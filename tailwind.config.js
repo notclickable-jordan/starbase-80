@@ -4,6 +4,7 @@ export default {
 	theme: {
 		colors: {
 			bg: "#f8fafc",
+			border: "#336699",
 		},
 		extend: {},
 	},

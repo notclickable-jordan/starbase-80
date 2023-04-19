@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+	background-color: theme(colors.bg);
+}
+
+h1 {
+	font-size: theme(fontSize.3xl);
+	font-weight: theme(fontWeight.semibold);
+	margin: 0;
+	padding: 0;
+}
