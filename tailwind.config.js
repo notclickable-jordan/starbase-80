@@ -2,11 +2,12 @@
 export default {
 	content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
 	theme: {
-		colors: {
-			bg: "#f8fafc",
-			border: "#336699",
+		extend: {
+			colors: {
+				bg: "#f8fafc",
+				border: "#336699",
+			},
 		},
-		extend: {},
 	},
 	plugins: [],
 };

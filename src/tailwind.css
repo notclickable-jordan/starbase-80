@@ -6,6 +6,10 @@ html {
 	background-color: theme(colors.bg);
 }
 
+body {
+	min-height: 100vh;
+}
+
 h1 {
 	font-size: theme(fontSize.3xl);
 	font-weight: theme(fontWeight.semibold);
