@@ -3,10 +3,24 @@ export interface IService {
 	uri: string;
 
 	description?: string;
-	icon?: string;
+	icon?: IIcon;
+}
+
+export interface IIcon {
+	href: string;
+	title?: string;
+	alt?: string;
 }
 
 export const FAKE_SERVICES: IService[] = [
+	{
+		name: "Archivebox",
+		uri: "https://archivebox.starbase80.dev",
+		description: "Backup webpages",
+		icon: {
+			href: "/icons/archivebox.jpg",
+		},
+	},
 	{
 		name: "Calibre",
 		uri: "https://calibre.starbase80.dev",
