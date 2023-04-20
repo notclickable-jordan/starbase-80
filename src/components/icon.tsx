@@ -72,7 +72,7 @@ const IconBase: React.FunctionComponent<IIconBaseProps> = ({ icon, index }) => {
 			src={href}
 			alt={alt}
 			title={title}
-			className="block w-16 h-16 rounded-2xl border border-black/5 shadow-sm overflow-hidden"
+			className=" block w-16 h-16 rounded-2xl border border-black/5 shadow-sm overflow-hidden"
 		/>
 	);
 };

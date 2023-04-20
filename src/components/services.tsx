@@ -26,16 +26,20 @@ const Service: React.FunctionComponent<IServiceProps> = ({ service, index }) => 
 	const { name, uri, description, icon } = service;
 
 	return (
-		<li className="p-4 flex flex-col items-center">
-			<Icon icon={icon} uri={uri} index={index} />
-			<h3 className="text-lg mt-1 font-semibold line-clamp-1">
-				<a href={uri}>{name}</a>
-			</h3>
-			{!is.null(description) && (
-				<p className="text-sm text-black/50 line-clamp-1">
-					<a href={uri}>{description}</a>
-				</p>
-			)}
+		<li className="p-4 flex gap-4">
+			<span className="flex-shrink-0 block ">
+				<Icon icon={icon} uri={uri} index={index} />
+			</span>
+			<div>
+				<h3 className="text-lg mt-1 font-semibold line-clamp-1">
+					<a href={uri}>{name}</a>
+				</h3>
+				{!is.null(description) && (
+					<p className="text-sm text-black/50 line-clamp-1">
+						<a href={uri}>{description}</a>
+					</p>
+				)}
+			</div>
 		</li>
 	);
 };
