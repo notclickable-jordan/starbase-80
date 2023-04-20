@@ -6,7 +6,7 @@
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc && vite build",
-		"serve": "vite preview"
+		"start": "vite preview"
 	},
 	"dependencies": {
 		"@types/react-dom": "^18.0.11",
