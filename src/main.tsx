@@ -5,6 +5,6 @@ import "./tailwind.css";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
 	<React.StrictMode>
-		<IndexPage title="Starbase 80" />
+		<IndexPage title="Starbase 80" icon="/starbase-80.png" />
 	</React.StrictMode>
 );
