@@ -3,24 +3,31 @@ import { is } from "../shared/is";
 import { IService } from "../shared/types";
 import { Icon } from "./icon";
 
-interface IProps {
+interface IServicesProps {
 	services: IService[];
 }
 
-export const Services: React.FunctionComponent<IProps> = ({ services }) => {
+export const Services: React.FunctionComponent<IServicesProps> = ({ services }) => {
 	return (
 		<ul className="grid grid-cols-5 gap-4">
 			{services.map((service, index) => (
-				<Service key={index} {...service} />
+				<Service key={index} service={service} index={index} />
 			))}
 		</ul>
 	);
 };
 
-const Service: React.FunctionComponent<IService> = ({ name, uri, description, icon }) => {
+interface IServiceProps {
+	service: IService;
+	index: number;
+}
+
+const Service: React.FunctionComponent<IServiceProps> = ({ service, index }) => {
+	const { name, uri, description, icon } = service;
+
 	return (
 		<li className="p-4 flex flex-col items-center">
-			{!is.null(icon) && <Icon icon={icon} uri={uri} />}
+			<Icon icon={icon} uri={uri} index={index} />
 			<h3 className="text-lg font-semibold line-clamp-1 mt-1">
 				<a href={uri}>{name}</a>
 			</h3>

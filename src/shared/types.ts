@@ -24,9 +24,14 @@ export const FAKE_SERVICES: IService[] = [
 	{
 		name: "Calibre",
 		uri: "https://calibre.starbase80.dev",
+		description: "eBook library",
 	},
 	{
 		name: "Gitea",
 		uri: "https://git.starbase80.dev",
+		description: "Code hosting",
+		icon: {
+			href: "/icons/gitea.png",
+		},
 	},
 ];
