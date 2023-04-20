@@ -1,7 +1,8 @@
 import React from "react";
+import userServices from "../../public/services.json";
 import { Header } from "../components/header";
 import { Services } from "../components/services";
-import { FAKE_SERVICES } from "../shared/types";
+import { IService } from "../shared/types";
 
 interface IProps {
 	title?: string;
@@ -9,13 +10,15 @@ interface IProps {
 }
 
 export const IndexPage: React.FunctionComponent<IProps> = ({ icon, title }) => {
+	const mySerices = userServices as IService[];
+
 	return (
 		<div className="min-h-screen flex flex-row">
 			<div className="min-h-screen border-0 border-solid border-r border-r-gray-300 p-4 max-w-xs">
 				<Header title={title} icon={icon} />
 			</div>
 			<div className="min-h-screen p-4 flex-grow">
-				<Services services={FAKE_SERVICES} />
+				<Services services={mySerices} />
 			</div>
 		</div>
 	);
