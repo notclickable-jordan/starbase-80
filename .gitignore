@@ -20,6 +20,3 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-
-# Starbase 80
-config
