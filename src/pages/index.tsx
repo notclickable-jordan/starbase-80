@@ -11,7 +11,7 @@ interface IProps {
 export const IndexPage: React.FunctionComponent<IProps> = ({ icon, title }) => {
 	return (
 		<div className="min-h-screen flex flex-row">
-			<div className="min-h-screen border-0 border-solid border-r border-r-gray-300 p-4">
+			<div className="min-h-screen border-0 border-solid border-r border-r-gray-300 p-4 max-w-xs">
 				<Header title={title} icon={icon} />
 			</div>
 			<div className="min-h-screen p-4 flex-grow">
