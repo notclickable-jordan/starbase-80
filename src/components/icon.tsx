@@ -31,6 +31,14 @@ interface IProps {
 
 export const Icon: React.FunctionComponent<IProps> = ({ uri, icon, index }) => {
 	if (is.null(icon)) {
+		if (!is.null(uri)) {
+			return (
+				<a href={uri}>
+					<IconBlank index={index} />
+				</a>
+			);
+		}
+
 		return <IconBlank index={index} />;
 	}
 
