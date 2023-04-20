@@ -33,7 +33,7 @@ export const Icon: React.FunctionComponent<IProps> = ({ uri, icon, index }) => {
 	if (is.null(icon)) {
 		if (!is.null(uri)) {
 			return (
-				<a href={uri}>
+				<a href={uri} target="_blank">
 					<IconBlank index={index} />
 				</a>
 			);
@@ -44,7 +44,7 @@ export const Icon: React.FunctionComponent<IProps> = ({ uri, icon, index }) => {
 
 	if (!is.null(uri)) {
 		return (
-			<a href={uri}>
+			<a href={uri} target="_blank">
 				<IconBase icon={icon as IIcon} index={index} />
 			</a>
 		);

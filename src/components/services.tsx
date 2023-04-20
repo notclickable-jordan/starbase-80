@@ -9,7 +9,7 @@ interface IServicesProps {
 
 export const Services: React.FunctionComponent<IServicesProps> = ({ services }) => {
 	return (
-		<ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 lg:gap-4 lg:gap-y-6">
+		<ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
 			{services.map((service, index) => (
 				<Service key={index} service={service} index={index} />
 			))}
@@ -32,11 +32,15 @@ const Service: React.FunctionComponent<IServiceProps> = ({ service, index }) => 
 			</span>
 			<div>
 				<h3 className="text-lg mt-1 font-semibold line-clamp-1">
-					<a href={uri}>{name}</a>
+					<a href={uri} target="_blank">
+						{name}
+					</a>
 				</h3>
 				{!is.null(description) && (
 					<p className="text-sm text-black/50 line-clamp-1">
-						<a href={uri}>{description}</a>
+						<a href={uri} target="_blank">
+							{description}
+						</a>
 					</p>
 				)}
 			</div>
