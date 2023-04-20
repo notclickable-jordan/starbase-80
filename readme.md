@@ -24,6 +24,8 @@ services:
         image: jordanroher/starbase-80
         ports:
             - 4173:4173
+        environment:
+            - TITLE=My Homepage
         volumes:
             - ./config.json:/app/src/config.json
             - ./icons:/app/public/icons # or wherever, JSON icon paths are relative to /app/public
