@@ -170,7 +170,10 @@
 			{
 				"name": "Synology",
 				"uri": "http://synology:5000",
-				"description": "Network storage"
+				"description": "Network storage",
+				"icon": {
+					"href": "/icons/synology.png"
+				}
 			}
 		]
 	}
