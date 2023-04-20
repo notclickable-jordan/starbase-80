@@ -9,7 +9,7 @@ interface IServicesProps {
 
 export const Services: React.FunctionComponent<IServicesProps> = ({ services }) => {
 	return (
-		<ul className="grid grid-cols-5 gap-4 gap-y-8">
+		<ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 lg:gap-4 lg:gap-y-6">
 			{services.map((service, index) => (
 				<Service key={index} service={service} index={index} />
 			))}
