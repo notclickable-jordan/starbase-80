@@ -1,7 +1,7 @@
 import React from "react";
 import { Header } from "../components/header";
 import { ServiceCatalogs } from "../components/service-catalogs";
-import userServices from "../config/services.json";
+import userServices from "../config.json";
 import { IServiceCatalog } from "../shared/types";
 
 interface IProps {

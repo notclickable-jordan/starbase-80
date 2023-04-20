@@ -1,4 +1,4 @@
-FROM node
+FROM node18:alpine
 
 WORKDIR /app
 
@@ -7,7 +7,7 @@ RUN npm i
 
 COPY . .
 
-RUN npm run build
+ENV NODE_ENV production
 
 EXPOSE 4173
 

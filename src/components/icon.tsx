@@ -1,6 +1,5 @@
 import React from "react";
 import { is } from "../shared/is";
-import { IIcon } from "../shared/types";
 
 const iconColors = [
 	"blue",
@@ -25,7 +24,7 @@ const getIconColor = (index: number) => `bg-${iconColors[iconColors.length % ind
 
 interface IProps {
 	index: number;
-	icon?: IIcon;
+	icon?: string;
 	uri?: string;
 }
 
@@ -45,12 +44,12 @@ export const Icon: React.FunctionComponent<IProps> = ({ uri, icon, index }) => {
 	if (!is.null(uri)) {
 		return (
 			<a href={uri} target="_blank">
-				<IconBase icon={icon as IIcon} index={index} />
+				<IconBase icon={icon as string} />
 			</a>
 		);
 	}
 
-	return <IconBase icon={icon as IIcon} index={index} />;
+	return <IconBase icon={icon as string} />;
 };
 
 interface IIconBlankProps {
@@ -68,18 +67,14 @@ const IconBlank: React.FunctionComponent<IIconBlankProps> = ({ index }) => {
 };
 
 interface IIconBaseProps {
-	icon: IIcon;
-	index: number;
+	icon: string;
 }
 
-const IconBase: React.FunctionComponent<IIconBaseProps> = ({ icon, index }) => {
-	const { href, alt, title } = icon;
-
+const IconBase: React.FunctionComponent<IIconBaseProps> = ({ icon }) => {
 	return (
 		<img
-			src={href}
-			alt={alt}
-			title={title}
+			src={icon}
+			alt=""
 			className=" block w-16 h-16 rounded-2xl border border-black/5 shadow-sm overflow-hidden"
 		/>
 	);
