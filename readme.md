@@ -6,9 +6,11 @@
 
 # About
 
-A nice looking homepage for Docker containers or any other services and links.
+<img src="./preview.jpg" alt="" />
 
-No actual integration with Docker. Loads instantly.
+A nice looking homepage for Docker containers or any services and links.
+
+No actual integration with Docker. Loads instantly. No dark theme.
 
 If you make a change to the config JSON, restart this container and refresh.
 
