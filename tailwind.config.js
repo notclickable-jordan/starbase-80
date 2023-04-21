@@ -3,21 +3,11 @@ export default {
 	content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
 	safelist: [
 		/* Built from icon.tsx */
-		"bg-blue-300",
-		"bg-rose-300",
-		"bg-green-300",
-		"bg-red-300",
-		"bg-yellow-300",
-		"bg-cyan-300",
-		"bg-pink-300",
-		"bg-orange-300",
-		"bg-sky-300",
-		"bg-slate-300",
-		"bg-emerald-300",
-		"bg-zinc-300",
-		"bg-neutral-300",
-		"bg-amber-300",
-		"bg-violet-300",
+		{
+			pattern:
+				/bg-(black|white|slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-(50|100|200|300|400|500|600|700|800|900|950)/,
+		},
+		"bg-transparent",
 	],
 	theme: {
 		extend: {

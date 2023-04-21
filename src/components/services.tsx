@@ -23,13 +23,23 @@ interface IServiceProps {
 }
 
 const Service: React.FunctionComponent<IServiceProps> = ({ service, index }) => {
-	const { name, uri, description, icon } = service;
+	const { name, uri, description, icon, iconBG, iconBubble, iconColor } = service;
 
 	return (
 		<li className="p-4 flex gap-4">
-			<span className="flex-shrink-0 block ">
-				<Icon icon={icon} uri={uri} index={index} />
-			</span>
+			{!is.null(icon) && (
+				<span className="flex-shrink-0 block">
+					<Icon
+						name={name}
+						icon={icon}
+						uri={uri}
+						index={index}
+						iconColor={iconColor}
+						iconBG={iconBG}
+						iconBubble={iconBubble}
+					/>
+				</span>
+			)}
 			<div>
 				<h3 className="text-lg mt-1 font-semibold line-clamp-1">
 					<a href={uri} target="_blank">
