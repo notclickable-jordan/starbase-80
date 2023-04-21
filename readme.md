@@ -66,9 +66,12 @@ Use any [Material Design icon](https://icon-sets.iconify.design/mdi/) by prefixi
 
 Fill the icon by providing an "iconColor" from the [list of Tailwind colors](https://tailwindcss.com/docs/background-color). Do not prefix with "bg-".
 
+Use "black" or "white" for those colors.
+
 ```bash
 # Specify an icon in config.json
-"icon": "mdi-cloud"
+"icon": "mdi-cloud",
+"iconColor": "black"
 ```
 
 # Docker compose
@@ -80,9 +83,11 @@ services:
         ports:
             - 4173:4173
         environment:
-            - TITLE=Starbase 80 # defaults to "My Website"
-            - LOGO=/starbase80.jpg # defaults to /logo.png
-			- HEADER=true # defaults to true, set to false to hide the header (title and logo)
+            - TITLE=Starbase 80 # defaults to "My Website", set to TITLE= to hide the title
+            - LOGO=/starbase80.jpg # defaults to /logo.png, set to LOGO= to hide the logo
+			- HEADER=true # defaults to true, set to false to hide the title and logo
+			- CATEGORIES=small # defaults to normal, set to small for smaller, uppercase category labels
+			- BGCOLOR=#fff # defaults to #f8fafc, set to any hex color or Tailwind color using the theme syntax (e.g. BGCOLOR=theme(colors.sky.100) for bg-sky-100)
         volumes:
             - ./config.json:/app/src/config.json # required
             - ./public/favicon.ico:/app/public/favicon.ico # optional
