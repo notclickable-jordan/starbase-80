@@ -18,6 +18,21 @@ Inspired by [Ben Phelps' Homepage](https://gethomepage.dev/) and [Umbrel](https:
 
 # Icons
 
+## Options
+
+-   Set a background by providing an "iconBG" from the [list of Tailwind colors](https://tailwindcss.com/docs/background-color). Do not prefix with "bg-".
+-   Turn off the bubble and shadow by setting `"iconBubble": false`.
+-   Turn off background color by setting `"iconBG": "transparent"`.
+-   Hide the icon entirely by setting `"icon": ""`.
+
+```bash
+# Specify an icon in config.json
+"icon": "/icons/jellyfin.jpg",
+"iconColor": "blue-500", # optional, defaults to a contrasting color
+"iconBG": "gray-200", # optional, defaults to a complementary color
+"iconBubble": false, # optional, defaults to true
+```
+
 ## Use your own
 
 Create a volume or bind mount to a subfolder of `/app/public` and specify a relative path.
@@ -51,20 +66,9 @@ Use any [Material Design icon](https://icon-sets.iconify.design/mdi/) by prefixi
 
 Fill the icon by providing an "iconColor" from the [list of Tailwind colors](https://tailwindcss.com/docs/background-color). Do not prefix with "bg-".
 
-Set a background by providing an "iconBG" from the [list of Tailwind colors](https://tailwindcss.com/docs/background-color). Do not prefix with "bg-".
-
-Turn off the bubble and shadow by setting `"iconBubble": false`.
-
-Turn off background color by setting `"iconBG": "transparent"`.
-
-Hide the icon entirely by setting `"icon": ""`.
-
 ```bash
 # Specify an icon in config.json
-"icon": "mdi-cloud",
-"iconColor": "blue-500", # optional, defaults to a contrasting color
-"iconBG": "gray-200", # optional, defaults to a complementary color
-"iconBubble": false, # optional, defaults to true
+"icon": "mdi-cloud"
 ```
 
 # Docker compose

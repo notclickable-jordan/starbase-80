@@ -70,6 +70,12 @@ const IconBlank: React.FunctionComponent<IIconBlankProps> = ({ index }) => {
 	);
 };
 
+enum IconType {
+	uri,
+	material,
+	dashboard,
+}
+
 interface IIconBaseProps {
 	icon: string;
 	iconColor?: string;
@@ -78,51 +84,74 @@ interface IIconBaseProps {
 }
 
 const IconBase: React.FunctionComponent<IIconBaseProps> = ({ icon, iconBG, iconBubble, iconColor }) => {
+	let iconType: IconType = IconType.uri;
+
 	if (icon.startsWith("http") || icon.startsWith("/")) {
-		/* Relative or absolute icon URI */
-		return (
-			<img
-				src={icon}
-				alt=""
-				className=" block w-16 h-16 rounded-2xl border border-black/5 shadow-sm overflow-hidden"
-			/>
-		);
+		iconType = IconType.uri;
+	} else if (icon.startsWith("mdi-")) {
+		iconType = IconType.material;
+	} else {
+		iconType = IconType.dashboard;
 	}
 
-	if (icon.startsWith("mdi-")) {
-		/* Material Design icon */
-		const iconName = icon.replace("mdi-", "").replace(".svg", "");
-		let iconClassName =
-			iconBubble === false
-				? "block w-16 h-16 overflow-hidden"
-				: "block w-16 h-16 rounded-2xl border border-black/5 shadow-sm overflow-hidden";
+	// Everyone starts the same size
+	let iconClassName = "block w-16 h-16 overflow-hidden bg-contain";
 
-		if (is.null(iconBG)) {
-			iconClassName += ` bg-slate-200`;
-		} else {
-			iconClassName += ` bg-${iconBG}`;
-		}
+	if (is.null(iconBubble) || iconBubble !== false) {
+		iconClassName += " rounded-2xl border border-black/5 shadow-sm";
+	}
 
-		return (
-			<div className={iconClassName}>
-				<div
-					className={`block w-16 h-16 bg-${iconColor} overflow-hidden`}
-					style={{
-						mask: `url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/${iconName}.svg) no-repeat center / contain`,
-						WebkitMask: `url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/${iconName}.svg) no-repeat center / contain`,
-					}}
+	switch (iconType) {
+		case IconType.uri:
+		case IconType.dashboard:
+			// Default to bubble and no background for URI and Dashboard icons
+			if (!is.null(iconBG)) {
+				iconClassName += ` bg-${iconBG}`;
+			}
+			break;
+		case IconType.material:
+			// Material icons get a color and a background by default, then an optional bubble
+			if (is.null(iconBG)) {
+				iconClassName += ` bg-slate-200`;
+			} else {
+				iconClassName += ` bg-${iconBG}`;
+			}
+
+			if (is.null(iconBubble) || iconBubble !== false) {
+				iconClassName += " rounded-2xl border border-black/5 shadow-sm";
+			}
+
+			if (is.null(iconColor)) {
+				iconColor = "black";
+			}
+			break;
+	}
+
+	switch (iconType) {
+		case IconType.uri:
+			return <img src={icon} alt="" className={iconClassName} />;
+		case IconType.dashboard:
+			icon = icon.replace(".png", "").replace(".jpg", "").replace(".svg", "");
+			return (
+				<img
+					src={`https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/${icon}.png`}
+					alt=""
+					className={iconClassName}
 				/>
-			</div>
-		);
-	}
+			);
+		case IconType.material:
+			icon = icon.replace("mdi-", "").replace(".svg", "");
 
-	/* Dashboard icon */
-	const iconName = icon.replace(".png", "").replace(".jpg", "").replace(".svg", "");
-	return (
-		<img
-			src={`https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/${iconName}.png`}
-			alt=""
-			className="block w-16 h-16 rounded-2xl border border-black/5 shadow-sm overflow-hidden"
-		/>
-	);
+			return (
+				<div className={iconClassName}>
+					<div
+						className={`block w-16 h-16 bg-${iconColor} overflow-hidden`}
+						style={{
+							mask: `url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/${icon}.svg) no-repeat center / contain`,
+							WebkitMask: `url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/${icon}.svg) no-repeat center / contain`,
+						}}
+					/>
+				</div>
+			);
+	}
 };
