@@ -26,7 +26,7 @@ services:
             - 4173:4173
         environment:
             - TITLE=My Homepage
-			- LOGO=/logo.png
+            - LOGO=/logo.png
         volumes:
             - ./config.json:/app/src/config.json # required
             - ./public/favicon.ico:/app/public/favicon.ico # optional
