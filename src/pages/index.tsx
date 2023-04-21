@@ -3,6 +3,7 @@ import { Header } from "../components/header";
 import { ServiceCatalogs } from "../components/service-catalogs";
 import userServices from "../config.json";
 import { IServiceCatalog } from "../shared/types";
+import { SHOWHEADER } from "../variables";
 
 interface IProps {
 	title?: string;
@@ -14,9 +15,11 @@ export const IndexPage: React.FunctionComponent<IProps> = ({ icon, title }) => {
 
 	return (
 		<div className="min-h-screen flex flex-col xl:flex-row">
-			<div className="w-full xl:w-auto xl:max-w-xs xl:min-h-screen border-0 border-solid border-b xl:border-r xl:border-b-0 border-gray-300 p-4">
-				<Header title={title} icon={icon} />
-			</div>
+			{SHOWHEADER && (
+				<div className="w-full xl:w-auto xl:max-w-xs xl:min-h-screen border-0 border-solid border-b xl:border-r xl:border-b-0 border-gray-300 p-4">
+					<Header title={title} icon={icon} />
+				</div>
+			)}
 			<div className="min-h-screen p-4 flex-grow">
 				<ServiceCatalogs catalogs={mySerices} />
 			</div>

@@ -11,6 +11,7 @@ ENV NODE_ENV production
 
 ENV TITLE "My Website"
 ENV LOGO "/logo.png"
+ENV HEADER "true"
 
 EXPOSE 4173
 

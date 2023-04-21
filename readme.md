@@ -78,6 +78,7 @@ services:
         environment:
             - TITLE=Starbase 80 # defaults to "My Website"
             - LOGO=/starbase80.jpg # defaults to /logo.png
+			- HEADER=true # defaults to true, set to false to hide the header (title and logo)
         volumes:
             - ./config.json:/app/src/config.json # required
             - ./public/favicon.ico:/app/public/favicon.ico # optional
