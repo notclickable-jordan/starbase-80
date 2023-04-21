@@ -3,7 +3,7 @@ import { Header } from "../components/header";
 import { ServiceCatalogs } from "../components/service-catalogs";
 import userServices from "../config.json";
 import { IServiceCatalog } from "../shared/types";
-import { SHOWHEADER } from "../variables";
+import { SHOWHEADER, SHOWHEADERLINE } from "../variables";
 
 interface IProps {
 	title?: string;
@@ -13,10 +13,16 @@ interface IProps {
 export const IndexPage: React.FunctionComponent<IProps> = ({ icon, title }) => {
 	const mySerices = userServices as IServiceCatalog[];
 
+	let headerClassName = "w-full xl:w-auto xl:max-w-xs xl:min-h-screen p-4";
+
+	if (SHOWHEADERLINE) {
+		headerClassName += "border-0 border-solid border-b xl:border-r xl:border-b-0 border-gray-300";
+	}
+
 	return (
 		<div className="min-h-screen flex flex-col xl:flex-row">
 			{SHOWHEADER && (
-				<div className="w-full xl:w-auto xl:max-w-xs xl:min-h-screen border-0 border-solid border-b xl:border-r xl:border-b-0 border-gray-300 p-4">
+				<div className={headerClassName}>
 					<Header title={title} icon={icon} />
 				</div>
 			)}

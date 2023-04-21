@@ -86,6 +86,7 @@ services:
             - TITLE=Starbase 80 # defaults to "My Website", set to TITLE= to hide the title
             - LOGO=/starbase80.jpg # defaults to /logo.png, set to LOGO= to hide the logo
 			- HEADER=true # defaults to true, set to false to hide the title and logo
+			- HEADERLINE=true # defaults to true, set to false to turn off the header border line
 			- CATEGORIES=small # defaults to normal, set to small for smaller, uppercase category labels
 			- BGCOLOR=#fff # defaults to #f8fafc, set to any hex color or Tailwind color using the theme syntax (e.g. BGCOLOR=theme(colors.sky.100) for bg-sky-100)
         volumes:
