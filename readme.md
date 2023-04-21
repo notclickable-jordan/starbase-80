@@ -26,10 +26,11 @@ services:
             - 4173:4173
         environment:
             - TITLE=My Homepage
+			- LOGO=/logo.png
         volumes:
-            - ./config.json:/app/src/config.json
-            - ./public/favicon.ico:/app/public/favicon.ico
-            - ./public/logo.png:/app/public/logo.png
+            - ./config.json:/app/src/config.json # required
+            - ./public/favicon.ico:/app/public/favicon.ico # optional
+            - ./public/logo.png:/app/public/logo.png # optional, or you can reference something in /icons
             - ./public/icons:/app/public/icons # or wherever, JSON icon paths are relative to /app/public
 ```
 

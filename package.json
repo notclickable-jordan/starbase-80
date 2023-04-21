@@ -1,7 +1,11 @@
 {
-	"name": "sb80",
-	"private": true,
-	"version": "1.0.0",
+	"name": "starbase-80",
+	"displayName": "Starbase 80",
+	"homepage": "https://github.com/notclickable-jordan/starbase-80",
+	"repository": {
+		"url": "https://github.com/notclickable-jordan/starbase-80"
+	},
+	"version": "1.0.1",
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
