@@ -13,7 +13,7 @@ ENV TITLE "My Website"
 
 EXPOSE 4173
 
-RUN sed -i -e 's/HTMLTITLE/'"${TITLE}"'/g' ./index.html
-RUN sed -i -e 's/HTMLTITLE/'"${TITLE}"'/g' ./src/main.tsx
+RUN chmod +x /app/docker-entrypoint.sh
+ENTRYPOINT ["/app/docker-entrypoint.sh"]
 
 CMD ["npm", "run", "start"]
