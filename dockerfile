@@ -14,7 +14,8 @@ ENV LOGO "/logo.png"
 ENV HEADER "true"
 ENV HEADERLINE "true"
 ENV CATEGORIES "normal"
-ENV BGCOLOR "#f8fafc"
+ENV BGCOLOR "theme(colors.slate.50)"
+ENV THEME "light"
 
 EXPOSE 4173
 

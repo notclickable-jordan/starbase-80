@@ -12,9 +12,9 @@ sed -i -e 's/(PAGEICON = ")\/logo\.png(")/'"$1${LOGO}$2"'/g' /app/src/variables.
 sed -i -e 's/(SHOWHEADER = )true/'"$1${HEADER}"'/g' /app/src/variables.ts
 sed -i -e 's/(SHOWHEADERLINE = )true/'"$1${HEADERLINE}"'/g' /app/src/variables.ts
 sed -i -e 's/(CATEGORIES = ")normal(")/'"$1${CATEGORIES}$2"'/g' /app/src/variables.ts
+sed -i -e 's/(THEME = ")light(")/'"$1${THEME}$2"'/g' /app/src/variables.ts
 
 # CSS replacement
-sed -i -e 's/(background-color: )#f8fafc/'"$1${BGCOLOR}"'/g' /app/src/tailwind.css
- #f8fafc
+sed -i -e 's/(background-color: )theme\(colors\.slate\.50\)/'"$1${BGCOLOR}"'/g' /app/src/tailwind.css
 
 exec "$@"

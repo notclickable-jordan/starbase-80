@@ -47,7 +47,7 @@ const Service: React.FunctionComponent<IServiceProps> = ({ service, index }) => 
 					</a>
 				</h3>
 				{!is.null(description) && (
-					<p className="text-sm text-black/50 line-clamp-1">
+					<p className="text-sm text-black/50 dark:text-white/50 line-clamp-1">
 						<a href={uri} target="_blank">
 							{description}
 						</a>

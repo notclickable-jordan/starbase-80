@@ -16,18 +16,21 @@ export const IndexPage: React.FunctionComponent<IProps> = ({ icon, title }) => {
 	let headerClassName = "w-full xl:w-auto xl:max-w-xs xl:min-h-screen p-4";
 
 	if (SHOWHEADERLINE) {
-		headerClassName += "border-0 border-solid border-b xl:border-r xl:border-b-0 border-gray-300";
+		headerClassName +=
+			"border-0 border-solid border-b xl:border-r xl:border-b-0 border-gray-300 dark:border-gray-700";
 	}
 
 	return (
-		<div className="min-h-screen flex flex-col xl:flex-row max-w-screen-2xl mx-auto">
-			{SHOWHEADER && (
-				<div className={headerClassName}>
-					<Header title={title} icon={icon} />
+		<div className="min-h-screen dark:bg-gray-950">
+			<div className="min-h-screen flex flex-col xl:flex-row max-w-screen-2xl mx-auto">
+				{SHOWHEADER && (
+					<div className={headerClassName}>
+						<Header title={title} icon={icon} />
+					</div>
+				)}
+				<div className="min-h-screen p-4 flex-grow">
+					<ServiceCatalogList catalogs={mySerices} />
 				</div>
-			)}
-			<div className="min-h-screen p-4 flex-grow">
-				<ServiceCatalogList catalogs={mySerices} />
 			</div>
 		</div>
 	);
