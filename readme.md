@@ -28,7 +28,9 @@ services:
             - TITLE=My Homepage
         volumes:
             - ./config.json:/app/src/config.json
-            - ./icons:/app/public/icons # or wherever, JSON icon paths are relative to /app/public
+            - ./public/favicon.ico:/app/public/favicon.ico
+            - ./public/logo.png:/app/public/logo.png
+            - ./public/icons:/app/public/icons # or wherever, JSON icon paths are relative to /app/public
 ```
 
 # config.json format
