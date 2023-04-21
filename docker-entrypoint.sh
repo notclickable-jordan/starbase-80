@@ -11,6 +11,7 @@ sed -i -e 's/(PAGETITLE = ")My Website(")/'"$1${TITLE}$2"'/g' /app/src/variables
 sed -i -e 's/(PAGEICON = ")\/logo\.png(")/'"$1${LOGO}$2"'/g' /app/src/variables.ts
 sed -i -e 's/(SHOWHEADER = )true/'"$1${HEADER}"'/g' /app/src/variables.ts
 sed -i -e 's/(SHOWHEADERLINE = )true/'"$1${HEADERLINE}"'/g' /app/src/variables.ts
+sed -i -e 's/(SHOWHEADERTOP = )false/'"$1${HEADERTOP}"'/g' /app/src/variables.ts
 sed -i -e 's/(CATEGORIES = ")normal(")/'"$1${CATEGORIES}$2"'/g' /app/src/variables.ts
 sed -i -e 's/(THEME = ")light(")/'"$1${THEME}$2"'/g' /app/src/variables.ts
 
