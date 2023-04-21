@@ -7,16 +7,15 @@ LOGO=${LOGO//\//\\/}
 sed -i -e 's/HTMLTITLE/'"${TITLE}"'/g' /app/index.html
 
 # TypeScript replacement
-sed -i -e 's/(PAGETITLE = ")My Website(")/'"$1${TITLE}$2"'/g' /app/src/variables.ts
-sed -i -e 's/(PAGEICON = ")\/logo\.png(")/'"$1${LOGO}$2"'/g' /app/src/variables.ts
-sed -i -e 's/(SHOWHEADER = )true/'"$1${HEADER}"'/g' /app/src/variables.ts
-sed -i -e 's/(SHOWHEADERLINE = )true/'"$1${HEADERLINE}"'/g' /app/src/variables.ts
-sed -i -e 's/(SHOWHEADERTOP = )false/'"$1${HEADERTOP}"'/g' /app/src/variables.ts
-sed -i -e 's/(CATEGORIES = ")normal(")/'"$1${CATEGORIES}$2"'/g' /app/src/variables.ts
-sed -i -e 's/(THEME = ")light(")/'"$1${THEME}$2"'/g' /app/src/variables.ts
+sed -i -e 's/PAGETITLE = "My Website"/PAGETITLE = "'"${TITLE}"'"/g' /app/src/variables.ts
+sed -i -e 's/PAGEICON = "\/logo\.png"/PAGEICON = "'"${LOGO}"'"/g' /app/src/variables.ts
+sed -i -e 's/SHOWHEADER = true/SHOWHEADER = '"${HEADER}"'/g' /app/src/variables.ts
+sed -i -e 's/SHOWHEADERLINE = true/SHOWHEADERLINE = '"${HEADERLINE}"'/g' /app/src/variables.ts
+sed -i -e 's/SHOWHEADERTOP = false/SHOWHEADERTOP = '"${HEADERTOP}"'/g' /app/src/variables.ts
+sed -i -e 's/CATEGORIES = "normal"/CATEGORIES = "'"${CATEGORIES}"'"/g' /app/src/variables.ts
 
 # CSS replacement
-sed -i -e 's/(background-color: )theme\(colors\.slate\.50\)/'"$1${BGCOLOR}"'/g' /app/src/tailwind.css
-sed -i -e 's/(background-color: )theme\(colors\.gray\.950\)/'"$1${BGCOLORDARK}"'/g' /app/src/tailwind.css
+sed -i -e 's/background-color: theme\(colors\.slate\.50\)/background-color: '"${BGCOLOR}"'/g' /app/src/tailwind.css
+sed -i -e 's/background-color: theme\(colors\.gray\.950\)/background-color: '"${BGCOLORDARK}"'/g' /app/src/tailwind.css
 
 exec "$@"
