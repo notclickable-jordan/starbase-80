@@ -6,15 +6,53 @@
 
 # About
 
-<img src="./preview.jpg" alt="" />
-
 A nice looking homepage for Docker containers or any services and links.
 
 No actual integration with Docker. Loads instantly. No dark theme.
 
 If you make a change to the config JSON, restart this container and refresh.
 
-Provide your own icons.
+Inspired by [Ben Phelps' Homepage](https://gethomepage.dev/) and [Umbrel](https://umbrel.com/).
+
+<img src="./preview.jpg" alt="" />
+
+# Icons
+
+## Use your own
+
+Create a volume or bind mount to a subfolder of `/app/public` and specify a relative path.
+
+```bash
+# Your folder
+compose.yml
+- icons
+  - jellyfin.jpg
+  - ghost.jpg
+
+# Bind mount
+./icons:/app/public/icons
+
+# Specify an icon in config.json
+"icon": "/icons/jellyfin.jpg"
+```
+
+## Dashboard icons
+
+Use [Dashboard icons](https://github.com/walkxcode/dashboard-icons) by specifying a name without any prefix.
+
+```bash
+# Specify an icon in config.json
+"icon": "jellyfin"
+```
+
+## Material design
+
+Use any [Material Design icon](https://icon-sets.iconify.design/mdi/) by prefixing the name with `mdi-`.
+
+```bash
+# Specify an icon in config.json
+"icon": "mdi-cloud"
+```
 
 # Docker compose
 
@@ -25,8 +63,8 @@ services:
         ports:
             - 4173:4173
         environment:
-            - TITLE=My Homepage
-            - LOGO=/logo.png
+            - TITLE=Starbase 80 # defaults to "My Website"
+            - LOGO=/starbase80.jpg # defaults to /logo.png
         volumes:
             - ./config.json:/app/src/config.json # required
             - ./public/favicon.ico:/app/public/favicon.ico # optional
@@ -35,6 +73,40 @@ services:
 ```
 
 # config.json format
+
+## Categories
+
+Can have as many categories as you like.
+
+-   **category**: Title, optional, displays above services
+-   **services**: Array of services
+
+## Service
+
+-   **name**: Name, required
+-   **uri**: Hyperlink, required
+-   **description**: 2-3 words, optional
+-   **icon**: relative URI, absolute URI, service name ([Dashboard icon](https://github.com/walkxcode/dashboard-icons)) or `mdi-`service name ([Material Design icon](https://icon-sets.iconify.design/mdi/))
+
+## Template
+
+```json
+[
+	{
+		"category": "Category name",
+		"services": [
+			{
+				"name": "My App",
+				"uri": "https://website.com",
+				"description": "Fun site",
+				"icon": "/icons/myapp.png"
+			}
+		]
+	}
+]
+```
+
+## Example
 
 ```json
 [
