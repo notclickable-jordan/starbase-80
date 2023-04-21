@@ -101,20 +101,30 @@ const IconBase: React.FunctionComponent<IIconBaseProps> = ({ icon, iconBG, iconB
 		iconClassName += " rounded-2xl border border-black/5 shadow-sm";
 	}
 
+	const iconStyle: React.CSSProperties = {};
+
 	switch (iconType) {
 		case IconType.uri:
 		case IconType.dashboard:
 			// Default to bubble and no background for URI and Dashboard icons
 			if (!is.null(iconBG)) {
-				iconClassName += ` bg-${iconBG}`;
+				if (iconBG?.startsWith("#")) {
+					iconStyle.backgroundColor = iconBG;
+				} else {
+					iconClassName += ` bg-${iconBG}`;
+				}
 			}
 			break;
 		case IconType.material:
 			// Material icons get a color and a background by default, then an optional bubble
 			if (is.null(iconBG)) {
-				iconClassName += ` bg-slate-200`;
+				iconClassName += ` bg-slate-200 dark:bg-gray-900`;
 			} else {
-				iconClassName += ` bg-${iconBG}`;
+				if (iconBG?.startsWith("#")) {
+					iconStyle.backgroundColor = iconBG;
+				} else {
+					iconClassName += ` bg-${iconBG}`;
+				}
 			}
 
 			if (is.null(iconBubble) || iconBubble !== false) {
@@ -122,14 +132,22 @@ const IconBase: React.FunctionComponent<IIconBaseProps> = ({ icon, iconBG, iconB
 			}
 
 			if (is.null(iconColor)) {
-				iconColor = "black";
+				iconColor = "black dark:bg-white";
 			}
 			break;
 	}
 
+	const mdiIconStyle: React.CSSProperties = {};
+	let mdiIconColorFull = "bg-" + iconColor;
+
+	if (!is.null(iconColor) && iconColor?.startsWith("#")) {
+		mdiIconColorFull = "";
+		mdiIconStyle.backgroundColor = iconColor;
+	}
+
 	switch (iconType) {
 		case IconType.uri:
-			return <img src={icon} alt="" className={iconClassName} />;
+			return <img src={icon} alt="" className={iconClassName} style={{ ...iconStyle }} />;
 		case IconType.dashboard:
 			icon = icon.replace(".png", "").replace(".jpg", "").replace(".svg", "");
 			return (
@@ -137,16 +155,18 @@ const IconBase: React.FunctionComponent<IIconBaseProps> = ({ icon, iconBG, iconB
 					src={`https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/${icon}.png`}
 					alt=""
 					className={iconClassName}
+					style={{ ...iconStyle }}
 				/>
 			);
 		case IconType.material:
 			icon = icon.replace("mdi-", "").replace(".svg", "");
 
 			return (
-				<div className={iconClassName}>
+				<div className={iconClassName} style={{ ...iconStyle }}>
 					<div
-						className={`block w-16 h-16 bg-${iconColor} overflow-hidden`}
+						className={`block w-16 h-16 ${mdiIconColorFull} overflow-hidden`}
 						style={{
+							...mdiIconStyle,
 							mask: `url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/${icon}.svg) no-repeat center / contain`,
 							WebkitMask: `url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/${icon}.svg) no-repeat center / contain`,
 						}}

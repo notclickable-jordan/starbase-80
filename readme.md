@@ -18,21 +18,6 @@ Inspired by [Ben Phelps' Homepage](https://gethomepage.dev/) and [Umbrel](https:
 
 # Icons
 
-## Options
-
--   Set a background by providing an "iconBG" from the [list of Tailwind colors](https://tailwindcss.com/docs/background-color). Do not prefix with "bg-".
--   Turn off the bubble and shadow by setting `"iconBubble": false`.
--   Turn off background color by setting `"iconBG": "transparent"`.
--   Hide the icon entirely by setting `"icon": ""`.
-
-```bash
-# Specify an icon in config.json
-"icon": "/icons/jellyfin.jpg",
-"iconColor": "blue-500", # optional, defaults to a contrasting color
-"iconBG": "gray-200", # optional, defaults to a complementary color
-"iconBubble": false, # optional, defaults to true
-```
-
 ## Use your own
 
 Create a volume or bind mount to a subfolder of `/app/public` and specify a relative path.
@@ -43,6 +28,7 @@ compose.yml
 - icons
   - jellyfin.jpg
   - ghost.jpg
+  - etc
 
 # Bind mount
 ./icons:/app/public/icons
@@ -73,6 +59,18 @@ Use "black" or "white" for those colors.
 "icon": "mdi-cloud",
 "iconColor": "black"
 ```
+
+## Options
+
+```bash
+# Specify an icon in config.json
+"icon": "/icons/jellyfin.jpg", # mostly required, but if set to "" it removes the icon
+"iconColor": "blue-500", # optional, defaults to a contrasting color
+"iconBG": "gray-200", # optional, defaults to a complementary color
+"iconBubble": false, # optional, defaults to true, turns off bubble and shadow when false
+```
+
+For `iconColor` and `iconBG`, use a [Tailwind color](https://tailwindcss.com/docs/background-color). Turn off background color with a value of `"transparent"`. Do not prefix with `"bg-"`.
 
 # Docker compose
 
@@ -113,7 +111,10 @@ Can have as many categories as you like.
 -   **name**: Name, required
 -   **uri**: Hyperlink, required
 -   **description**: 2-3 words, optional
--   **icon**: relative URI, absolute URI, service name ([Dashboard icon](https://github.com/walkxcode/dashboard-icons)) or `mdi-`service name ([Material Design icon](https://icon-sets.iconify.design/mdi/))
+-   **icon**: optional, relative URI, absolute URI, service name ([Dashboard icon](https://github.com/walkxcode/dashboard-icons)) or `mdi-`service name ([Material Design icon](https://icon-sets.iconify.design/mdi/))
+-   **iconBG**: optional, hex code or [Tailwind color](https://tailwindcss.com/docs/background-color) (do not prefix with `bg-`). Background color for icons.
+-   **iconColor**: optional, hex code or [Tailwind color](https://tailwindcss.com/docs/background-color) (do not prefix with `bg-`). Only used as the fill color for Material Design icons.
+-   **iconBubble**: option, `true` or `false`, when `false` the bubble and shadow are removed from the icon
 
 ## Template
 
@@ -124,10 +125,13 @@ Can have as many categories as you like.
 		"bubble": false,
 		"services": [
 			{
-				"name": "My App",
+				"name": "My Cloud App",
 				"uri": "https://website.com",
 				"description": "Fun site",
-				"icon": "/icons/myapp.png"
+				"icon": "mdi-cloud",
+				"iconBG": "#fff",
+				"iconColor": "#000",
+				"iconBubble": false
 			}
 		]
 	}
@@ -175,7 +179,8 @@ Can have as many categories as you like.
 				"name": "Home Assistant",
 				"uri": "http://homeassistant.local:8123/",
 				"description": "Home automation",
-				"icon": "/icons/home-assistant.svg"
+				"icon": "home-assistant",
+				"iconBubble": false
 			},
 			{
 				"name": "Synology",
