@@ -21,7 +21,7 @@ export const IndexPage: React.FunctionComponent<IProps> = ({ icon, title }) => {
 	}
 
 	return (
-		<div className="min-h-screen dark:bg-gray-950">
+		<div className="min-h-screen">
 			<div className="min-h-screen flex flex-col xl:flex-row max-w-screen-2xl mx-auto">
 				{SHOWHEADER && (
 					<div className={headerClassName}>

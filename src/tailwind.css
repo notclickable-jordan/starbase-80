@@ -4,6 +4,10 @@
 
 html {
 	background-color: theme(colors.slate.50);
+
+	@media (prefers-color-scheme: dark) {
+		background-color: theme(colors.gray.950);
+	}
 }
 
 body {

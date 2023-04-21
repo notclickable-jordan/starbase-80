@@ -15,7 +15,7 @@ ENV HEADER "true"
 ENV HEADERLINE "true"
 ENV CATEGORIES "normal"
 ENV BGCOLOR "theme(colors.slate.50)"
-ENV THEME "light"
+ENV BGCOLORDARK "theme(colors.gray.950)"
 
 EXPOSE 4173
 

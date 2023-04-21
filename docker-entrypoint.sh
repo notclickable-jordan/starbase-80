@@ -16,5 +16,6 @@ sed -i -e 's/(THEME = ")light(")/'"$1${THEME}$2"'/g' /app/src/variables.ts
 
 # CSS replacement
 sed -i -e 's/(background-color: )theme\(colors\.slate\.50\)/'"$1${BGCOLOR}"'/g' /app/src/tailwind.css
+sed -i -e 's/(background-color: )theme\(colors\.gray\.950\)/'"$1${BGCOLORDARK}"'/g' /app/src/tailwind.css
 
 exec "$@"

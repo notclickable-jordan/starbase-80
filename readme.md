@@ -8,7 +8,7 @@
 
 A nice looking homepage for Docker containers or any services and links.
 
-No actual integration with Docker. Loads instantly. No dark theme.
+No actual integration with Docker. Loads instantly. Dark mode follows your OS.
 
 If you make a change to the config JSON, restart this container and refresh.
 
@@ -88,8 +88,8 @@ services:
 			- HEADER=true # defaults to true, set to false to hide the title and logo
 			- HEADERLINE=true # defaults to true, set to false to turn off the header border line
 			- CATEGORIES=small # defaults to normal, set to small for smaller, uppercase category labels
-			- BGCOLOR=#fff # defaults to theme(colors.slate.50), set to any hex color or Tailwind color using the theme syntax (e.g. BGCOLOR=theme(colors.sky.100) for bg-sky-100)
-			- THEME=light # defaults to light, set to dark for dark mode
+			- BGCOLOR=#fff # defaults to theme(colors.slate.50), set to any hex color or Tailwind color using the theme syntax
+			- BGCOLORDARK=#000 # defaults to theme(colors.gray.950), set to any hex color or Tailwind color using the theme syntax
         volumes:
             - ./config.json:/app/src/config.json # required
             - ./public/favicon.ico:/app/public/favicon.ico # optional

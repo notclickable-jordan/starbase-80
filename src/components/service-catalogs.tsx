@@ -38,7 +38,7 @@ const ServiceCatalog: React.FunctionComponent<ICatalogProps> = ({ catalog, index
 	let liClassName = "mt-12 first:mt-0 xl:first:mt-6";
 
 	if (catalog.bubble) {
-		liClassName += " bg-white dark:bg-black rounded-2xl px-6 py-8 ring-1 ring-slate-900/5 shadow-xl";
+		liClassName += " bg-white dark:bg-black rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl";
 	}
 
 	return (
