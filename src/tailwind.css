@@ -3,11 +3,23 @@
 @tailwind utilities;
 
 html {
-	background-color: theme(colors.bg);
+	background-color: theme(colors.slate.50);
+}
+
+@media (prefers-color-scheme: dark) {
+	html {
+		background-color: theme(colors.gray.950);
+	}
 }
 
 body {
 	min-height: 100vh;
+}
+
+@media (prefers-color-scheme: dark) {
+	body {
+		color: theme(colors.slate.200);
+	}
 }
 
 h1 {

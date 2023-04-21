@@ -11,6 +11,12 @@ ENV NODE_ENV production
 
 ENV TITLE "My Website"
 ENV LOGO "/logo.png"
+ENV HEADER "true"
+ENV HEADERLINE "true"
+ENV HEADERTOP "false"
+ENV CATEGORIES "normal"
+ENV BGCOLOR "theme(colors.slate.50)"
+ENV BGCOLORDARK "theme(colors.gray.950)"
 
 EXPOSE 4173
 
