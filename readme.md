@@ -88,7 +88,7 @@ services:
 			- HEADER=true # defaults to true, set to false to hide the title and logo
 			- HEADERLINE=true # defaults to true, set to false to turn off the header border line
 			- CATEGORIES=small # defaults to normal, set to small for smaller, uppercase category labels
-			- BGCOLOR=#fff # defaults to #f8fafc, set to any hex color or Tailwind color using the theme syntax (e.g. BGCOLOR=theme(colors.sky.100) for bg-sky-100)
+			- BGCOLOR=#fff # defaults to theme(colors.slate.50), set to any hex color or Tailwind color using the theme syntax (e.g. BGCOLOR=theme(colors.sky.100) for bg-sky-100)
         volumes:
             - ./config.json:/app/src/config.json # required
             - ./public/favicon.ico:/app/public/favicon.ico # optional
@@ -103,6 +103,7 @@ services:
 Can have as many categories as you like.
 
 -   **category**: Title, optional, displays above services
+-   **bubble**: boolean, optional, defaults to false, shows a bubble around category
 -   **services**: Array of services
 
 ## Service
@@ -118,6 +119,7 @@ Can have as many categories as you like.
 [
 	{
 		"category": "Category name",
+		"bubble": false,
 		"services": [
 			{
 				"name": "My App",
@@ -159,6 +161,7 @@ Can have as many categories as you like.
 	},
 	{
 		"category": "Devices",
+		"bubble": true,
 		"services": [
 			{
 				"name": "Router",

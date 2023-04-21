@@ -1,6 +1,6 @@
 import React from "react";
 import { Header } from "../components/header";
-import { ServiceCatalogs } from "../components/service-catalogs";
+import { ServiceCatalogList } from "../components/service-catalogs";
 import userServices from "../config.json";
 import { IServiceCatalog } from "../shared/types";
 import { SHOWHEADER, SHOWHEADERLINE } from "../variables";
@@ -20,14 +20,14 @@ export const IndexPage: React.FunctionComponent<IProps> = ({ icon, title }) => {
 	}
 
 	return (
-		<div className="min-h-screen flex flex-col xl:flex-row">
+		<div className="min-h-screen flex flex-col xl:flex-row max-w-screen-2xl mx-auto">
 			{SHOWHEADER && (
 				<div className={headerClassName}>
 					<Header title={title} icon={icon} />
 				</div>
 			)}
 			<div className="min-h-screen p-4 flex-grow">
-				<ServiceCatalogs catalogs={mySerices} />
+				<ServiceCatalogList catalogs={mySerices} />
 			</div>
 		</div>
 	);

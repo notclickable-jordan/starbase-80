@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 html {
-	background-color: #f8fafc;
+	background-color: theme(colors.slate.50);
 }
 
 body {

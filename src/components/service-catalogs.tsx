@@ -7,7 +7,22 @@ interface IProps {
 	catalogs: IServiceCatalog[];
 }
 
-export const ServiceCatalogs: React.FunctionComponent<IProps> = ({ catalogs }) => {
+export const ServiceCatalogList: React.FunctionComponent<IProps> = ({ catalogs }) => {
+	return (
+		<ul>
+			{catalogs.map((catalog, index) => (
+				<ServiceCatalog key={index} catalog={catalog} index={index} />
+			))}
+		</ul>
+	);
+};
+
+interface ICatalogProps {
+	catalog: IServiceCatalog;
+	index: number;
+}
+
+const ServiceCatalog: React.FunctionComponent<ICatalogProps> = ({ catalog, index }) => {
 	let categoryClassName = "";
 
 	switch (CATEGORIES as string) {
@@ -20,14 +35,16 @@ export const ServiceCatalogs: React.FunctionComponent<IProps> = ({ catalogs }) =
 			break;
 	}
 
+	let liClassName = "mt-12 first:mt-0 xl:first:mt-6";
+
+	if (catalog.bubble) {
+		liClassName += " bg-white rounded-2xl px-6 py-8 ring-1 ring-slate-900/5 shadow-xl";
+	}
+
 	return (
-		<ul>
-			{catalogs.map((catalog, index) => (
-				<li key={index} className="mt-12 first:mt-0 xl:first:mt-6">
-					<h2 className={categoryClassName}>{catalog.category}</h2>
-					<Services services={catalog.services} />
-				</li>
-			))}
-		</ul>
+		<li key={index} className={liClassName}>
+			<h2 className={categoryClassName}>{catalog.category}</h2>
+			<Services services={catalog.services} />
+		</li>
 	);
 };

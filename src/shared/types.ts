@@ -1,5 +1,6 @@
 export interface IServiceCatalog {
 	category: string;
+	bubble?: boolean;
 	services: IService[];
 }
 
