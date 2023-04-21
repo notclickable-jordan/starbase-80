@@ -10,6 +10,7 @@ COPY . .
 ENV NODE_ENV production
 
 ENV TITLE "My Website"
+ENV LOGOFILE "/logo.png"
 
 EXPOSE 4173
 

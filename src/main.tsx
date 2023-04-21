@@ -5,6 +5,6 @@ import "./tailwind.css";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
 	<React.StrictMode>
-		<IndexPage title="HTMLTITLE" icon="/logo.png" />
+		<IndexPage title="HTMLTITLE" icon="LOGOFILE" />
 	</React.StrictMode>
 );
