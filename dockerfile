@@ -1,5 +1,14 @@
 FROM node:18-alpine
 
+ARG BUILD_DATE
+
+LABEL \
+  maintainer="Jordan Roher <jordan@notclickable.com>" \
+  org.opencontainers.image.authors="Jordan Roher <jordan@notclickable.com>" \
+  org.opencontainers.image.title="starbase-80" \
+  org.opencontainers.image.description="A nice app grid of icons for Docker services" \
+  org.opencontainers.image.created=$BUILD_DATE
+
 WORKDIR /app
 
 COPY package.json .
@@ -17,6 +26,8 @@ ENV HEADERTOP "false"
 ENV CATEGORIES "normal"
 ENV BGCOLOR "theme(colors.slate.50)"
 ENV BGCOLORDARK "theme(colors.gray.950)"
+
+COPY version /
 
 EXPOSE 4173
 

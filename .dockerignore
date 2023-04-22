@@ -4,4 +4,3 @@ node_modules
 dist
 dist-ssr
 compose.yml
-src/config.json
