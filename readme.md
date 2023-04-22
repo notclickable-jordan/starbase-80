@@ -22,6 +22,11 @@ Inspired by [Ben Phelps' Homepage](https://gethomepage.dev/) and [Umbrel](https:
 
 <img src="./preview-dark.jpg" alt="Dark mode" />
 
+# Docker and source code
+
+-   [Docker image](https://hub.docker.com/r/jordanroher/starbase-80)
+-   [Source code on GitHub](https://github.com/notclickable-jordan/starbase-80)
+
 # Icons
 
 ## Use your own
