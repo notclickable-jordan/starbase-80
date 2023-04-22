@@ -14,7 +14,13 @@ If you make a change to the config JSON, restart this container and refresh.
 
 Inspired by [Ben Phelps' Homepage](https://gethomepage.dev/) and [Umbrel](https://umbrel.com/).
 
-<img src="./preview.jpg" alt="" />
+# Preview
+
+<img src="./preview.jpg" alt="Light mode" />
+
+<br />
+
+<img src="./preview-dark.jpg" alt="Dark mode" />
 
 # Icons
 
