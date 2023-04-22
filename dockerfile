@@ -26,6 +26,7 @@ ENV HEADERTOP "false"
 ENV CATEGORIES "normal"
 ENV BGCOLOR "theme(colors.slate.50)"
 ENV BGCOLORDARK "theme(colors.gray.950)"
+ENV NEWWINDOW "true"
 
 COPY version /
 

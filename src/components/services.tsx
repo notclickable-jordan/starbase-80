@@ -1,6 +1,7 @@
 import React from "react";
 import { is } from "../shared/is";
 import { IService } from "../shared/types";
+import { Anchor } from "./anchor";
 import { Icon } from "./icon";
 
 interface IServicesProps {
@@ -42,15 +43,11 @@ const Service: React.FunctionComponent<IServiceProps> = ({ service, index }) => 
 			)}
 			<div>
 				<h3 className="text-lg mt-1 font-semibold line-clamp-1">
-					<a href={uri} target="_blank">
-						{name}
-					</a>
+					<Anchor uri={uri}>{name}</Anchor>
 				</h3>
 				{!is.null(description) && (
 					<p className="text-sm text-black/50 dark:text-white/50 line-clamp-1">
-						<a href={uri} target="_blank">
-							{description}
-						</a>
+						<Anchor uri={uri}>{description}</Anchor>
 					</p>
 				)}
 			</div>

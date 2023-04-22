@@ -95,6 +95,7 @@ services:
             - CATEGORIES=small # defaults to normal, set to small for smaller, uppercase category labels
             - BGCOLOR=#fff # defaults to theme(colors.slate.50), set to any hex color or Tailwind color using the theme syntax
             - BGCOLORDARK=#000 # defaults to theme(colors.gray.950), set to any hex color or Tailwind color using the theme syntax
+			- NEWWINDOW=true # defaults to true, set to false to not have links open in a new window
         volumes:
             - ./config.json:/app/src/config.json # required
             - ./public/favicon.ico:/app/public/favicon.ico # optional

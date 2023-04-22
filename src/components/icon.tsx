@@ -1,5 +1,6 @@
 import React from "react";
 import { is } from "../shared/is";
+import { Anchor } from "./anchor";
 
 const iconColors = [
 	"blue",
@@ -36,9 +37,9 @@ export const Icon: React.FunctionComponent<IProps> = ({ name, uri, icon, index, 
 	if (is.null(icon)) {
 		if (!is.null(uri)) {
 			return (
-				<a href={uri} target="_blank" rel="noreferrer" title={name}>
+				<Anchor uri={uri as string} title={name}>
 					<IconBlank index={index} />
-				</a>
+				</Anchor>
 			);
 		}
 
@@ -47,9 +48,9 @@ export const Icon: React.FunctionComponent<IProps> = ({ name, uri, icon, index, 
 
 	if (!is.null(uri)) {
 		return (
-			<a href={uri} target="_blank" rel="noreferrer" title={name}>
+			<Anchor uri={uri as string} title={name}>
 				<IconBase icon={icon as string} iconBG={iconBG} iconColor={iconColor} iconBubble={iconBubble} />
-			</a>
+			</Anchor>
 		);
 	}
 
