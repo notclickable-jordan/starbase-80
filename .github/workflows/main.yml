@@ -18,7 +18,7 @@ jobs:
 
       - name: Set variables
         run: |
-          VER=$(cat VERSION)
+          VER=$(cat version)
           echo "VERSION=$VER" >> $GITHUB_ENV
 
       - name: Set up QEMU
