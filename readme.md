@@ -50,7 +50,7 @@ Use [Dashboard icons](https://github.com/walkxcode/dashboard-icons) by specifyin
 
 Use any [Material Design icon](https://icon-sets.iconify.design/mdi/) by prefixing the name with `mdi-`.
 
-Fill the icon by providing an "iconColor" from the [list of Tailwind colors](https://tailwindcss.com/docs/background-color). Do not prefix with "bg-".
+Fill the icon by providing an "iconColor."
 
 Use "black" or "white" for those colors.
 
@@ -70,7 +70,7 @@ Use "black" or "white" for those colors.
 "iconBubble": false, # optional, defaults to true, turns off bubble and shadow when false
 ```
 
-For `iconColor` and `iconBG`, use a [Tailwind color](https://tailwindcss.com/docs/background-color). Turn off background color with a value of `"transparent"`. Do not prefix with `"bg-"`.
+For `iconColor` and `iconBG`, use a hexadecimal color or a [Tailwind color](https://tailwindcss.com/docs/background-color). Turn off background color with a value of `"transparent"`. Do not prefix with `"bg-"`.
 
 # Docker compose
 
@@ -114,7 +114,7 @@ Can have as many categories as you like.
 -   **icon**: optional, relative URI, absolute URI, service name ([Dashboard icon](https://github.com/walkxcode/dashboard-icons)) or `mdi-`service name ([Material Design icon](https://icon-sets.iconify.design/mdi/))
 -   **iconBG**: optional, hex code or [Tailwind color](https://tailwindcss.com/docs/background-color) (do not prefix with `bg-`). Background color for icons.
 -   **iconColor**: optional, hex code or [Tailwind color](https://tailwindcss.com/docs/background-color) (do not prefix with `bg-`). Only used as the fill color for Material Design icons.
--   **iconBubble**: option, `true` or `false`, when `false` the bubble and shadow are removed from the icon
+-   **iconBubble**: optional, defaults to `true`, when `false` the bubble and shadow are removed from the icon
 
 ## Template
 
