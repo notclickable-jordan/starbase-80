@@ -128,10 +128,6 @@ const IconBase: React.FunctionComponent<IIconBaseProps> = ({ icon, iconBG, iconB
 				}
 			}
 
-			if (is.null(iconBubble) || iconBubble !== false) {
-				iconClassName += " rounded-2xl border border-black/5 shadow-sm";
-			}
-
 			if (is.null(iconColor)) {
 				iconColor = "black dark:bg-white";
 			}
