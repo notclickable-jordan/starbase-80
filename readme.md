@@ -86,6 +86,8 @@ For `iconColor` and `iconBG`, use a hexadecimal color or a [Tailwind color](http
 # Docker compose
 
 ```yaml
+version: '3'
+
 services:
     homepage:
         image: jordanroher/starbase-80
