@@ -1,8 +1,7 @@
 # Starbase 80
 
-> DR T'ANA: (to Mariner) "You wanna goof around? Go work on Starbase 80!"<br />
-> JET: "Damn, Starbase 80?!"<br />
-> via [@EnterpriseExtra](https://twitter.com/EnterpriseExtra/status/1304161631451004928)
+> DR T'ANA: (to Mariner) "You wanna goof around, go work on Starbase 80!"<br />
+> JET: "Damn, Starbase 80?!"
 
 # About
 
