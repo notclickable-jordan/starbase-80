@@ -1,5 +1,6 @@
 import React from "react";
 import { is } from "../shared/is";
+import { IconAspect } from "../shared/types";
 import { Anchor } from "./anchor";
 
 const iconColors = [
@@ -30,10 +31,20 @@ interface IProps {
 	iconColor?: string;
 	iconBG?: string;
 	iconBubble?: boolean;
+	iconAspect?: IconAspect;
 	uri?: string;
 }
 
-export const Icon: React.FunctionComponent<IProps> = ({ name, uri, icon, index, iconBG, iconBubble, iconColor }) => {
+export const Icon: React.FunctionComponent<IProps> = ({
+	name,
+	uri,
+	icon,
+	index,
+	iconBG,
+	iconBubble,
+	iconColor,
+	iconAspect,
+}) => {
 	if (is.null(icon)) {
 		if (!is.null(uri)) {
 			return (
@@ -48,13 +59,27 @@ export const Icon: React.FunctionComponent<IProps> = ({ name, uri, icon, index, 
 
 	if (!is.null(uri)) {
 		return (
-			<Anchor uri={uri as string} title={name}>
-				<IconBase icon={icon as string} iconBG={iconBG} iconColor={iconColor} iconBubble={iconBubble} />
+			<Anchor uri={uri as string} title={name} className="flex">
+				<IconBase
+					icon={icon as string}
+					iconBG={iconBG}
+					iconColor={iconColor}
+					iconBubble={iconBubble}
+					iconAspect={iconAspect}
+				/>
 			</Anchor>
 		);
 	}
 
-	return <IconBase icon={icon as string} iconBG={iconBG} iconColor={iconColor} iconBubble={iconBubble} />;
+	return (
+		<IconBase
+			icon={icon as string}
+			iconBG={iconBG}
+			iconColor={iconColor}
+			iconBubble={iconBubble}
+			iconAspect={iconAspect}
+		/>
+	);
 };
 
 interface IIconBlankProps {
@@ -82,9 +107,16 @@ interface IIconBaseProps {
 	iconColor?: string;
 	iconBG?: string;
 	iconBubble?: boolean;
+	iconAspect?: IconAspect;
 }
 
-const IconBase: React.FunctionComponent<IIconBaseProps> = ({ icon, iconBG, iconBubble, iconColor }) => {
+const IconBase: React.FunctionComponent<IIconBaseProps> = ({
+	icon,
+	iconBG,
+	iconBubble,
+	iconColor,
+	iconAspect = "square",
+}) => {
 	let iconType: IconType = IconType.uri;
 
 	if (icon.startsWith("http") || icon.startsWith("/")) {
@@ -96,7 +128,23 @@ const IconBase: React.FunctionComponent<IIconBaseProps> = ({ icon, iconBG, iconB
 	}
 
 	// Everyone starts the same size
-	let iconClassName = "block w-16 h-16 overflow-hidden bg-contain";
+	let iconClassName = "block overflow-hidden bg-contain";
+	let iconWidthHeightClassName = "";
+
+	switch (iconAspect) {
+		case "width":
+			iconWidthHeightClassName = "w-16";
+			break;
+		case "height":
+			iconWidthHeightClassName = "h-16";
+			break;
+		case "square":
+		default:
+			iconWidthHeightClassName = "w-16 h-16";
+			break;
+	}
+
+	iconClassName += " " + iconWidthHeightClassName;
 
 	if (is.null(iconBubble) || iconBubble !== false) {
 		iconClassName += " rounded-2xl border border-black/5 shadow-sm";
@@ -161,7 +209,7 @@ const IconBase: React.FunctionComponent<IIconBaseProps> = ({ icon, iconBG, iconB
 			return (
 				<div className={iconClassName} style={{ ...iconStyle }}>
 					<div
-						className={`block w-16 h-16 ${mdiIconColorFull} overflow-hidden`}
+						className={`block ${iconWidthHeightClassName} ${mdiIconColorFull} overflow-hidden`}
 						style={{
 							...mdiIconStyle,
 							mask: `url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/${icon}.svg) no-repeat center / contain`,
