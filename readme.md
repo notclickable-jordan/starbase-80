@@ -79,6 +79,7 @@ Use "black" or "white" for those colors.
 "iconColor": "blue-500", # optional, defaults to a contrasting color
 "iconBG": "gray-200", # optional, defaults to a complementary color
 "iconBubble": false, # optional, defaults to true, turns off bubble and shadow when false
+"iconAspect": "width", # optional, defaults to "square", can set to "width" or "height" to constrain the icon to the width or height of the icon, respectively
 ```
 
 For `iconColor` and `iconBG`, use a hexadecimal color or a [Tailwind color](https://tailwindcss.com/docs/background-color). Turn off background color with a value of `"transparent"`. Do not prefix with `"bg-"`.
@@ -86,7 +87,7 @@ For `iconColor` and `iconBG`, use a hexadecimal color or a [Tailwind color](http
 # Docker compose
 
 ```yaml
-version: '3'
+version: "3"
 
 services:
     homepage:
@@ -129,7 +130,7 @@ Can have as many categories as you like.
 -   **iconBG**: optional, hex code or [Tailwind color](https://tailwindcss.com/docs/background-color) (do not prefix with `bg-`). Background color for icons.
 -   **iconColor**: optional, hex code or [Tailwind color](https://tailwindcss.com/docs/background-color) (do not prefix with `bg-`). Only used as the fill color for Material Design icons.
 -   **iconBubble**: optional, defaults to `true`, when `false` the bubble and shadow are removed from the icon
--	**iconAspect**: optional, defaults to `"square"`, can set to `"width"` or `"height"` to constrain the icon to the width or height of the icon, respectively
+-   **iconAspect**: optional, defaults to `"square"`, can set to `"width"` or `"height"` to constrain the icon to the width or height of the icon, respectively
 
 ## Template
 
