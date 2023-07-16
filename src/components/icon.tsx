@@ -59,7 +59,7 @@ export const Icon: React.FunctionComponent<IProps> = ({
 
 	if (!is.null(uri)) {
 		return (
-			<Anchor uri={uri as string} title={name} className="flex">
+			<Anchor uri={uri as string} title={name} className="self-center">
 				<IconBase
 					icon={icon as string}
 					iconBG={iconBG}

@@ -29,7 +29,7 @@ const Service: React.FunctionComponent<IServiceProps> = ({ service, index }) => 
 	return (
 		<li className="p-4 flex gap-4">
 			{!is.null(icon) && (
-				<span className="flex-shrink-0 block">
+				<span className="flex-shrink-0 flex">
 					<Icon
 						name={name}
 						icon={icon}
