@@ -24,12 +24,12 @@ interface IServiceProps {
 }
 
 const Service: React.FunctionComponent<IServiceProps> = ({ service, index }) => {
-	const { name, uri, description, icon, iconBG, iconBubble, iconColor } = service;
+	const { name, uri, description, icon, iconBG, iconBubble, iconColor, iconAspect } = service;
 
 	return (
 		<li className="p-4 flex gap-4">
 			{!is.null(icon) && (
-				<span className="flex-shrink-0 block">
+				<span className="flex-shrink-0 flex">
 					<Icon
 						name={name}
 						icon={icon}
@@ -38,6 +38,7 @@ const Service: React.FunctionComponent<IServiceProps> = ({ service, index }) => 
 						iconColor={iconColor}
 						iconBG={iconBG}
 						iconBubble={iconBubble}
+						iconAspect={iconAspect}
 					/>
 				</span>
 			)}

@@ -13,4 +13,7 @@ export interface IService {
 	iconColor?: string;
 	iconBG?: string;
 	iconBubble?: boolean;
+	iconAspect?: IconAspect;
 }
+
+export type IconAspect = "square" | "width" | "height";
