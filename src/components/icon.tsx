@@ -33,6 +33,7 @@ interface IProps {
 	iconBubble?: boolean;
 	iconAspect?: IconAspect;
 	uri?: string;
+	newWindow?: boolean;
 }
 
 export const Icon: React.FunctionComponent<IProps> = ({
@@ -44,11 +45,12 @@ export const Icon: React.FunctionComponent<IProps> = ({
 	iconBubble,
 	iconColor,
 	iconAspect,
+	newWindow,
 }) => {
 	if (is.null(icon)) {
 		if (!is.null(uri)) {
 			return (
-				<Anchor uri={uri as string} title={name}>
+				<Anchor uri={uri as string} title={name} newWindow={newWindow}>
 					<IconBlank index={index} />
 				</Anchor>
 			);
@@ -59,7 +61,7 @@ export const Icon: React.FunctionComponent<IProps> = ({
 
 	if (!is.null(uri)) {
 		return (
-			<Anchor uri={uri as string} title={name} className="self-center">
+			<Anchor uri={uri as string} title={name} newWindow={newWindow} className="self-center">
 				<IconBase
 					icon={icon as string}
 					iconBG={iconBG}

@@ -14,6 +14,8 @@ export interface IService {
 	iconBG?: string;
 	iconBubble?: boolean;
 	iconAspect?: IconAspect;
+
+	newWindow?: boolean;
 }
 
 export type IconAspect = "square" | "width" | "height";
