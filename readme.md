@@ -130,6 +130,7 @@ Can have as many categories as you like.
 -   **iconColor**: optional, hex code or [Tailwind color](https://tailwindcss.com/docs/background-color) (do not prefix with `bg-`). Only used as the fill color for Material Design icons.
 -   **iconBubble**: optional, defaults to `true`, when `false` the bubble and shadow are removed from the icon
 -   **iconAspect**: optional, defaults to `"square"`, can set to `"width"` or `"height"` to constrain the icon to the width or height of the icon, respectively
+-   **newWindow**: optional, set to `true` or `false` to override the environment variable `NEWWINDOW`
 
 ## Template
 
@@ -147,7 +148,8 @@ Can have as many categories as you like.
 				"iconBG": "#fff",
 				"iconColor": "#000",
 				"iconBubble": false,
-				"iconAspect": "width"
+				"iconAspect": "width",
+				"newWindow": false
 			}
 		]
 	}

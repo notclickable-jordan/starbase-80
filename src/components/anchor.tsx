@@ -1,4 +1,5 @@
 import React from "react";
+import { is } from "../shared/is";
 import { NEWWINDOW } from "../variables";
 
 interface IProps {
@@ -6,10 +7,17 @@ interface IProps {
 	title?: string;
 	className?: string;
 	children?: React.ReactNode;
+	newWindow?: boolean;
 }
 
-export const Anchor: React.FunctionComponent<IProps> = ({ uri, children, title, className }) => {
-	if (NEWWINDOW) {
+export const Anchor: React.FunctionComponent<IProps> = ({ uri, children, title, className, newWindow }) => {
+	let newWindowLocal = NEWWINDOW;
+
+	if (!is.null(newWindow)) {
+		newWindowLocal = newWindow as boolean;
+	}
+
+	if (newWindowLocal) {
 		return (
 			<a href={uri} target="_blank" rel="noreffer" title={title} className={className}>
 				{children}

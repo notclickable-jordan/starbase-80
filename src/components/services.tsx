@@ -24,7 +24,7 @@ interface IServiceProps {
 }
 
 const Service: React.FunctionComponent<IServiceProps> = ({ service, index }) => {
-	const { name, uri, description, icon, iconBG, iconBubble, iconColor, iconAspect } = service;
+	const { name, uri, description, icon, iconBG, iconBubble, iconColor, iconAspect, newWindow } = service;
 
 	return (
 		<li className="p-4 flex gap-4">
@@ -39,16 +39,21 @@ const Service: React.FunctionComponent<IServiceProps> = ({ service, index }) => 
 						iconBG={iconBG}
 						iconBubble={iconBubble}
 						iconAspect={iconAspect}
+						newWindow={newWindow}
 					/>
 				</span>
 			)}
 			<div>
 				<h3 className="text-lg mt-1 font-semibold line-clamp-1">
-					<Anchor uri={uri}>{name}</Anchor>
+					<Anchor uri={uri} newWindow={newWindow}>
+						{name}
+					</Anchor>
 				</h3>
 				{!is.null(description) && (
 					<p className="text-sm text-black/50 dark:text-white/50 line-clamp-1">
-						<Anchor uri={uri}>{description}</Anchor>
+						<Anchor uri={uri} newWindow={newWindow}>
+							{description}
+						</Anchor>
 					</p>
 				)}
 			</div>
