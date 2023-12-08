@@ -104,7 +104,7 @@ services:
             - BGCOLORDARK=#000 # defaults to theme(colors.gray.950), set to any hex color or Tailwind color using the theme syntax
             - NEWWINDOW=true # defaults to true, set to false to not have links open in a new window
         volumes:
-            - ./config.json:/app/src/config.json # required
+            - ./config.json:/app/src/config/config.json # required
             - ./public/favicon.ico:/app/public/favicon.ico # optional
             - ./public/logo.png:/app/public/logo.png # optional, or you can reference something in /icons
             - ./public/icons:/app/public/icons # or wherever, JSON icon paths are relative to /app/public
