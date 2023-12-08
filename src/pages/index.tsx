@@ -1,7 +1,7 @@
 import React from "react";
 import { Header } from "../components/header";
 import { ServiceCatalogList } from "../components/service-catalogs";
-import userServices from "../config.json";
+import userServices from "../config/config.json";
 import { IServiceCatalog } from "../shared/types";
 import { SHOWHEADER, SHOWHEADERLINE, SHOWHEADERTOP } from "../variables";
 
