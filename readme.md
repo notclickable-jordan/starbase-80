@@ -30,6 +30,12 @@ Inspired by [Ben Phelps' Homepage](https://gethomepage.dev/) and [Umbrel](https:
 
 <img src="./preview-dark.jpg" alt="Dark mode" />
 
+# Change history
+
+## 1.2.0
+
+-   Moved `config.json` bind mount destination to `/app/src/config/config.json` for improved Portainer and volume support. The previous bind mount location will continue to work, but we recommend updating your bind mounts.
+
 # Docker
 
 ## Sample Docker compose
@@ -44,7 +50,7 @@ services:
             - TITLE=Starbase 80
             - LOGO=/starbase80.jpg
         volumes:
-            - ./config.json:/app/src/config.json
+            - ./config.json:/app/src/config/config.json
             - ./public/favicon.ico:/app/public/favicon.ico
             - ./public/logo.png:/app/public/logo.png
             - ./public/icons:/app/public/icons
@@ -65,12 +71,12 @@ services:
 
 ## Volumes (bind mounts)
 
-| Path                    | Required | Notes                                                                         |
-| ----------------------- | -------- | ----------------------------------------------------------------------------- |
-| /app/src/config.json    | true     | Configuration with list of sites and links                                    |
-| /app/public/favicon.ico | false    | Website favicon                                                               |
-| /app/public/logo.png    | false    | Logo in the header                                                            |
-| /app/public/icons       | false    | Or wherever you want to put them, JSON icon paths are relative to /app/public |
+| Path                        | Required | Notes                                                                         |
+| --------------------------- | -------- | ----------------------------------------------------------------------------- |
+| /app/src/config/config.json | true     | Configuration with list of sites and links                                    |
+| /app/public/favicon.ico     | false    | Website favicon                                                               |
+| /app/public/logo.png        | false    | Logo in the header                                                            |
+| /app/public/icons           | false    | Or wherever you want to put them, JSON icon paths are relative to /app/public |
 
 # Configuration
 
