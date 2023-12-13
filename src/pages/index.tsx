@@ -1,7 +1,9 @@
 import React from "react";
 import { Header } from "../components/header";
 import { ServiceCatalogList } from "../components/service-catalogs";
-import userServices from "../config.json";
+import userServicesOld from "../config.json";
+import userServices from "../config/config.json";
+import { is } from "../shared/is";
 import { IServiceCatalog } from "../shared/types";
 import { SHOWHEADER, SHOWHEADERLINE, SHOWHEADERTOP } from "../variables";
 
@@ -11,7 +13,7 @@ interface IProps {
 }
 
 export const IndexPage: React.FunctionComponent<IProps> = ({ icon, title }) => {
-	const mySerices = userServices as IServiceCatalog[];
+	const mySerices = (is.null(userServicesOld) ? userServices : userServicesOld) as IServiceCatalog[];
 
 	let headerClassName = "p-4";
 
