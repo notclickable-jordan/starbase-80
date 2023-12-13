@@ -11,7 +11,16 @@ No actual integration with Docker. Loads instantly. Dark mode follows your OS.
 
 If you make a change to the config JSON, restart this container and refresh.
 
-Inspired by [Ben Phelps' Homepage](https://gethomepage.dev/) and [Umbrel](https://umbrel.com/).
+Inspired by [Ben Phelps' Homepage](https://gethomepage.dev/) and [Umbrel](https://umbrel.com/). Dedicated to [Star Trek: Lower Decks](https://www.paramountplus.com/shows/star-trek-lower-decks/).
+
+# Docker and source code
+
+-   [Docker image](https://hub.docker.com/r/jordanroher/starbase-80)
+-   [Source code on GitHub](https://github.com/notclickable-jordan/starbase-80)
+
+# Live demo
+
+-   [Starbase 80](https://www.starbase80.dev/)
 
 # Preview
 
@@ -21,142 +30,51 @@ Inspired by [Ben Phelps' Homepage](https://gethomepage.dev/) and [Umbrel](https:
 
 <img src="./preview-dark.jpg" alt="Dark mode" />
 
-# Docker and source code
+# Docker
 
--   [Docker image](https://hub.docker.com/r/jordanroher/starbase-80)
--   [Source code on GitHub](https://github.com/notclickable-jordan/starbase-80)
-
-# Icons
-
-## Use your own
-
-Create a volume or bind mount to a subfolder of `/app/public` and specify a relative path.
-
-```bash
-# Your folder
-compose.yml
-- icons
-  - jellyfin.jpg
-  - ghost.jpg
-  - etc
-
-# Bind mount
-./icons:/app/public/icons
-
-# Specify an icon in config.json
-"icon": "/icons/jellyfin.jpg"
-```
-
-## Dashboard icons
-
-Use [Dashboard icons](https://github.com/walkxcode/dashboard-icons) by specifying a name without any prefix.
-
-```bash
-# Specify an icon in config.json
-"icon": "jellyfin"
-```
-
-## Material design
-
-Use any [Material Design icon](https://icon-sets.iconify.design/mdi/) by prefixing the name with `mdi-`.
-
-Fill the icon by providing an "iconColor."
-
-Use "black" or "white" for those colors.
-
-```bash
-# Specify an icon in config.json
-"icon": "mdi-cloud",
-"iconColor": "black"
-```
-
-## Options
-
-```bash
-# Specify an icon in config.json
-"icon": "/icons/jellyfin.jpg", # mostly required, but if set to "" it removes the icon
-"iconColor": "blue-500", # optional, defaults to a contrasting color
-"iconBG": "gray-200", # optional, defaults to a complementary color
-"iconBubble": false, # optional, defaults to true, turns off bubble and shadow when false
-"iconAspect": "width", # optional, defaults to "square", can set to "width" or "height" to constrain the icon to the width or height of the icon, respectively
-```
-
-For `iconColor` and `iconBG`, use a hexadecimal color or a [Tailwind color](https://tailwindcss.com/docs/background-color). Turn off background color with a value of `"transparent"`. Do not prefix with `"bg-"`.
-
-# Docker compose
+## Sample Docker compose
 
 ```yaml
-version: "3"
-
 services:
-    homepage:
+    starbase80:
         image: jordanroher/starbase-80
         ports:
-            - 4173:4173
+            - 80:4173
         environment:
-            - TITLE=Starbase 80 # defaults to "My Website", set to TITLE= to hide the title
-            - LOGO=/starbase80.jpg # defaults to /logo.png, set to LOGO= to hide the logo
-            - HEADER=true # defaults to true, set to false to hide the title and logo
-            - HEADERLINE=true # defaults to true, set to false to turn off the header border line
-            - HEADERTOP=true # defaults to false, set to true to force the header to always stay on top
-            - CATEGORIES=small # defaults to normal, set to small for smaller, uppercase category labels
-            - BGCOLOR=#fff # defaults to theme(colors.slate.50), set to any hex color or Tailwind color using the theme syntax
-            - BGCOLORDARK=#000 # defaults to theme(colors.gray.950), set to any hex color or Tailwind color using the theme syntax
-            - NEWWINDOW=true # defaults to true, set to false to not have links open in a new window
+            - TITLE=Starbase 80
+            - LOGO=/starbase80.jpg
         volumes:
-            - ./config.json:/app/src/config.json # required
-            - ./public/favicon.ico:/app/public/favicon.ico # optional
-            - ./public/logo.png:/app/public/logo.png # optional, or you can reference something in /icons
-            - ./public/icons:/app/public/icons # or wherever, JSON icon paths are relative to /app/public
+            - ./config.json:/app/src/config.json
+            - ./public/favicon.ico:/app/public/favicon.ico
+            - ./public/logo.png:/app/public/logo.png
+            - ./public/icons:/app/public/icons
 ```
 
-# config.json format
+## Environment variables
 
-## Categories
+| Variable    | Default                | Notes                                                                                           |
+| ----------- | ---------------------- | ----------------------------------------------------------------------------------------------- |
+| TITLE       | My Website             | Set to TITLE= to hide the title                                                                 |
+| LOGO        | /logo.png              | Set to LOGO= to hide the logo                                                                   |
+| HEADER      | true                   | Set to false to hide the title and logo                                                         |
+| HEADERLINE  | true                   | Set to false to turn off the header border line                                                 |
+| CATEGORIES  | normal                 | Set to "small" for smaller, uppercase category labels                                           |
+| BGCOLOR     | theme(colors.slate.50) | Background color for light mode. Set to any hex color or Tailwind color using the theme syntax. |
+| BGCOLORDARK | theme(colors.gray.950) | Background color for dark mode. Set to any hex color or Tailwind color using the theme syntax.  |
+| NEWWINDOW   | true                   | Set to false to not have links open in a new window                                             |
 
-Can have as many categories as you like.
+## Volumes (bind mounts)
 
--   **category**: Title, optional, displays above services
--   **bubble**: boolean, optional, defaults to false, shows a bubble around category
--   **services**: Array of services
+| Path                    | Required | Notes                                                                         |
+| ----------------------- | -------- | ----------------------------------------------------------------------------- |
+| /app/src/config.json    | true     | Configuration with list of sites and links                                    |
+| /app/public/favicon.ico | false    | Website favicon                                                               |
+| /app/public/logo.png    | false    | Logo in the header                                                            |
+| /app/public/icons       | false    | Or wherever you want to put them, JSON icon paths are relative to /app/public |
 
-## Service
+# Configuration
 
--   **name**: Name, required
--   **uri**: Hyperlink, required
--   **description**: 2-3 words, optional
--   **icon**: optional, relative URI, absolute URI, service name ([Dashboard icon](https://github.com/walkxcode/dashboard-icons)) or `mdi-`service name ([Material Design icon](https://icon-sets.iconify.design/mdi/))
--   **iconBG**: optional, hex code or [Tailwind color](https://tailwindcss.com/docs/background-color) (do not prefix with `bg-`). Background color for icons.
--   **iconColor**: optional, hex code or [Tailwind color](https://tailwindcss.com/docs/background-color) (do not prefix with `bg-`). Only used as the fill color for Material Design icons.
--   **iconBubble**: optional, defaults to `true`, when `false` the bubble and shadow are removed from the icon
--   **iconAspect**: optional, defaults to `"square"`, can set to `"width"` or `"height"` to constrain the icon to the width or height of the icon, respectively
--   **newWindow**: optional, set to `true` or `false` to override the environment variable `NEWWINDOW`
-
-## Template
-
-```json
-[
-	{
-		"category": "Category name",
-		"bubble": false,
-		"services": [
-			{
-				"name": "My Cloud App",
-				"uri": "https://website.com",
-				"description": "Fun site",
-				"icon": "mdi-cloud",
-				"iconBG": "#fff",
-				"iconColor": "#000",
-				"iconBubble": false,
-				"iconAspect": "width",
-				"newWindow": false
-			}
-		]
-	}
-]
-```
-
-## Example
+## Sample config.json
 
 ```json
 [
@@ -209,4 +127,70 @@ Can have as many categories as you like.
 		]
 	}
 ]
+```
+
+## Category variables
+
+| Name     | Default | Required | Notes                               |
+| -------- | ------- | -------- | ----------------------------------- |
+| category |         | false    | Displays above the list of services |
+| bubble   | false   | false    | Shows a bubble around category      |
+| services |         | true     | Array of services                   |
+
+## Service variables
+
+| Name        | Default | Required | Notes                                                                                                                                                                                           |
+| ----------- | ------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| name        |         | true     | Title of service                                                                                                                                                                                |
+| uri         |         | true     | Hyperlink to resource                                                                                                                                                                           |
+| description |         | false    | 2-3 words which appear below the title                                                                                                                                                          |
+| icon        |         | false    | Relative URI, absolute URI, service name ([Dashboard icon](https://github.com/walkxcode/dashboard-icons)) or `mdi-`service name ([Material Design icon](https://icon-sets.iconify.design/mdi/)) |
+| iconBG      |         | false    | Background color for icons. Hex code or [Tailwind color](https://tailwindcss.com/docs/background-color) (do not prefix with `bg-`).                                                             |
+| iconColor   |         | false    | Only used as the fill color for Material Design icons. Hex code or [Tailwind color](https://tailwindcss.com/docs/background-color) (do not prefix with `bg-`).                                  |
+| iconBubble  | true    | false    | If `false` the bubble and shadow are removed from the icon                                                                                                                                      |
+| iconAspect  | square  | false    | Set to `"width"` or `"height"` to constrain the icon to the width or height of the icon, respectively                                                                                           |
+| newWindow   |         | false    | Set to `true` or `false` to override the environment variable `NEWWINDOW` for this service                                                                                                      |
+
+# Icons
+
+## Volume / bind mount
+
+Create a volume or bind mount to a subfolder of `/app/public` and specify a relative path.
+
+```bash
+# Your folder
+compose.yml
+- icons
+  - jellyfin.jpg
+  - ghost.jpg
+  - etc
+
+# Bind mount
+./icons:/app/public/icons
+
+# Icon in config.json
+"icon": "/icons/jellyfin.jpg"
+```
+
+## Dashboard icons
+
+Use [Dashboard icons](https://github.com/walkxcode/dashboard-icons) by specifying a name without any prefix.
+
+```bash
+# Icon in config.json
+"icon": "jellyfin"
+```
+
+## Material design
+
+Use any [Material Design icon](https://icon-sets.iconify.design/mdi/) by prefixing the name with `mdi-`.
+
+Fill the icon by providing an "iconColor."
+
+Use "black" or "white" for those colors.
+
+```bash
+# Icon in config.json
+"icon": "mdi-cloud",
+"iconColor": "black"
 ```
