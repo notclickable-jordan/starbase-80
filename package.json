@@ -12,7 +12,7 @@
 		"build": "tsc && vite build",
 		"serve": "vite preview",
 		"start": "node start.js",
-		"stop": "pkill -f node",
+		"stop": "pkill -f 'vite preview'",
 		"html": "html-minifier --remove-comments --collapse-whitespace --input-dir ./dist --output-dir ./dist --file-ext html",
 		"replace": "npm run replace:script",
 		"replace:script": "replace-in-file --configFile replace-script.cjs"
