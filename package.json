@@ -12,7 +12,10 @@
 		"build": "tsc && vite build",
 		"serve": "vite preview",
 		"start": "node start.js",
-		"stop": "pkill -f node"
+		"stop": "pkill -f node",
+		"html": "html-minifier --remove-comments --collapse-whitespace --input-dir ./dist --output-dir ./dist --file-ext html",
+		"replace": "npm run replace:script",
+		"replace:script": "replace-in-file --configFile replace-script.cjs"
 	},
 	"dependencies": {
 		"@types/react": "^18.2.45",
@@ -20,6 +23,7 @@
 		"@types/react-helmet": "^6.1.11",
 		"@vitejs/plugin-react": "^4.2.1",
 		"autoprefixer": "^10.4.16",
+		"html-minifier": "^4.0.0",
 		"js-yaml": "^4.1.0",
 		"npm-run-all": "^4.1.5",
 		"postcss": "^8.4.32",
@@ -29,6 +33,7 @@
 		"react-dom": "^18.2.0",
 		"react-helmet": "^6.1.0",
 		"react-snap": "^1.23.0",
+		"replace-in-file": "^7.0.2",
 		"tailwindcss": "^3.3.6",
 		"typescript": "^5.3.3",
 		"vite": "^5.0.8"

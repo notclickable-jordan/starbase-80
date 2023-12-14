@@ -44,6 +44,8 @@ async function runCommands() {
 		setTimeout(async () => {
 			console.log("Taking snapshot");
 			await renderHomePage();
+			await runNpmCommand("run html");
+			await runNpmCommand("run replace");
 			await runNpmCommand("run stop");
 		}, 2000);
 
