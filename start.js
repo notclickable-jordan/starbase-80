@@ -20,7 +20,7 @@ async function renderHomePage() {
 	const browser = await puppeteer.launch({
 		headless: true,
 		args: ["--no-sandbox", "--disable-setuid-sandbox"],
-		executablePath: "chromium",
+		executablePath: "chromium", // Remove this when running locally
 	});
 	const page = await browser.newPage();
 
