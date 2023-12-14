@@ -48,11 +48,6 @@ async function runCommands() {
 			await renderHomePage();
 			await runNpmCommand("run html");
 			await runNpmCommand("run replace");
-			try {
-				await runNpmCommand("run stop");
-			} catch {
-				// It's fine
-			}
 		}, 2000);
 
 		console.log("Starting web server");

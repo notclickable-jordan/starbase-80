@@ -1,5 +1,5 @@
 # Build site using Node JS
-FROM node:21-slim as builder
+FROM node:21-slim
 
 # Install latest chrome dev package and fonts to support major charsets (Chinese, Japanese, Arabic, Hebrew, Thai and a few others)
 # Note: this installs the necessary libs to make the bundled version of Chromium that Puppeteer
@@ -48,14 +48,9 @@ ENV BGCOLORDARK "theme(colors.gray.950)"
 ENV NEWWINDOW "true"
 
 COPY version /
+EXPOSE 4173
 
 RUN chmod +x /app/docker-entrypoint.sh
-RUN /app/docker-entrypoint.sh
-RUN npm run start
+ENTRYPOINT ["/app/docker-entrypoint.sh"]
 
-# Serve site using nginx
-FROM nginx
-
-COPY --from=builder /app/dist /usr/share/nginx/html
-
-EXPOSE 80
+CMD ["npm", "run", "start"]
