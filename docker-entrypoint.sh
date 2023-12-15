@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Escape slashes
-LOGO=$(echo "${LOGO}" | sed 's/\//\\\//g')
+LOGO=${LOGO//\//\\/}
 
 # HTML replacement
 sed -i -e 's/My Website/'"${TITLE}"'/g' /app/index.html

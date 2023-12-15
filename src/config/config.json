@@ -11,7 +11,7 @@
 			{
 				"name": "Bind mount",
 				"uri": "https://github.com/notclickable-jordan/docker-symphony",
-				"description": "/app/src/config/config.json",
+				"description": "to /app/src/config/config.json",
 				"icon": "docker"
 			},
 			{
