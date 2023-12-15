@@ -32,6 +32,10 @@ Inspired by [Ben Phelps' Homepage](https://gethomepage.dev/) and [Umbrel](https:
 
 # Change history
 
+## 1.3.0
+
+-   Removed all JavaScript as part of the build step. The image will be slightly larger and take longer to start up and shut down, but the page will be even lighter.
+
 ## 1.2.0
 
 -   Moved `config.json` bind mount destination to `/app/src/config/config.json` for improved Portainer and volume support. The previous bind mount location will continue to work, but we recommend updating your bind mounts.
