@@ -3,28 +3,29 @@ import * as path from "path";
 import { IndexPage } from "./pages/index";
 import { PAGEICON, PAGETITLE } from "./variables";
 
-const indexFilePath = path.join(__dirname, "../", "index.html");
+const indexFileInPath = path.join(__dirname, "../", "index.html");
+const indexFileOutPath = path.join(__dirname, "../", "index-2.html");
 
-async function writeIndexPage(contents: string): Promise<boolean> {
+async function readIndexPage(): Promise<string> {
 	return new Promise(async (resolve, reject) => {
 		try {
-			await fs.writeFile(indexFilePath, contents);
-			return resolve(true);
+			const index = await fs.readFile(indexFileInPath);
+
+			return resolve(index.toString());
 		} catch (exception) {
-			console.error("Could not write index.html file");
+			console.error("Could not read index.html file");
 			reject(exception);
 		}
 	});
 }
 
-async function readIndexPage(): Promise<string> {
+async function writeIndexPage(contents: string): Promise<boolean> {
 	return new Promise(async (resolve, reject) => {
 		try {
-			const index = await fs.readFile(indexFilePath);
-
-			return resolve(index.toString());
+			await fs.writeFile(indexFileOutPath, contents);
+			return resolve(true);
 		} catch (exception) {
-			console.error("Could not read index.html file");
+			console.error("Could not write index.html file");
 			reject(exception);
 		}
 	});

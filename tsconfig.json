@@ -8,5 +8,5 @@
 		"resolveJsonModule": true,
 		"module": "CommonJS"
 	},
-	"include": ["src"]
+	"include": ["src/static.ts"]
 }

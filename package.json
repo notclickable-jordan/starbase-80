@@ -8,7 +8,7 @@
 	"version": "1.3.0",
 	"type": "commonjs",
 	"scripts": {
-		"build": "tsc src/static.ts && node src/static.js",
+		"build": "tsc && node src/static.js",
 		"html": "html-minifier --remove-comments --collapse-whitespace --input-dir ./dist --output-dir ./dist --file-ext html",
 		"replace": "npm run replace:script",
 		"replace:script": "replace-in-file --configFile replace-script.cjs"
