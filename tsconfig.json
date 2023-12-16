@@ -5,7 +5,8 @@
 		"outDir": "./dist",
 		"strict": true,
 		"esModuleInterop": true,
+		"resolveJsonModule": true,
 		"module": "CommonJS"
 	},
-	"include": ["src/*.ts"]
+	"include": ["src"]
 }

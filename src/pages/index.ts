@@ -1,6 +1,4 @@
-import React from "react";
 import { Header } from "../components/header";
-import { ServiceCatalogList } from "../components/service-catalogs";
 import userServicesOld from "../config.json";
 import userServices from "../config/config.json";
 import { is } from "../shared/is";
@@ -12,7 +10,8 @@ interface IProps {
 	icon?: string;
 }
 
-export const IndexPage: React.FunctionComponent<IProps> = ({ icon, title }) => {
+export const IndexPage = function (props: IProps): string {
+	const { icon, title } = props;
 	const mySerices = (is.null(userServicesOld) ? userServices : userServicesOld) as IServiceCatalog[];
 
 	let headerClassName = "p-4";
@@ -45,18 +44,21 @@ export const IndexPage: React.FunctionComponent<IProps> = ({ icon, title }) => {
 		serviceCatalogListWrapperClassName += " min-h-screen";
 	}
 
-	return (
+	return `
 		<div className="min-h-screen">
-			<div className={pageWrapperClassName}>
-				{SHOWHEADER && (
-					<div className={headerClassName}>
-						<Header title={title} icon={icon} />
+			<div className=${pageWrapperClassName}>
+				${
+					SHOWHEADER &&
+					`
+					<div className=${headerClassName}>
+					${Header({ icon, title })}
 					</div>
-				)}
-				<div className={serviceCatalogListWrapperClassName}>
+				`
+				}
+				<div className=${serviceCatalogListWrapperClassName}>
 					<ServiceCatalogList catalogs={mySerices} />
 				</div>
 			</div>
 		</div>
-	);
+	`;
 };

@@ -38,6 +38,8 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var fs = require("fs/promises");
 var path = require("path");
+var index_1 = require("./pages/index");
+var variables_1 = require("./variables");
 var indexFilePath = path.join(__dirname, "../", "index.html");
 function writeIndexPage(contents) {
     return __awaiter(this, void 0, void 0, function () {
@@ -99,7 +101,7 @@ function start() {
                 case 0: return [4 /*yield*/, readIndexPage()];
                 case 1:
                     index = _a.sent();
-                    newText = "<p>Hello, world!</p>";
+                    newText = (0, index_1.IndexPage)({ icon: variables_1.PAGEICON, title: variables_1.PAGETITLE });
                     rootDiv = '<div id="root"></div>';
                     rootDivReplacement = '<div id="root">$1</div>';
                     newIndex = index.replace(rootDiv, rootDivReplacement.replace("$1", newText));

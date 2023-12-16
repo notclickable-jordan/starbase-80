@@ -1,5 +1,7 @@
 import * as fs from "fs/promises";
 import * as path from "path";
+import { IndexPage } from "./pages/index";
+import { PAGEICON, PAGETITLE } from "./variables";
 
 const indexFilePath = path.join(__dirname, "../", "index.html");
 
@@ -31,7 +33,7 @@ async function readIndexPage(): Promise<string> {
 async function start(): Promise<void> {
 	const index = await readIndexPage();
 
-	const newText = "<p>Hello, world!</p>";
+	const newText = IndexPage({ icon: PAGEICON, title: PAGETITLE });
 	const rootDiv = '<div id="root"></div>';
 	const rootDivReplacement = '<div id="root">$1</div>';
 
