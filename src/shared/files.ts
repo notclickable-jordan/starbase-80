@@ -36,3 +36,30 @@ export async function sbRename(fileNameOld: string, fileNameNew: string): Promis
 		}
 	});
 }
+
+export async function sbMakeFolder(path: string): Promise<boolean> {
+	return new Promise(async (resolve, reject) => {
+		try {
+			await fs.mkdir(path, { recursive: true });
+			return resolve(true);
+		} catch (exception) {
+			console.error(`Could not make folder: ${path}`, exception);
+			reject(exception);
+		}
+	});
+}
+
+export async function sbRemoveAllCSS(path: string): Promise<boolean> {
+	return new Promise(async (resolve, reject) => {
+		try {
+			await fs.rm(path, {
+				recursive: true,
+				force: true,
+			});
+			return resolve(true);
+		} catch (exception) {
+			console.error(`Could not remove all CSS from path: ${path}`);
+			reject(exception);
+		}
+	});
+}

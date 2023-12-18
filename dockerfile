@@ -41,4 +41,4 @@ EXPOSE 4173
 RUN chmod +x /app/docker-entrypoint.sh
 ENTRYPOINT ["/app/docker-entrypoint.sh"]
 
-CMD ["npm", "run", "build"]
+CMD ["sh", "-c", "npm run build && nginx -g 'daemon off;'"]

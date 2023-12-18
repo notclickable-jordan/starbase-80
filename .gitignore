@@ -4,4 +4,5 @@ dist
 src/*.js
 src/**/*.js
 public/index.html
-public/main.*.css
+public/main.css
+public/css
