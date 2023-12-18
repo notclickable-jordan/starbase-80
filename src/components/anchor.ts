@@ -20,14 +20,14 @@ export const Anchor = function (props: IProps) {
 
 	if (newWindowLocal) {
 		return `
-			<a href="${uri}" target="_blank" rel="noreffer" title="${title || ""}" className="${className || ""}">
+			<a href="${uri}" target="_blank" rel="noreffer" title="${title || ""}" class="${className || ""}">
 				${children}
 			</a>
 		`;
 	}
 
 	return `
-		<a href="${uri}" title="${title || ""}" className="${className || ""}">
+		<a href="${uri}" title="${title || ""}" class="${className || ""}">
 			${children}
 		</a>
 	`;

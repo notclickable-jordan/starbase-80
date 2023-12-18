@@ -38,7 +38,7 @@ interface IProps {
 export const Icon = function (props: IProps): string {
 	const { name, uri, icon, index, iconBG, iconBubble, iconColor, iconAspect, newWindow } = props;
 
-	if (!is.null(icon)) {
+	if (is.null(icon)) {
 		if (!is.null(uri)) {
 			return Anchor({ uri: uri as string, title: name, newWindow, children: IconBlank({ index }) });
 		}
@@ -79,7 +79,7 @@ function IconBlank(props: IIconBlankProps) {
 	const { index } = props;
 	return `
 		<span
-			className="${`block w-16 h-16 rounded-2xl border border-black/5 shadow-sm ${getIconColor(index)} overflow-hidden`}"
+			class="${`block w-16 h-16 rounded-2xl border border-black/5 shadow-sm ${getIconColor(index)} overflow-hidden`}"
 		/>
 	`;
 }
@@ -176,14 +176,14 @@ function IconBase(props: IIconBaseProps) {
 
 	switch (iconType) {
 		case IconType.uri:
-			return `<img src="${icon}" alt="" className="${iconClassName || ""}" style="${{ ...iconStyle }}" />`;
+			return `<img src="${icon}" alt="" class="${iconClassName || ""}" style="${{ ...iconStyle }}" />`;
 		case IconType.dashboard:
 			icon = icon.replace(".png", "").replace(".jpg", "").replace(".svg", "");
 			return `
 				<img
 					src=${`https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/${icon}.png`}
 					alt=""
-					className="${iconClassName || ""}"
+					class="${iconClassName || ""}"
 					style="${{ ...iconStyle }}"
 				/>
 			`;
@@ -191,7 +191,7 @@ function IconBase(props: IIconBaseProps) {
 			icon = icon.replace("mdi-", "").replace(".svg", "");
 
 			return `
-				<div className="${iconClassName || ""}" style="${{ ...iconStyle }}">
+				<div class="${iconClassName || ""}" style="${{ ...iconStyle }}">
 					<div
 						className=${`block ${iconWidthHeightClassName} ${mdiIconColorFull} overflow-hidden`}
 						style="${{

@@ -43,8 +43,8 @@ const ServiceCatalog = function (props: ICatalogProps) {
 	}
 
 	return `
-		<li className="${liClassName}">
-			<h2 className="${categoryClassName}">${catalog.category}</h2>
+		<li class="${liClassName}">
+			<h2 class="${categoryClassName}">${catalog.category}</h2>
 			${Services({ services: catalog.services })}
 		</li>
 	`;

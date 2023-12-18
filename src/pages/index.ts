@@ -46,17 +46,17 @@ export const IndexPage = function (props: IProps): string {
 	}
 
 	return `
-		<div className="min-h-screen">
-			<div className="${pageWrapperClassName}">
+		<div class="min-h-screen">
+			<div class="${pageWrapperClassName}">
 				${
 					SHOWHEADER &&
 					`
-					<div className="${headerClassName}">
+					<div class="${headerClassName}">
 					${Header({ icon, title })}
 					</div>
 				`
 				}
-				<div className="${serviceCatalogListWrapperClassName}">
+				<div class="${serviceCatalogListWrapperClassName}">
 				${ServiceCatalogList({ catalogs: myServices })}
 				</div>
 			</div>

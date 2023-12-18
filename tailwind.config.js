@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-	content: ["./dist/index.html"],
+	content: ["./public/index.html"],
 	safelist: [
 		/* Built from icon.tsx */
 		{
