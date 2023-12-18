@@ -1,6 +1,8 @@
 # Build site using Node JS
 FROM node:21-slim
 
+RUN apt-get update && apt-get install -y nginx
+
 ARG BUILD_DATE
 
 LABEL \
