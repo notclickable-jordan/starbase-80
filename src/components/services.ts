@@ -44,7 +44,7 @@ function Service(props: IServiceProps) {
 				${
 					!is.null(description) &&
 					`
-					<p className="text-sm text-black/50 dark:text-white/50 line-clamp-1">2
+					<p className="text-sm text-black/50 dark:text-white/50 line-clamp-1">
 					${Anchor({ uri, newWindow, children: description })}
 					</p>
 				`
