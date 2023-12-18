@@ -8,8 +8,9 @@
 	"version": "1.3.0",
 	"type": "commonjs",
 	"scripts": {
-		"build": "tsc && node ./dist/static.js && npm run html",
-		"html": "html-minifier --remove-comments --collapse-whitespace --input-dir ./dist --output-dir ./dist --file-ext html"
+		"build": "tsc && node ./dist/static.js && npm run html && npm run tailwind",
+		"html": "html-minifier --remove-comments --collapse-whitespace --input-dir ./dist --output-dir ./dist --file-ext html",
+		"tailwind": "npx tailwindcss -i ./src/tailwind.css -o ./dist/main.css"
 	},
 	"dependencies": {
 		"@types/node": "^20.10.4",
