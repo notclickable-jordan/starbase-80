@@ -8,5 +8,5 @@
 		"resolveJsonModule": true,
 		"module": "CommonJS"
 	},
-	"include": ["src/static.ts"]
+	"include": ["src/index.ts", "src/css-cache-break.ts"]
 }

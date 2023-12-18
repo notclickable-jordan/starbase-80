@@ -1,6 +1,7 @@
 # Build site using Node JS
 FROM node:21-slim
 
+# Install nginx
 RUN apt-get update && apt-get install -y nginx
 
 ARG BUILD_DATE
@@ -18,6 +19,9 @@ COPY package.json .
 RUN npm i
 
 COPY . .
+
+# Copy the nginx config to the correct folder
+COPY default.conf /etc/nginx/conf.d/default.conf
 
 ENV NODE_ENV production
 
@@ -37,4 +41,4 @@ EXPOSE 4173
 RUN chmod +x /app/docker-entrypoint.sh
 ENTRYPOINT ["/app/docker-entrypoint.sh"]
 
-CMD ["npm", "run", "start"]
+CMD ["npm", "run", "build"]

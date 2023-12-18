@@ -8,12 +8,14 @@
 	"version": "1.4.0",
 	"type": "commonjs",
 	"scripts": {
-		"build": "tsc && node ./dist/static.js && npm run html && npm run tailwind",
-		"html": "html-minifier --remove-comments --collapse-whitespace --input-dir ./dist --output-dir ./dist --file-ext html",
-		"tailwind": "npx tailwindcss -i ./src/tailwind.css -o ./dist/main.css"
+		"build": "tsc && node ./dist/index.js && npm run html && npm run tailwind && npm run css-cache-break",
+		"html": "html-minifier --remove-comments --collapse-whitespace --input-dir ./public --output-dir ./public --file-ext html",
+		"tailwind": "npx tailwindcss -i ./src/tailwind.css -o ./public/main.css",
+		"css-cache-break": "node ./dist/css-cache-break.js"
 	},
 	"dependencies": {
 		"@types/node": "^20.10.5",
+		"clean-css": "^5.3.3",
 		"html-minifier": "^4.0.0",
 		"prettier": "^3.1.1",
 		"tailwindcss": "^3.3.6",
@@ -27,5 +29,8 @@
 		"tabWidth": 4,
 		"trailingComma": "es5",
 		"useTabs": true
+	},
+	"devDependencies": {
+		"@types/clean-css": "^4.2.11"
 	}
 }
