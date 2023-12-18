@@ -1,21 +1,12 @@
 {
 	"compilerOptions": {
 		"target": "ESNext",
-		"useDefineForClassFields": true,
 		"lib": ["DOM", "DOM.Iterable", "ESNext"],
-		"allowJs": false,
-		"skipLibCheck": true,
-		"esModuleInterop": false,
-		"allowSyntheticDefaultImports": true,
+		"outDir": "./dist",
 		"strict": true,
-		"forceConsistentCasingInFileNames": true,
-		"module": "ESNext",
-		"moduleResolution": "Node",
+		"esModuleInterop": true,
 		"resolveJsonModule": true,
-		"isolatedModules": true,
-		"noEmit": true,
-		"jsx": "react-jsx"
+		"module": "CommonJS"
 	},
-	"include": ["src", "public"],
-	"references": [{ "path": "./tsconfig.node.json" }]
+	"include": ["src/index.ts", "src/css-cache-break.ts"]
 }

@@ -1,4 +1,3 @@
-import React from "react";
 import { IServiceCatalog } from "../shared/types";
 import { CATEGORIES } from "../variables";
 import { Services } from "./services";
@@ -7,14 +6,14 @@ interface IProps {
 	catalogs: IServiceCatalog[];
 }
 
-export const ServiceCatalogList: React.FunctionComponent<IProps> = ({ catalogs }) => {
-	return (
+export const ServiceCatalogList = function (props: IProps) {
+	const { catalogs } = props;
+
+	return `
 		<ul>
-			{catalogs.map((catalog, index) => (
-				<ServiceCatalog key={index} catalog={catalog} index={index} />
-			))}
+			${catalogs.map((catalog, index) => ServiceCatalog({ catalog, index })).join("")}
 		</ul>
-	);
+	`;
 };
 
 interface ICatalogProps {
@@ -22,7 +21,9 @@ interface ICatalogProps {
 	index: number;
 }
 
-const ServiceCatalog: React.FunctionComponent<ICatalogProps> = ({ catalog, index }) => {
+const ServiceCatalog = function (props: ICatalogProps) {
+	const { catalog, index } = props;
+
 	let categoryClassName = "dark:text-slate-200";
 
 	switch (CATEGORIES as string) {
@@ -41,10 +42,10 @@ const ServiceCatalog: React.FunctionComponent<ICatalogProps> = ({ catalog, index
 		liClassName += " bg-white dark:bg-black rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl";
 	}
 
-	return (
-		<li key={index} className={liClassName}>
-			<h2 className={categoryClassName}>{catalog.category}</h2>
-			<Services services={catalog.services} />
+	return `
+		<li class="${liClassName}">
+			<h2 class="${categoryClassName}">${catalog.category}</h2>
+			${Services({ services: catalog.services })}
 		</li>
-	);
+	`;
 };

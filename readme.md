@@ -32,6 +32,11 @@ Inspired by [Ben Phelps' Homepage](https://gethomepage.dev/) and [Umbrel](https:
 
 # Change history
 
+## 1.4.0
+
+-   Rewrote the entire application to not use React. Now it's just a Node application that emits static HTML.
+-   Removed lots of packages
+
 ## 1.3.0
 
 -   Removed all JavaScript as part of the build step. The image will be slightly larger and take longer to start up and shut down, but the page will be even lighter.

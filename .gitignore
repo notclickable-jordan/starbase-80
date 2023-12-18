@@ -1,4 +1,8 @@
 node_modules
 .DS_Store
 dist
-dist-ssr
+src/*.js
+src/**/*.js
+public/index.html
+public/main.css
+public/css

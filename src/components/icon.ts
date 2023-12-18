@@ -1,4 +1,3 @@
-import React from "react";
 import { is } from "../shared/is";
 import { IconAspect } from "../shared/types";
 import { Anchor } from "./anchor";
@@ -36,67 +35,54 @@ interface IProps {
 	newWindow?: boolean;
 }
 
-export const Icon: React.FunctionComponent<IProps> = ({
-	name,
-	uri,
-	icon,
-	index,
-	iconBG,
-	iconBubble,
-	iconColor,
-	iconAspect,
-	newWindow,
-}) => {
+export const Icon = function (props: IProps): string {
+	const { name, uri, icon, index, iconBG, iconBubble, iconColor, iconAspect, newWindow } = props;
+
 	if (is.null(icon)) {
 		if (!is.null(uri)) {
-			return (
-				<Anchor uri={uri as string} title={name} newWindow={newWindow}>
-					<IconBlank index={index} />
-				</Anchor>
-			);
+			return Anchor({ uri: uri as string, title: name, newWindow, children: IconBlank({ index }) });
 		}
 
-		return <IconBlank index={index} />;
+		return IconBlank({ index });
 	}
 
 	if (!is.null(uri)) {
-		return (
-			<Anchor uri={uri as string} title={name} newWindow={newWindow} className="self-center">
-				<IconBase
-					icon={icon as string}
-					iconBG={iconBG}
-					iconColor={iconColor}
-					iconBubble={iconBubble}
-					iconAspect={iconAspect}
-				/>
-			</Anchor>
-		);
+		return Anchor({
+			uri: uri as string,
+			title: name,
+			newWindow,
+			className: "self-center",
+			children: IconBase({
+				icon: icon as string,
+				iconBG,
+				iconColor,
+				iconBubble,
+				iconAspect,
+			}),
+		});
 	}
 
-	return (
-		<IconBase
-			icon={icon as string}
-			iconBG={iconBG}
-			iconColor={iconColor}
-			iconBubble={iconBubble}
-			iconAspect={iconAspect}
-		/>
-	);
+	return IconBase({
+		icon: icon as string,
+		iconBG,
+		iconColor,
+		iconBubble,
+		iconAspect,
+	});
 };
 
 interface IIconBlankProps {
 	index: number;
 }
 
-const IconBlank: React.FunctionComponent<IIconBlankProps> = ({ index }) => {
-	return (
+function IconBlank(props: IIconBlankProps) {
+	const { index } = props;
+	return `
 		<span
-			className={`block w-16 h-16 rounded-2xl border border-black/5 shadow-sm ${getIconColor(
-				index
-			)} overflow-hidden`}
+			class="${`block w-16 h-16 rounded-2xl border border-black/5 shadow-sm ${getIconColor(index)} overflow-hidden`}"
 		/>
-	);
-};
+	`;
+}
 
 enum IconType {
 	uri,
@@ -112,13 +98,9 @@ interface IIconBaseProps {
 	iconAspect?: IconAspect;
 }
 
-const IconBase: React.FunctionComponent<IIconBaseProps> = ({
-	icon,
-	iconBG,
-	iconBubble,
-	iconColor,
-	iconAspect = "square",
-}) => {
+function IconBase(props: IIconBaseProps) {
+	let { icon, iconBG, iconBubble, iconColor, iconAspect = "square" } = props;
+
 	let iconType: IconType = IconType.uri;
 
 	if (icon.startsWith("http") || icon.startsWith("/")) {
@@ -152,7 +134,7 @@ const IconBase: React.FunctionComponent<IIconBaseProps> = ({
 		iconClassName += " rounded-2xl border border-black/5 shadow-sm";
 	}
 
-	const iconStyle: React.CSSProperties = {};
+	const iconStyle: string[] = [];
 
 	switch (iconType) {
 		case IconType.uri:
@@ -160,7 +142,7 @@ const IconBase: React.FunctionComponent<IIconBaseProps> = ({
 			// Default to bubble and no background for URI and Dashboard icons
 			if (!is.null(iconBG)) {
 				if (iconBG?.startsWith("#")) {
-					iconStyle.backgroundColor = iconBG;
+					iconStyle.push(`background-color: ${iconBG}`);
 				} else {
 					iconClassName += ` bg-${iconBG}`;
 				}
@@ -172,7 +154,7 @@ const IconBase: React.FunctionComponent<IIconBaseProps> = ({
 				iconClassName += ` bg-slate-200 dark:bg-gray-900`;
 			} else {
 				if (iconBG?.startsWith("#")) {
-					iconStyle.backgroundColor = iconBG;
+					iconStyle.push(`background-color: ${iconBG}`);
 				} else {
 					iconClassName += ` bg-${iconBG}`;
 				}
@@ -184,41 +166,50 @@ const IconBase: React.FunctionComponent<IIconBaseProps> = ({
 			break;
 	}
 
-	const mdiIconStyle: React.CSSProperties = {};
+	const mdiIconStyle: string[] = [];
 	let mdiIconColorFull = "bg-" + iconColor;
 
 	if (!is.null(iconColor) && iconColor?.startsWith("#")) {
 		mdiIconColorFull = "";
-		mdiIconStyle.backgroundColor = iconColor;
+		mdiIconStyle.push(`background-color: ${iconColor}`);
 	}
 
 	switch (iconType) {
 		case IconType.uri:
-			return <img src={icon} alt="" className={iconClassName} style={{ ...iconStyle }} />;
+			return `<img src="${icon}" alt="" class="${iconClassName || ""}" style="${unwrapStyles(iconStyle)}" />`;
 		case IconType.dashboard:
 			icon = icon.replace(".png", "").replace(".jpg", "").replace(".svg", "");
-			return (
+			return `
 				<img
-					src={`https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/${icon}.png`}
+					src=${`https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/${icon}.png`}
 					alt=""
-					className={iconClassName}
-					style={{ ...iconStyle }}
+					class="${iconClassName || ""}"
+					style="${unwrapStyles(iconStyle)}"
 				/>
-			);
+			`;
 		case IconType.material:
 			icon = icon.replace("mdi-", "").replace(".svg", "");
 
-			return (
-				<div className={iconClassName} style={{ ...iconStyle }}>
+			return `
+				<div class="${iconClassName || ""}" style="${{ ...iconStyle }}">
 					<div
-						className={`block ${iconWidthHeightClassName} ${mdiIconColorFull} overflow-hidden`}
-						style={{
-							...mdiIconStyle,
-							mask: `url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/${icon}.svg) no-repeat center / contain`,
-							WebkitMask: `url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/${icon}.svg) no-repeat center / contain`,
-						}}
+						className=${`block ${iconWidthHeightClassName} ${mdiIconColorFull} overflow-hidden`}
+						style="${unwrapStyles(
+							mdiIconStyle.concat(
+								`mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/${icon}.svg) no-repeat center / contain`,
+								`webkit-mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/${icon}.svg) no-repeat center / contain`
+							)
+						)}"
 					/>
 				</div>
-			);
+			`;
 	}
-};
+}
+
+function unwrapStyles(styles: string[]): string {
+	if (is.null(styles)) {
+		return "";
+	}
+
+	return styles.join(";");
+}
