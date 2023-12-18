@@ -134,7 +134,7 @@ function IconBase(props: IIconBaseProps) {
 		iconClassName += " rounded-2xl border border-black/5 shadow-sm";
 	}
 
-	const iconStyle: any = {};
+	const iconStyle: string[] = [];
 
 	switch (iconType) {
 		case IconType.uri:
@@ -142,7 +142,7 @@ function IconBase(props: IIconBaseProps) {
 			// Default to bubble and no background for URI and Dashboard icons
 			if (!is.null(iconBG)) {
 				if (iconBG?.startsWith("#")) {
-					iconStyle.backgroundColor = iconBG;
+					iconStyle.push(`background-color: ${iconBG}`);
 				} else {
 					iconClassName += ` bg-${iconBG}`;
 				}
@@ -154,7 +154,7 @@ function IconBase(props: IIconBaseProps) {
 				iconClassName += ` bg-slate-200 dark:bg-gray-900`;
 			} else {
 				if (iconBG?.startsWith("#")) {
-					iconStyle.backgroundColor = iconBG;
+					iconStyle.push(`background-color: ${iconBG}`);
 				} else {
 					iconClassName += ` bg-${iconBG}`;
 				}
@@ -166,17 +166,17 @@ function IconBase(props: IIconBaseProps) {
 			break;
 	}
 
-	const mdiIconStyle: any = {};
+	const mdiIconStyle: string[] = [];
 	let mdiIconColorFull = "bg-" + iconColor;
 
 	if (!is.null(iconColor) && iconColor?.startsWith("#")) {
 		mdiIconColorFull = "";
-		mdiIconStyle.backgroundColor = iconColor;
+		mdiIconStyle.push(`background-color: ${iconColor}`);
 	}
 
 	switch (iconType) {
 		case IconType.uri:
-			return `<img src="${icon}" alt="" class="${iconClassName || ""}" style="${{ ...iconStyle }}" />`;
+			return `<img src="${icon}" alt="" class="${iconClassName || ""}" style="${unwrapStyles(iconStyle)}" />`;
 		case IconType.dashboard:
 			icon = icon.replace(".png", "").replace(".jpg", "").replace(".svg", "");
 			return `
@@ -184,7 +184,7 @@ function IconBase(props: IIconBaseProps) {
 					src=${`https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/${icon}.png`}
 					alt=""
 					class="${iconClassName || ""}"
-					style="${{ ...iconStyle }}"
+					style="${unwrapStyles(iconStyle)}"
 				/>
 			`;
 		case IconType.material:
@@ -194,13 +194,22 @@ function IconBase(props: IIconBaseProps) {
 				<div class="${iconClassName || ""}" style="${{ ...iconStyle }}">
 					<div
 						className=${`block ${iconWidthHeightClassName} ${mdiIconColorFull} overflow-hidden`}
-						style="${{
-							...mdiIconStyle,
-							mask: `url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/${icon}.svg) no-repeat center / contain`,
-							WebkitMask: `url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/${icon}.svg) no-repeat center / contain`,
-						}}"
+						style="${unwrapStyles(
+							mdiIconStyle.concat(
+								`mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/${icon}.svg) no-repeat center / contain`,
+								`webkit-mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/${icon}.svg) no-repeat center / contain`
+							)
+						)}"
 					/>
 				</div>
 			`;
 	}
+}
+
+function unwrapStyles(styles: string[]): string {
+	if (is.null(styles)) {
+		return "";
+	}
+
+	return styles.join(";");
 }
