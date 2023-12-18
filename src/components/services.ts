@@ -12,7 +12,7 @@ export const Services = function (props: IServicesProps) {
 
 	return `
 		<ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
-			${services.map((service, index) => Service({ index, service }))}
+			${services.map((service, index) => Service({ index, service })).join("")}
 		</ul>
 	`;
 };

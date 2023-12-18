@@ -11,7 +11,7 @@ export const ServiceCatalogList = function (props: IProps) {
 
 	return `
 		<ul>
-			${catalogs.map((catalog, index) => ServiceCatalog({ catalog, index }))}
+			${catalogs.map((catalog, index) => ServiceCatalog({ catalog, index })).join("")}
 		</ul>
 	`;
 };
