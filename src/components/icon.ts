@@ -176,14 +176,14 @@ function IconBase(props: IIconBaseProps) {
 
 	switch (iconType) {
 		case IconType.uri:
-			return `<img src="${icon}" alt="" className="${iconClassName}" style="${{ ...iconStyle }}" />`;
+			return `<img src="${icon}" alt="" className="${iconClassName || ""}" style="${{ ...iconStyle }}" />`;
 		case IconType.dashboard:
 			icon = icon.replace(".png", "").replace(".jpg", "").replace(".svg", "");
 			return `
 				<img
 					src=${`https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/${icon}.png`}
 					alt=""
-					className="${iconClassName}"
+					className="${iconClassName || ""}"
 					style="${{ ...iconStyle }}"
 				/>
 			`;
@@ -191,7 +191,7 @@ function IconBase(props: IIconBaseProps) {
 			icon = icon.replace("mdi-", "").replace(".svg", "");
 
 			return `
-				<div className="${iconClassName}" style="${{ ...iconStyle }}">
+				<div className="${iconClassName || ""}" style="${{ ...iconStyle }}">
 					<div
 						className=${`block ${iconWidthHeightClassName} ${mdiIconColorFull} overflow-hidden`}
 						style="${{

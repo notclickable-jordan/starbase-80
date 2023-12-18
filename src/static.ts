@@ -4,7 +4,7 @@ import { IndexPage } from "./pages/index";
 import { PAGEICON, PAGETITLE } from "./variables";
 
 const indexFileInPath = path.join(__dirname, "../", "index.html");
-const indexFileOutPath = path.join(__dirname, "../", "index-2.html");
+const indexFileOutPath = path.join(__dirname, "../", "./dist", "index.html");
 
 async function readIndexPage(): Promise<string> {
 	return new Promise(async (resolve, reject) => {
