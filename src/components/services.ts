@@ -30,24 +30,24 @@ function Service(props: IServiceProps) {
 	return `
 		<li class="p-4 flex gap-4">
 			${
-				!is.null(icon) &&
+				!is.null(icon) ?
 				`
 				<span class="flex-shrink-0 flex">
 				${Icon({ name, icon, uri, index, iconColor, iconBG, iconBubble, iconAspect, newWindow })}
 				</span>
-			`
+			` : ``
 			}
 			<div>
 				<h3 class="text-lg mt-1 font-semibold line-clamp-1">
 					${Anchor({ uri, newWindow, children: name })}
 				</h3>
 				${
-					!is.null(description) &&
+					!is.null(description) ?
 					`
 					<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">
 					${Anchor({ uri, newWindow, children: description })}
 					</p>
-				`
+				` : ``
 				}
 			</div>
 		</li>
