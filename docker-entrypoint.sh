@@ -5,6 +5,7 @@ LOGO=$(echo "${LOGO}" | sed 's/\//\\\//g')
 
 # HTML replacement
 sed -i -e 's/My Website/'"${TITLE}"'/g' /app/index.html
+sed -i -e 's/\/logo\.png/'"${LOGO}"'/g' /app/index.html
 
 # TypeScript replacement
 sed -i -e 's/PAGETITLE = "My Website"/PAGETITLE = "'"${TITLE}"'"/g' /app/src/variables.ts

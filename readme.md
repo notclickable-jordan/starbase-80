@@ -32,6 +32,10 @@ Inspired by [Ben Phelps' Homepage](https://gethomepage.dev/) and [Umbrel](https:
 
 # Change history
 
+## 1.4.2
+
+-   Added `apple-touch-icon-precomposed` link
+
 ## 1.4.0
 
 -   Rewrote the entire application to not use React. Now it's just a Node application that emits static HTML.
