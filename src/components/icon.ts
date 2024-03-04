@@ -191,17 +191,17 @@ function IconBase(props: IIconBaseProps) {
 			icon = icon.replace("mdi-", "").replace(".svg", "");
 
 			return `
-				<div class="${iconClassName || ""}" style="${{ ...iconStyle }}">
-					<div
-						className=${`block ${iconWidthHeightClassName} ${mdiIconColorFull} overflow-hidden`}
+				<span class="${iconClassName || ""}" style="${unwrapStyles(iconStyle)}">
+					<span
+						class="block ${iconWidthHeightClassName} ${mdiIconColorFull} overflow-hidden"
 						style="${unwrapStyles(
-							mdiIconStyle.concat(
+							mdiIconStyle.concat([
 								`mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/${icon}.svg) no-repeat center / contain`,
-								`webkit-mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/${icon}.svg) no-repeat center / contain`
-							)
+								`webkit-mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/${icon}.svg) no-repeat center / contain`,
+							])
 						)}"
 					/>
-				</div>
+				</span>
 			`;
 	}
 }
