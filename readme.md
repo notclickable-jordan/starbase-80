@@ -32,6 +32,10 @@ Inspired by [Ben Phelps' Homepage](https://gethomepage.dev/) and [Umbrel](https:
 
 # Change history
 
+## 1.5.0
+
+-   Fixed dark mode manual override
+
 ## 1.4.2
 
 -   Added `apple-touch-icon-precomposed` link
