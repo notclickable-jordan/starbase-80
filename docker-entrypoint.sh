@@ -20,4 +20,9 @@ sed -i -e 's/NEWWINDOW = true/NEWWINDOW = '"${NEWWINDOW}"'/g' /app/src/variables
 sed -i -e 's/background-color: theme(\(colors\.slate\.50\))/background-color: '"${BGCOLOR}"'/g' /app/src/tailwind.css
 sed -i -e 's/background-color: theme(\(colors\.gray\.950\))/background-color: '"${BGCOLORDARK}"'/g' /app/src/tailwind.css
 
+# Dark theme
+if [ "$THEME" = "dark" ]; then sed -i -e 's/darkMode: "media"/darkMode: "selector"/g' /app/tailwind.config.js; fi
+if [ "$THEME" = "dark" ]; then sed -i -e 's/<html/<html class="dark"/' /app/index.html; fi
+
+
 exec "$@"

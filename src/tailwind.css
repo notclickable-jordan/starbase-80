@@ -12,6 +12,10 @@ html {
 	}
 }
 
+html.dark {
+	background-color: theme(colors.gray.950);
+}
+
 body {
 	min-height: 100vh;
 }
@@ -20,6 +24,10 @@ body {
 	body {
 		color: theme(colors.slate.200);
 	}
+}
+
+html.dark body {
+	color: theme(colors.slate.200);
 }
 
 h1 {
