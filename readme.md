@@ -32,6 +32,10 @@ Inspired by [Ben Phelps' Homepage](https://gethomepage.dev/) and [Umbrel](https:
 
 # Change history
 
+## 1.5.0
+
+-   Fixed dark mode manual override
+
 ## 1.4.2
 
 -   Added `apple-touch-icon-precomposed` link
@@ -81,6 +85,7 @@ services:
 | BGCOLOR     | theme(colors.slate.50) | Background color for light mode. Set to any hex color or Tailwind color using the theme syntax. |
 | BGCOLORDARK | theme(colors.gray.950) | Background color for dark mode. Set to any hex color or Tailwind color using the theme syntax.  |
 | NEWWINDOW   | true                   | Set to false to not have links open in a new window                                             |
+| THEME       | auto                   | Set to "auto", or "dark" to force a display mode (e.g. dark mode)                               |
 
 ## Volumes (bind mounts)
 
