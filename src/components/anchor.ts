@@ -20,7 +20,7 @@ export const Anchor = function (props: IProps) {
 
 	if (newWindowLocal) {
 		return `
-			<a href="${uri}" target="_blank" rel="noreffer" title="${title || ""}" class="${className || ""}">
+			<a href="${uri}" target="_blank" rel="noreffer" title="${title || ""}" class="${className || "link-box__link"}">
 				${children}
 			</a>
 		`;

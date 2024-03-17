@@ -36,3 +36,20 @@ h1 {
 	margin: 0;
 	padding: 0;
 }
+
+.link-box {
+    position: relative;
+}
+
+.link-box:hover .link-box__link {
+    text-decoration: underline;
+}
+
+.link-box__link:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}

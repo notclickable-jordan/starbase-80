@@ -1,6 +1,5 @@
 import { is } from "../shared/is";
 import { IconAspect } from "../shared/types";
-import { Anchor } from "./anchor";
 
 const iconColors = [
 	"blue",
@@ -39,27 +38,7 @@ export const Icon = function (props: IProps): string {
 	const { name, uri, icon, index, iconBG, iconBubble, iconColor, iconAspect, newWindow } = props;
 
 	if (is.null(icon)) {
-		if (!is.null(uri)) {
-			return Anchor({ uri: uri as string, title: name, newWindow, children: IconBlank({ index }) });
-		}
-
 		return IconBlank({ index });
-	}
-
-	if (!is.null(uri)) {
-		return Anchor({
-			uri: uri as string,
-			title: name,
-			newWindow,
-			className: "self-center",
-			children: IconBase({
-				icon: icon as string,
-				iconBG,
-				iconColor,
-				iconBubble,
-				iconAspect,
-			}),
-		});
 	}
 
 	return IconBase({

@@ -28,7 +28,7 @@ function Service(props: IServiceProps) {
 	const { name, uri, description, icon, iconBG, iconBubble, iconColor, iconAspect, newWindow } = service;
 
 	return `
-		<li class="p-4 flex gap-4">
+		<li class="link-box p-4 flex gap-4">
 			${
 				!is.null(icon) ?
 				`
@@ -45,7 +45,7 @@ function Service(props: IServiceProps) {
 					!is.null(description) ?
 					`
 					<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">
-					${Anchor({ uri, newWindow, children: description })}
+					${description}
 					</p>
 				` : ``
 				}
