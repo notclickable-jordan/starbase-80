@@ -36,3 +36,8 @@ h1 {
 	margin: 0;
 	padding: 0;
 }
+
+a:hover h3,
+a:focus h3 {
+	@apply no-underline;
+}

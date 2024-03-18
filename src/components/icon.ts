@@ -46,22 +46,6 @@ export const Icon = function (props: IProps): string {
 		return IconBlank({ index });
 	}
 
-	if (!is.null(uri)) {
-		return Anchor({
-			uri: uri as string,
-			title: name,
-			newWindow,
-			className: "self-center",
-			children: IconBase({
-				icon: icon as string,
-				iconBG,
-				iconColor,
-				iconBubble,
-				iconAspect,
-			}),
-		});
-	}
-
 	return IconBase({
 		icon: icon as string,
 		iconBG,

@@ -35,6 +35,7 @@ ENV BGCOLOR "theme(colors.slate.50)"
 ENV BGCOLORDARK "theme(colors.gray.950)"
 ENV THEME "auto"
 ENV NEWWINDOW "true"
+ENV HOVER "none"
 
 COPY version /
 EXPOSE 4173
