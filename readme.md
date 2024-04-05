@@ -32,6 +32,11 @@ Inspired by [Ben Phelps' Homepage](https://gethomepage.dev/) and [Umbrel](https:
 
 # Change history
 
+## 1.5.2
+
+-   Fixed issue with Material icons having incorrect left margin
+-   Fixed aspect ratio issues on images
+
 ## 1.5.1
 
 -   Changed links to be on the entire service object
