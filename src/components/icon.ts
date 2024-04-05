@@ -160,7 +160,9 @@ function IconBase(props: IIconBaseProps) {
 
 	switch (iconType) {
 		case IconType.uri:
-			return `<img src="${icon}" alt="" class="${iconClassName || ""}" style="${unwrapStyles(iconStyle)}" />`;
+			return `<span class="flex items-center ${iconWidthHeightClassName}"><img src="${icon}" alt="" class="${
+				iconClassName || ""
+			}" style="${unwrapStyles(iconStyle)}" /></span>`;
 		case IconType.dashboard:
 			icon = icon.replace(".png", "").replace(".jpg", "").replace(".svg", "");
 			return `
