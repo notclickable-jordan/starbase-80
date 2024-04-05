@@ -184,7 +184,7 @@ function IconBase(props: IIconBaseProps) {
 								`webkit-mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/${icon}.svg) no-repeat center / contain`,
 							])
 						)}"
-					/>
+					></span>
 				</span>
 			`;
 	}
