@@ -96,7 +96,7 @@ function IconBase(props: IIconBaseProps) {
 	}
 
 	// Everyone starts the same size
-	let iconClassName = "block overflow-hidden bg-contain";
+	let iconClassName = "block overflow-hidden bg-contain object-contain";
 	let iconWidthHeightClassName = "";
 
 	switch (iconAspect) {
