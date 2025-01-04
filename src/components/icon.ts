@@ -72,6 +72,7 @@ enum IconType {
 	uri,
 	material,
 	dashboard,
+	selfhst,
 }
 
 interface IIconBaseProps {
@@ -91,6 +92,8 @@ function IconBase(props: IIconBaseProps) {
 		iconType = IconType.uri;
 	} else if (icon.startsWith("mdi-")) {
 		iconType = IconType.material;
+	} else if (icon.startsWith("selfhst-")) {
+		iconType = IconType.selfhst;
 	} else {
 		iconType = IconType.dashboard;
 	}
@@ -123,7 +126,8 @@ function IconBase(props: IIconBaseProps) {
 	switch (iconType) {
 		case IconType.uri:
 		case IconType.dashboard:
-			// Default to bubble and no background for URI and Dashboard icons
+		case IconType.selfhst:
+			// Default to bubble and no background for URI, Dashboard and selfhst icons
 			if (!is.null(iconBG)) {
 				if (iconBG?.startsWith("#")) {
 					iconStyle.push(`background-color: ${iconBG}`);
@@ -168,6 +172,16 @@ function IconBase(props: IIconBaseProps) {
 			return `
 				<img
 					src=${`https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/${icon}.png`}
+					alt=""
+					class="${iconClassName || ""}"
+					style="${unwrapStyles(iconStyle)}"
+				/>
+			`;
+		case IconType.selfhst:
+			icon = icon.replace("selfhst-", "").replace(".png", "").replace(".svg", "");
+			return `
+				<img
+					src=${`https://cdn.jsdelivr.net/gh/selfhst/icons/png/${icon}.png`}
 					alt=""
 					class="${iconClassName || ""}"
 					style="${unwrapStyles(iconStyle)}"

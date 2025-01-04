@@ -23,19 +23,19 @@ COPY . .
 # Copy the nginx config to the correct folder
 COPY default.conf /etc/nginx/conf.d/default.conf
 
-ENV NODE_ENV production
+ENV NODE_ENV=production
 
-ENV TITLE "My Website"
-ENV LOGO "/logo.png"
-ENV HEADER "true"
-ENV HEADERLINE "true"
-ENV HEADERTOP "false"
-ENV CATEGORIES "normal"
-ENV BGCOLOR "theme(colors.slate.50)"
-ENV BGCOLORDARK "theme(colors.gray.950)"
-ENV THEME "auto"
-ENV NEWWINDOW "true"
-ENV HOVER "none"
+ENV TITLE="My Website"
+ENV LOGO="/logo.png"
+ENV HEADER="true"
+ENV HEADERLINE="true"
+ENV HEADERTOP="false"
+ENV CATEGORIES="normal"
+ENV BGCOLOR="theme(colors.slate.50)"
+ENV BGCOLORDARK="theme(colors.gray.950)"
+ENV THEME="auto"
+ENV NEWWINDOW="true"
+ENV HOVER="none"
 
 COPY version /
 EXPOSE 4173
