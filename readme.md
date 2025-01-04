@@ -32,6 +32,10 @@ Inspired by [Ben Phelps' Homepage](https://gethomepage.dev/) and [Umbrel](https:
 
 # Change history
 
+## 1.5.3
+
+-   Added support for [selfh.st](https://selfh.st/icons/) icons
+
 ## 1.5.2
 
 -   Fixed issue with Material icons having incorrect left margin
@@ -126,7 +130,7 @@ services:
 				"name": "Authelia",
 				"uri": "https://auth.mywebsite.com",
 				"description": "Authentication",
-				"icon": "/icons/authelia.png"
+				"icon": "selfhst-authelia"
 			},
 			{
 				"name": "Calibre",
@@ -174,17 +178,17 @@ services:
 
 ## Service variables
 
-| Name        | Default | Required | Notes                                                                                                                                                                                           |
-| ----------- | ------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| name        |         | true     | Title of service                                                                                                                                                                                |
-| uri         |         | true     | Hyperlink to resource                                                                                                                                                                           |
-| description |         | false    | 2-3 words which appear below the title                                                                                                                                                          |
-| icon        |         | false    | Relative URI, absolute URI, service name ([Dashboard icon](https://github.com/walkxcode/dashboard-icons)) or `mdi-`service name ([Material Design icon](https://icon-sets.iconify.design/mdi/)) |
-| iconBG      |         | false    | Background color for icons. Hex code or [Tailwind color](https://tailwindcss.com/docs/background-color) (do not prefix with `bg-`).                                                             |
-| iconColor   |         | false    | Only used as the fill color for Material Design icons. Hex code or [Tailwind color](https://tailwindcss.com/docs/background-color) (do not prefix with `bg-`).                                  |
-| iconBubble  | true    | false    | If `false` the bubble and shadow are removed from the icon                                                                                                                                      |
-| iconAspect  | square  | false    | Set to `"width"` or `"height"` to constrain the icon to the width or height of the icon, respectively                                                                                           |
-| newWindow   |         | false    | Set to `true` or `false` to override the environment variable `NEWWINDOW` for this service                                                                                                      |
+| Name        | Default | Required | Notes                                                                                                                                                                                                                                                         |
+| ----------- | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| name        |         | true     | Title of service                                                                                                                                                                                                                                              |
+| uri         |         | true     | Hyperlink to resource                                                                                                                                                                                                                                         |
+| description |         | false    | 2-3 words which appear below the title                                                                                                                                                                                                                        |
+| icon        |         | false    | Relative URI, absolute URI, service name ([Dashboard icon](https://github.com/walkxcode/dashboard-icons)), `mdi-` service name ([Material Design icon](https://icon-sets.iconify.design/mdi/)), `selfhst-` icon name [selfh.st icon](https://selfh.st/icons/) |
+| iconBG      |         | false    | Background color for icons. Hex code or [Tailwind color](https://tailwindcss.com/docs/background-color) (do not prefix with `bg-`).                                                                                                                           |
+| iconColor   |         | false    | Only used as the fill color for Material Design icons. Hex code or [Tailwind color](https://tailwindcss.com/docs/background-color) (do not prefix with `bg-`).                                                                                                |
+| iconBubble  | true    | false    | If `false` the bubble and shadow are removed from the icon                                                                                                                                                                                                    |
+| iconAspect  | square  | false    | Set to `"width"` or `"height"` to constrain the icon to the width or height of the icon, respectively                                                                                                                                                         |
+| newWindow   |         | false    | Set to `true` or `false` to override the environment variable `NEWWINDOW` for this service                                                                                                                                                                    |
 
 # Icons
 
@@ -228,4 +232,13 @@ Use "black" or "white" for those colors.
 # Icon in config.json
 "icon": "mdi-cloud",
 "iconColor": "black"
+```
+
+## Selfh.st icons
+
+Use any [selfh.st icon](https://selfh.st/icons/) by prefixing the name with `selfhst-`.
+
+```bash
+# Icon in config.json
+"icon": "selfhst-couchdb"
 ```
