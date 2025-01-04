@@ -20,7 +20,7 @@ Inspired by [Ben Phelps' Homepage](https://gethomepage.dev/) and [Umbrel](https:
 
 # Live demo
 
--   [Starbase 80](https://www.starbase80.dev/)
+-   [Starbase 80](https://notclickable-jordan.github.io/starbase-80/)
 
 # Preview
 
