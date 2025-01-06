@@ -32,6 +32,10 @@ Inspired by [Ben Phelps' Homepage](https://gethomepage.dev/) and [Umbrel](https:
 
 # Change history
 
+## 1.5.4
+
+-   Re-added wget to allow for health checks
+
 ## 1.5.3
 
 -   Added support for [selfh.st](https://selfh.st/icons/) icons
