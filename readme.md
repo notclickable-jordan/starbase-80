@@ -32,6 +32,10 @@ Inspired by [Ben Phelps' Homepage](https://gethomepage.dev/) and [Umbrel](https:
 
 # Change history
 
+## 1.5.5
+
+-   Updated to node:23-slim
+
 ## 1.5.4
 
 -   Re-added wget to allow for health checks

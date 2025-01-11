@@ -1,5 +1,5 @@
 # Build site using Node JS
-FROM node:21-slim
+FROM node:23-slim
 
 # Install nginx and wget
 RUN apt-get update && apt-get install -y nginx wget
