@@ -1,3 +1,4 @@
+import { is } from "../shared/is";
 import { IServiceCatalog } from "../shared/types";
 import { CATEGORIES } from "../variables";
 import { Services } from "./services";
@@ -11,18 +12,17 @@ export const ServiceCatalogList = function (props: IProps) {
 
 	return `
 		<ul>
-			${catalogs.map((catalog, index) => ServiceCatalog({ catalog, index })).join("")}
+			${catalogs.map(catalog => ServiceCatalog({ catalog })).join("")}
 		</ul>
 	`;
 };
 
 interface ICatalogProps {
 	catalog: IServiceCatalog;
-	index: number;
 }
 
 const ServiceCatalog = function (props: ICatalogProps) {
-	const { catalog, index } = props;
+	const { catalog } = props;
 
 	let categoryClassName = "dark:text-slate-200";
 
@@ -39,7 +39,15 @@ const ServiceCatalog = function (props: ICatalogProps) {
 	let liClassName = "mt-12 first:mt-0 xl:first:mt-6";
 
 	if (catalog.bubble) {
-		liClassName += " bg-white dark:bg-black rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl";
+		liClassName += " var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl";
+
+		if (!is.null(catalog.bubbleBGLight)) {
+			liClassName += ` !bg-${catalog.bubbleBGLight}`;
+		}
+
+		if (!is.null(catalog.bubbleBGDark)) {
+			liClassName += ` dark:!bg-${catalog.bubbleBGDark}`;
+		}
 	}
 
 	return `

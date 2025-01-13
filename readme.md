@@ -32,6 +32,11 @@ Inspired by [Ben Phelps' Homepage](https://gethomepage.dev/) and [Umbrel](https:
 
 # Change history
 
+## 1.6.0
+
+-   Added `CATEGORYBUBBLECOLORLIGHT` and `CATEGORYBUBBLECOLORDARK` for greater control of category bubble colors
+-   Added `catalog.bubbleBGLight` and `catalog.bubbleBGDark` to theme individual category bubble background colors
+
 ## 1.5.5
 
 -   Updated to node:23-slim
@@ -97,18 +102,20 @@ services:
 
 ## Environment variables
 
-| Variable    | Default                | Notes                                                                                           |
-| ----------- | ---------------------- | ----------------------------------------------------------------------------------------------- |
-| TITLE       | My Website             | Set to TITLE= to hide the title                                                                 |
-| LOGO        | /logo.png              | Set to LOGO= to hide the logo                                                                   |
-| HEADER      | true                   | Set to false to hide the title and logo                                                         |
-| HEADERLINE  | true                   | Set to false to turn off the header border line                                                 |
-| CATEGORIES  | normal                 | Set to "small" for smaller, uppercase category labels                                           |
-| BGCOLOR     | theme(colors.slate.50) | Background color for light mode. Set to any hex color or Tailwind color using the theme syntax. |
-| BGCOLORDARK | theme(colors.gray.950) | Background color for dark mode. Set to any hex color or Tailwind color using the theme syntax.  |
-| NEWWINDOW   | true                   | Set to false to not have links open in a new window                                             |
-| THEME       | auto                   | Set to "auto", or "dark" to force a display mode (e.g. dark mode)                               |
-| HOVER       | none                   | Set to "underline" for an underline effect on titles when hovering/focusing on that service     |
+| Variable                 | Default                | Notes                                                                                                                           |
+| ------------------------ | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| TITLE                    | My Website             | Set to TITLE= to hide the title                                                                                                 |
+| LOGO                     | /logo.png              | Set to LOGO= to hide the logo                                                                                                   |
+| HEADER                   | true                   | Set to false to hide the title and logo                                                                                         |
+| HEADERLINE               | true                   | Set to false to turn off the header border line                                                                                 |
+| CATEGORIES               | normal                 | Set to "small" for smaller, uppercase category labels                                                                           |
+| BGCOLOR                  | theme(colors.slate.50) | Page background color in light mode. Set to any hex color or Tailwind color using the theme syntax.                             |
+| BGCOLORDARK              | theme(colors.gray.950) | Page background color in dark mode. Set to any hex color or Tailwind color using the theme syntax.                              |
+| CATEGORYBUBBLECOLORLIGHT | theme(colors.white)    | Background color for catalog bubbles (if enabled) in light mode. Set to any hex color or Tailwind color using the theme syntax. |
+| CATEGORYBUBBLECOLORDARK  | theme(colors.black)    | Background color for catalog bubbles (if enabled) in dark mode. Set to any hex color or Tailwind color using the theme syntax.  |
+| NEWWINDOW                | true                   | Set to false to not have links open in a new window                                                                             |
+| THEME                    | auto                   | Set to "auto", or "dark" to force a display mode (e.g. dark mode)                                                               |
+| HOVER                    | none                   | Set to "underline" for an underline effect on titles when hovering/focusing on that service                                     |
 
 ## Volumes (bind mounts)
 
@@ -178,11 +185,13 @@ services:
 
 ## Category variables
 
-| Name     | Default | Required | Notes                               |
-| -------- | ------- | -------- | ----------------------------------- |
-| category |         | false    | Displays above the list of services |
-| bubble   | false   | false    | Shows a bubble around category      |
-| services |         | true     | Array of services                   |
+| Name          | Default | Required | Notes                                                                                                                                                     |
+| ------------- | ------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| category      |         | false    | Displays above the list of services                                                                                                                       |
+| bubble        | false   | false    | Shows a bubble around category                                                                                                                            |
+| bubbleBGLight |         | false    | Background color for category bubbles. Must be a [Tailwind color](https://tailwindcss.com/docs/background-color) (do not prefix with `bg-`).              |
+| bubbleBGDark  |         | false    | Background color for category bubbles in dark mode. Must be a [Tailwind color](https://tailwindcss.com/docs/background-color) (do not prefix with `bg-`). |
+| services      |         | true     | Array of services                                                                                                                                         |
 
 ## Service variables
 

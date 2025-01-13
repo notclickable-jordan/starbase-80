@@ -17,8 +17,10 @@ sed -i -e 's/CATEGORIES = "normal"/CATEGORIES = "'"${CATEGORIES}"'"/g' /app/src/
 sed -i -e 's/NEWWINDOW = true/NEWWINDOW = '"${NEWWINDOW}"'/g' /app/src/variables.ts
 
 # CSS replacement
-sed -i -e 's/background-color: theme(\(colors\.slate\.50\))/background-color: '"${BGCOLOR}"'/g' /app/src/tailwind.css
-sed -i -e 's/background-color: theme(\(colors\.gray\.950\))/background-color: '"${BGCOLORDARK}"'/g' /app/src/tailwind.css
+sed -i -e 's/background-color: theme(colors\.slate\.50)/background-color: '"${BGCOLOR}"'/g' /app/src/tailwind.css
+sed -i -e 's/background-color: theme(colors\.gray\.950)/background-color: '"${BGCOLORDARK}"'/g' /app/src/tailwind.css
+sed -i -e 's/background-color: theme(colors\.white)\; \/\* category light \*\//background-color: '"${CATEGORYBUBBLECOLORLIGHT}"\;'/g' /app/src/tailwind.css
+sed -i -e 's/background-color: theme(colors\.black)\; \/\* category dark \*\//background-color: '"${CATEGORYBUBBLECOLORDARK}"\;'/g' /app/src/tailwind.css
 
 # Dark theme
 if [ "$THEME" = "dark" ]; then sed -i -e 's/darkMode: "media"/darkMode: "selector"/g' /app/tailwind.config.js; fi

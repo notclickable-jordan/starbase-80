@@ -41,3 +41,13 @@ a:hover h3,
 a:focus h3 {
 	@apply no-underline;
 }
+
+.var-category-bubble-bg {
+	background-color: theme(colors.white); /* category light */
+}
+
+@media (prefers-color-scheme: dark) {
+	.var-category-bubble-bg {
+		background-color: theme(colors.black); /* category dark */
+	}
+}
