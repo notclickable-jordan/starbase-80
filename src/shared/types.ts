@@ -1,6 +1,8 @@
 export interface IServiceCatalog {
 	category: string;
 	bubble?: boolean;
+	bubbleBGLight?: string;
+	bubbleBGDark?: string;
 	services: IService[];
 }
 
