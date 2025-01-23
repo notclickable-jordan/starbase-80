@@ -1,9 +1,10 @@
-export interface IServiceCatalog {
+export interface IServiceCategory {
 	category: string;
 	bubble?: boolean;
 	bubbleBGLight?: string;
 	bubbleBGDark?: string;
 	services: IService[];
+	iconBubblePadding?: boolean;
 }
 
 export interface IService {
@@ -15,6 +16,7 @@ export interface IService {
 	iconColor?: string;
 	iconBG?: string;
 	iconBubble?: boolean;
+	iconBubblePadding?: boolean;
 	iconAspect?: IconAspect;
 
 	newWindow?: boolean;

@@ -30,13 +30,27 @@ interface IProps {
 	iconColor?: string;
 	iconBG?: string;
 	iconBubble?: boolean;
+	iconBubblePadding?: boolean;
 	iconAspect?: IconAspect;
 	uri?: string;
 	newWindow?: boolean;
+	categoryBubblePadding?: boolean;
 }
 
 export const Icon = function (props: IProps): string {
-	const { name, uri, icon, index, iconBG, iconBubble, iconColor, iconAspect, newWindow } = props;
+	const {
+		name,
+		uri,
+		icon,
+		index,
+		iconBG,
+		iconBubble,
+		iconBubblePadding,
+		iconColor,
+		iconAspect,
+		newWindow,
+		categoryBubblePadding,
+	} = props;
 
 	if (is.null(icon)) {
 		if (!is.null(uri)) {
@@ -46,11 +60,20 @@ export const Icon = function (props: IProps): string {
 		return IconBlank({ index });
 	}
 
+	let bubblePadding = categoryBubblePadding || false;
+
+	if (iconBubblePadding === true) {
+		bubblePadding = true;
+	} else if (iconBubblePadding === false) {
+		bubblePadding = false;
+	}
+
 	return IconBase({
 		icon: icon as string,
 		iconBG,
 		iconColor,
 		iconBubble,
+		iconBubblePadding: bubblePadding,
 		iconAspect,
 	});
 };
@@ -80,11 +103,12 @@ interface IIconBaseProps {
 	iconColor?: string;
 	iconBG?: string;
 	iconBubble?: boolean;
+	iconBubblePadding?: boolean;
 	iconAspect?: IconAspect;
 }
 
 function IconBase(props: IIconBaseProps) {
-	let { icon, iconBG, iconBubble, iconColor, iconAspect = "square" } = props;
+	let { icon, iconBG, iconBubble, iconBubblePadding, iconColor, iconAspect = "square" } = props;
 
 	let iconType: IconType = IconType.uri;
 
@@ -99,29 +123,45 @@ function IconBase(props: IIconBaseProps) {
 	}
 
 	// Everyone starts the same size
-	let iconClassName = "block overflow-hidden bg-contain object-contain";
-	let iconWidthHeightClassName = "";
+	let bubbleClassName = "flex items-center justify-center overflow-hidden bg-contain object-contain";
+	let iconWrapperWidthHeightClassName = "";
+	let iconItselfWidthHeightClassName = "";
 
 	switch (iconAspect) {
 		case "width":
-			iconWidthHeightClassName = "w-16";
+			iconItselfWidthHeightClassName = "w-16";
+			iconWrapperWidthHeightClassName += " w-16";
+
+			if (iconBubblePadding) {
+				iconItselfWidthHeightClassName = "w-14";
+			}
 			break;
 		case "height":
-			iconWidthHeightClassName = "h-16";
+			iconItselfWidthHeightClassName = "h-16";
+			iconWrapperWidthHeightClassName += " h-16";
+
+			if (iconBubblePadding) {
+				iconItselfWidthHeightClassName = "h-14";
+			}
 			break;
 		case "square":
 		default:
-			iconWidthHeightClassName = "w-16 h-16";
+			iconItselfWidthHeightClassName = "w-16 h-16";
+			iconWrapperWidthHeightClassName += " w-16 h-16";
+
+			if (iconBubblePadding) {
+				iconItselfWidthHeightClassName = "w-14 h-14";
+			}
 			break;
 	}
 
-	iconClassName += " " + iconWidthHeightClassName;
+	bubbleClassName += iconWrapperWidthHeightClassName;
 
 	if (is.null(iconBubble) || iconBubble !== false) {
-		iconClassName += " rounded-2xl border border-black/5 shadow-sm";
+		bubbleClassName += " rounded-2xl border border-black/5 shadow-sm";
 	}
 
-	const iconStyle: string[] = [];
+	const bubbleStyle: string[] = [];
 
 	switch (iconType) {
 		case IconType.uri:
@@ -130,21 +170,21 @@ function IconBase(props: IIconBaseProps) {
 			// Default to bubble and no background for URI, Dashboard and selfhst icons
 			if (!is.null(iconBG)) {
 				if (iconBG?.startsWith("#")) {
-					iconStyle.push(`background-color: ${iconBG}`);
+					bubbleStyle.push(`background-color: ${iconBG}`);
 				} else {
-					iconClassName += ` bg-${iconBG}`;
+					bubbleClassName += ` bg-${iconBG}`;
 				}
 			}
 			break;
 		case IconType.material:
 			// Material icons get a color and a background by default, then an optional bubble
 			if (is.null(iconBG)) {
-				iconClassName += ` bg-slate-200 dark:bg-gray-900`;
+				bubbleClassName += ` bg-slate-200 dark:bg-gray-900`;
 			} else {
 				if (iconBG?.startsWith("#")) {
-					iconStyle.push(`background-color: ${iconBG}`);
+					bubbleStyle.push(`background-color: ${iconBG}`);
 				} else {
-					iconClassName += ` bg-${iconBG}`;
+					bubbleClassName += ` bg-${iconBG}`;
 				}
 			}
 
@@ -164,36 +204,34 @@ function IconBase(props: IIconBaseProps) {
 
 	switch (iconType) {
 		case IconType.uri:
-			return `<span class="flex items-center ${iconWidthHeightClassName}"><img src="${icon}" alt="" class="${
-				iconClassName || ""
-			}" style="${unwrapStyles(iconStyle)}" /></span>`;
+			return `<span class="${bubbleClassName}" style="${unwrapStyles(
+				bubbleStyle
+			)}"><img src="${icon}" alt="" class="${iconItselfWidthHeightClassName || ""}" /></span>`;
 		case IconType.dashboard:
 			icon = icon.replace(".png", "").replace(".jpg", "").replace(".svg", "");
-			return `
+			return `<span class="${bubbleClassName}" style="${unwrapStyles(bubbleStyle)}">
 				<img
 					src=${`https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/${icon}.png`}
 					alt=""
-					class="${iconClassName || ""}"
-					style="${unwrapStyles(iconStyle)}"
+					class="${iconItselfWidthHeightClassName || ""}"
 				/>
-			`;
+			</span>`;
 		case IconType.selfhst:
 			icon = icon.replace("selfhst-", "").replace(".png", "").replace(".svg", "");
-			return `
+			return `<span class="${bubbleClassName}" style="${unwrapStyles(bubbleStyle)}">
 				<img
 					src=${`https://cdn.jsdelivr.net/gh/selfhst/icons/png/${icon}.png`}
 					alt=""
-					class="${iconClassName || ""}"
-					style="${unwrapStyles(iconStyle)}"
+					class="${iconItselfWidthHeightClassName || ""}"
 				/>
-			`;
+			</span>`;
 		case IconType.material:
 			icon = icon.replace("mdi-", "").replace(".svg", "");
-
 			return `
-				<span class="${iconClassName || ""}" style="${unwrapStyles(iconStyle)}">
+			<span class="${bubbleClassName}" style="${unwrapStyles(bubbleStyle)}">
+				<span>
 					<span
-						class="block ${iconWidthHeightClassName} ${mdiIconColorFull} overflow-hidden"
+						class="flex items-center justify-center ${iconItselfWidthHeightClassName} ${mdiIconColorFull} overflow-hidden"
 						style="${unwrapStyles(
 							mdiIconStyle.concat([
 								`mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/${icon}.svg) no-repeat center / contain`,
@@ -201,6 +239,7 @@ function IconBase(props: IIconBaseProps) {
 							])
 						)}"
 					></span>
+				</span>
 				</span>
 			`;
 	}
