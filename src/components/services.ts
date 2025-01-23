@@ -5,14 +5,15 @@ import { Icon } from "./icon";
 
 interface IServicesProps {
 	services: IService[];
+	categoryBubblePadding: boolean;
 }
 
 export const Services = function (props: IServicesProps) {
-	const { services } = props;
+	const { services, categoryBubblePadding } = props;
 
 	return `
 		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
-			${services.map((service, index) => Service({ index, service })).join("")}
+			${services.map((service, index) => Service({ index, service, categoryBubblePadding })).join("")}
 		</ul>
 	`;
 };
@@ -20,12 +21,14 @@ export const Services = function (props: IServicesProps) {
 interface IServiceProps {
 	service: IService;
 	index: number;
+	categoryBubblePadding: boolean;
 }
 
 function Service(props: IServiceProps) {
-	const { service, index } = props;
+	const { service, index, categoryBubblePadding } = props;
 
-	const { name, uri, description, icon, iconBG, iconBubble, iconColor, iconAspect, newWindow } = service;
+	const { name, uri, description, icon, iconBG, iconBubble, iconBubblePadding, iconColor, iconAspect, newWindow } =
+		service;
 
 	return `
 		<li class="p-4">
@@ -45,6 +48,8 @@ function Service(props: IServiceProps) {
 							iconBubble,
 							iconAspect,
 							newWindow,
+							categoryBubblePadding,
+							iconBubblePadding,
 						})}</span>`
 					: ``
 			}

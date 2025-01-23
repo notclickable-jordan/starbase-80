@@ -53,7 +53,7 @@ const ServiceCatalog = function (props: ICatalogProps) {
 	return `
 		<li class="${liClassName}">
 			<h2 class="${categoryClassName}">${catalog.category}</h2>
-			${Services({ services: catalog.services })}
+			${Services({ services: catalog.services, categoryBubblePadding: catalog.iconBubblePadding || false })}
 		</li>
 	`;
 };
