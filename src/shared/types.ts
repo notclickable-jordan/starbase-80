@@ -1,4 +1,4 @@
-export interface IServiceCatalog {
+export interface IServiceCategory {
 	category: string;
 	bubble?: boolean;
 	bubbleBGLight?: string;

@@ -34,7 +34,7 @@ Inspired by [Ben Phelps' Homepage](https://gethomepage.dev/) and [Umbrel](https:
 
 ## 1.6.1
 
--   Added `iconBubblePadding` boolean option to categories and services. Only applies to non-URI icons.
+-   Added `iconBubblePadding` boolean option to categories and services
 
 ## 1.6.0
 
@@ -195,7 +195,7 @@ services:
 | bubble            | false   | false    | Shows a bubble around category                                                                                                                            |
 | bubbleBGLight     |         | false    | Background color for category bubbles. Must be a [Tailwind color](https://tailwindcss.com/docs/background-color) (do not prefix with `bg-`).              |
 | bubbleBGDark      |         | false    | Background color for category bubbles in dark mode. Must be a [Tailwind color](https://tailwindcss.com/docs/background-color) (do not prefix with `bg-`). |
-| iconBubblePadding | false   | false    | If `true`, adds a slight padding around each service's icons which are in a bubble. Only applies to non-URI icons.                                        |
+| iconBubblePadding | false   | false    | If `true`, adds a slight padding around each service's icons which are in a bubble.                                                                       |
 | services          |         | true     | Array of services                                                                                                                                         |
 
 ## Service variables

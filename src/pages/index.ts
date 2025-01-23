@@ -3,7 +3,7 @@ import { ServiceCatalogList } from "../components/service-catalogs";
 import userServicesOld from "../config.json";
 import userServices from "../config/config.json";
 import { is } from "../shared/is";
-import { IServiceCatalog } from "../shared/types";
+import { IServiceCategory } from "../shared/types";
 import { SHOWHEADER, SHOWHEADERLINE, SHOWHEADERTOP } from "../variables";
 
 interface IProps {
@@ -13,7 +13,7 @@ interface IProps {
 
 export const IndexPage = function (props: IProps): string {
 	const { icon, title } = props;
-	const myServices = (is.null(userServicesOld) ? userServices : userServicesOld) as IServiceCatalog[];
+	const myServices = (is.null(userServicesOld) ? userServices : userServicesOld) as IServiceCategory[];
 
 	let headerClassName = "p-4";
 
@@ -49,15 +49,16 @@ export const IndexPage = function (props: IProps): string {
 		<div class="min-h-screen">
 			<div class="${pageWrapperClassName}">
 				${
-					SHOWHEADER ?
-					`
+					SHOWHEADER
+						? `
 					<div class="${headerClassName}">
 					${Header({ icon, title })}
 					</div>
-				` : ``
+				`
+						: ``
 				}
 				<div class="${serviceCatalogListWrapperClassName}">
-				${ServiceCatalogList({ catalogs: myServices })}
+				${ServiceCatalogList({ categories: myServices })}
 				</div>
 			</div>
 		</div>

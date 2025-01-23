@@ -5,7 +5,7 @@ import { Icon } from "./icon";
 
 interface IServicesProps {
 	services: IService[];
-	categoryBubblePadding: boolean;
+	categoryBubblePadding?: boolean;
 }
 
 export const Services = function (props: IServicesProps) {
@@ -21,7 +21,7 @@ export const Services = function (props: IServicesProps) {
 interface IServiceProps {
 	service: IService;
 	index: number;
-	categoryBubblePadding: boolean;
+	categoryBubblePadding?: boolean;
 }
 
 function Service(props: IServiceProps) {

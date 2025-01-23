@@ -34,7 +34,7 @@ interface IProps {
 	iconAspect?: IconAspect;
 	uri?: string;
 	newWindow?: boolean;
-	categoryBubblePadding: boolean;
+	categoryBubblePadding?: boolean;
 }
 
 export const Icon = function (props: IProps): string {
@@ -123,7 +123,7 @@ function IconBase(props: IIconBaseProps) {
 	}
 
 	// Everyone starts the same size
-	let iconWrapperClassName = "flex items-center justify-center overflow-hidden bg-contain object-contain";
+	let bubbleClassName = "flex items-center justify-center overflow-hidden bg-contain object-contain";
 	let iconWrapperWidthHeightClassName = "";
 	let iconItselfWidthHeightClassName = "";
 
@@ -155,13 +155,13 @@ function IconBase(props: IIconBaseProps) {
 			break;
 	}
 
-	iconWrapperClassName += iconWrapperWidthHeightClassName;
+	bubbleClassName += iconWrapperWidthHeightClassName;
 
 	if (is.null(iconBubble) || iconBubble !== false) {
-		iconWrapperClassName += " rounded-2xl border border-black/5 shadow-sm";
+		bubbleClassName += " rounded-2xl border border-black/5 shadow-sm";
 	}
 
-	const iconStyle: string[] = [];
+	const bubbleStyle: string[] = [];
 
 	switch (iconType) {
 		case IconType.uri:
@@ -170,21 +170,21 @@ function IconBase(props: IIconBaseProps) {
 			// Default to bubble and no background for URI, Dashboard and selfhst icons
 			if (!is.null(iconBG)) {
 				if (iconBG?.startsWith("#")) {
-					iconStyle.push(`background-color: ${iconBG}`);
+					bubbleStyle.push(`background-color: ${iconBG}`);
 				} else {
-					iconWrapperClassName += ` bg-${iconBG}`;
+					bubbleClassName += ` bg-${iconBG}`;
 				}
 			}
 			break;
 		case IconType.material:
 			// Material icons get a color and a background by default, then an optional bubble
 			if (is.null(iconBG)) {
-				iconWrapperClassName += ` bg-slate-200 dark:bg-gray-900`;
+				bubbleClassName += ` bg-slate-200 dark:bg-gray-900`;
 			} else {
 				if (iconBG?.startsWith("#")) {
-					iconStyle.push(`background-color: ${iconBG}`);
+					bubbleStyle.push(`background-color: ${iconBG}`);
 				} else {
-					iconWrapperClassName += ` bg-${iconBG}`;
+					bubbleClassName += ` bg-${iconBG}`;
 				}
 			}
 
@@ -204,33 +204,32 @@ function IconBase(props: IIconBaseProps) {
 
 	switch (iconType) {
 		case IconType.uri:
-			return `<span class="flex items-center ${iconWrapperWidthHeightClassName}"><img src="${icon}" alt="" class="${
-				iconWrapperClassName || ""
-			}" style="${unwrapStyles(iconStyle)}" /></span>`;
+			return `<span class="${bubbleClassName}" style="${unwrapStyles(
+				bubbleStyle
+			)}"><img src="${icon}" alt="" class="${iconItselfWidthHeightClassName || ""}" /></span>`;
 		case IconType.dashboard:
 			icon = icon.replace(".png", "").replace(".jpg", "").replace(".svg", "");
-			return `
+			return `<span class="${bubbleClassName}" style="${unwrapStyles(bubbleStyle)}">
 				<img
 					src=${`https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/${icon}.png`}
 					alt=""
-					class="${iconWrapperClassName || ""}"
-					style="${unwrapStyles(iconStyle)}"
+					class="${iconItselfWidthHeightClassName || ""}"
 				/>
-			`;
+			</span>`;
 		case IconType.selfhst:
 			icon = icon.replace("selfhst-", "").replace(".png", "").replace(".svg", "");
-			return `
+			return `<span class="${bubbleClassName}" style="${unwrapStyles(bubbleStyle)}">
 				<img
 					src=${`https://cdn.jsdelivr.net/gh/selfhst/icons/png/${icon}.png`}
 					alt=""
-					class="${iconWrapperClassName || ""}"
-					style="${unwrapStyles(iconStyle)}"
+					class="${iconItselfWidthHeightClassName || ""}"
 				/>
-			`;
+			</span>`;
 		case IconType.material:
 			icon = icon.replace("mdi-", "").replace(".svg", "");
 			return `
-				<span class="${iconWrapperClassName || ""}" style="${unwrapStyles(iconStyle)}">
+			<span class="${bubbleClassName}" style="${unwrapStyles(bubbleStyle)}">
+				<span>
 					<span
 						class="flex items-center justify-center ${iconItselfWidthHeightClassName} ${mdiIconColorFull} overflow-hidden"
 						style="${unwrapStyles(
@@ -240,6 +239,7 @@ function IconBase(props: IIconBaseProps) {
 							])
 						)}"
 					></span>
+				</span>
 				</span>
 			`;
 	}
