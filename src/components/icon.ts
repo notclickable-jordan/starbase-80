@@ -123,7 +123,7 @@ function IconBase(props: IIconBaseProps) {
 	}
 
 	// Everyone starts the same size
-	let bubbleClassName = "flex items-center justify-center overflow-hidden bg-contain object-contain";
+	let bubbleClassName = "flex items-center justify-center overflow-hidden bg-contain";
 	let iconWrapperWidthHeightClassName = "";
 	let iconItselfWidthHeightClassName = "";
 
@@ -146,11 +146,11 @@ function IconBase(props: IIconBaseProps) {
 			break;
 		case "square":
 		default:
-			iconItselfWidthHeightClassName = "w-16 h-16";
+			iconItselfWidthHeightClassName = "w-16 h-16 object-contain";
 			iconWrapperWidthHeightClassName += " w-16 h-16";
 
 			if (iconBubblePadding) {
-				iconItselfWidthHeightClassName = "w-14 h-14";
+				iconItselfWidthHeightClassName = "w-14 h-14 object-contain";
 			}
 			break;
 	}
