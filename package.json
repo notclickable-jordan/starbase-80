@@ -5,7 +5,7 @@
 	"repository": {
 		"url": "https://github.com/notclickable-jordan/starbase-80/"
 	},
-	"version": "1.4.0",
+	"version": "1.6.2",
 	"type": "commonjs",
 	"scripts": {
 		"build": "tsc && node ./dist/index.js && npm run html && npm run tailwind && npm run css-cache-break",

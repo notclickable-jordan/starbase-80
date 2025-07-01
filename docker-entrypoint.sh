@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Set up signal handling for faster shutdown
+trap 'nginx -s quit; exit 0' TERM QUIT
+
 # Escape slashes
 LOGO=$(echo "${LOGO}" | sed 's/\//\\\//g')
 

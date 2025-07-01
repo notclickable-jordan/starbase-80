@@ -7,6 +7,17 @@ const indexFileInPath = path.join(__dirname, "../", "index.html");
 const indexFileOutPath = path.join(__dirname, "../", "./public", "index.html");
 
 async function start(): Promise<void> {
+	// Add signal handlers for graceful shutdown during build
+	process.on("SIGTERM", () => {
+		console.log("Build process received SIGTERM, exiting...");
+		process.exit(0);
+	});
+
+	process.on("SIGINT", () => {
+		console.log("Build process received SIGINT, exiting...");
+		process.exit(0);
+	});
+
 	const index = await sbReadFile(indexFileInPath);
 
 	const newText = IndexPage({ icon: PAGEICON, title: PAGETITLE });

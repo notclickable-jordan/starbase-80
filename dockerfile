@@ -42,6 +42,9 @@ ENV HOVER="none"
 COPY version /
 EXPOSE 4173
 
+# Add signal handling for faster shutdown
+STOPSIGNAL SIGQUIT
+
 RUN chmod +x /app/docker-entrypoint.sh
 ENTRYPOINT ["/app/docker-entrypoint.sh"]
 
