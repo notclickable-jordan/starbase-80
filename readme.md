@@ -32,6 +32,10 @@ Inspired by [Ben Phelps' Homepage](https://gethomepage.dev/) and [Umbrel](https:
 
 # Change history
 
+## 1.6.3
+
+-   Fixed faster shutdown on Docker container
+
 ## 1.6.2
 
 -   Faster shutdown on Docker container

@@ -1,7 +1,20 @@
 #!/bin/sh
 
-# Set up signal handling for faster shutdown
-trap 'nginx -s quit; exit 0' TERM QUIT
+# PID tracking for proper signal handling
+nginx_pid=""
+
+# Signal handler for fast shutdown
+cleanup() {
+    echo "Received shutdown signal, stopping nginx..."
+    if [ -n "$nginx_pid" ]; then
+        kill -QUIT "$nginx_pid" 2>/dev/null
+        wait "$nginx_pid" 2>/dev/null
+    fi
+    exit 0
+}
+
+# Set up signal traps
+trap cleanup TERM INT QUIT
 
 # Escape slashes
 LOGO=$(echo "${LOGO}" | sed 's/\//\\\//g')
@@ -32,4 +45,14 @@ if [ "$THEME" = "dark" ]; then sed -i -e 's/<html/<html class="dark"/' /app/inde
 # Hover effect
 if [ "$HOVER" = "underline" ]; then sed -i -e 's/@apply no-underline;/@apply underline;/g' /app/src/tailwind.css; fi
 
-exec "$@"
+# Build the application
+echo "Building application..."
+npm run build
+
+# Start nginx and track its PID
+echo "Starting nginx..."
+"$@" &
+nginx_pid=$!
+
+# Wait for nginx to finish, but respond to signals
+wait "$nginx_pid"

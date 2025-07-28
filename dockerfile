@@ -11,7 +11,8 @@ LABEL \
   org.opencontainers.image.authors="Jordan Roher <jordan@notclickable.com>" \
   org.opencontainers.image.title="starbase-80" \
   org.opencontainers.image.description="A nice app grid of icons for Docker services" \
-  org.opencontainers.image.created=$BUILD_DATE
+  org.opencontainers.image.created=$BUILD_DATE \
+  org.opencontainers.image.stop-timeout=1
 
 WORKDIR /app
 
@@ -22,6 +23,7 @@ COPY . .
 
 # Copy the nginx config to the correct folder
 COPY default.conf /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/nginx.conf
 
 ENV NODE_ENV=production
 
@@ -43,9 +45,9 @@ COPY version /
 EXPOSE 4173
 
 # Add signal handling for faster shutdown
-STOPSIGNAL SIGQUIT
+STOPSIGNAL SIGTERM
 
 RUN chmod +x /app/docker-entrypoint.sh
 ENTRYPOINT ["/app/docker-entrypoint.sh"]
 
-CMD ["sh", "-c", "npm run build && nginx -g 'daemon off;'"]
+CMD ["nginx", "-g", "daemon off;"]
