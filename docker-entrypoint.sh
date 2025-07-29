@@ -41,7 +41,7 @@ sed -i -e 's/background-color: theme(colors\.black)\; \/\* category dark \*\//ba
 # Light/dark theme
 if [ "$THEME" = "dark" ]; then sed -i -e 's/darkMode: "media"/darkMode: "selector"/g' /app/tailwind.config.js; fi
 if [ "$THEME" = "dark" ]; then sed -i -e 's/<html class="auto"/<html class="dark"/' /app/index.html; fi
-if [ "$THEME" = "light" ]; then sed -i -e 's/darkMode: "media"/darkMode: "class"/g' /app/tailwind.config.js; fi
+if [ "$THEME" = "light" ]; then sed -i -e 's/darkMode: "media"/darkMode: "selector"/g' /app/tailwind.config.js; fi
 if [ "$THEME" = "light" ]; then sed -i -e 's/<html class="auto"/<html class="light"/' /app/index.html; fi
 
 # Hover effect
