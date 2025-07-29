@@ -38,9 +38,11 @@ sed -i -e 's/background-color: theme(colors\.gray\.950)/background-color: '"${BG
 sed -i -e 's/background-color: theme(colors\.white)\; \/\* category light \*\//background-color: '"${CATEGORYBUBBLECOLORLIGHT}"\;'/g' /app/src/tailwind.css
 sed -i -e 's/background-color: theme(colors\.black)\; \/\* category dark \*\//background-color: '"${CATEGORYBUBBLECOLORDARK}"\;'/g' /app/src/tailwind.css
 
-# Dark theme
+# Light/dark theme
 if [ "$THEME" = "dark" ]; then sed -i -e 's/darkMode: "media"/darkMode: "selector"/g' /app/tailwind.config.js; fi
-if [ "$THEME" = "dark" ]; then sed -i -e 's/<html/<html class="dark"/' /app/index.html; fi
+if [ "$THEME" = "dark" ]; then sed -i -e 's/<html class="auto"/<html class="dark"/' /app/index.html; fi
+if [ "$THEME" = "light" ]; then sed -i -e 's/darkMode: "media"/darkMode: "selector"/g' /app/tailwind.config.js; fi
+if [ "$THEME" = "light" ]; then sed -i -e 's/<html class="auto"/<html class="light"/' /app/index.html; fi
 
 # Hover effect
 if [ "$HOVER" = "underline" ]; then sed -i -e 's/@apply no-underline;/@apply underline;/g' /app/src/tailwind.css; fi

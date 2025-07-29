@@ -32,6 +32,10 @@ Inspired by [Ben Phelps' Homepage](https://gethomepage.dev/) and [Umbrel](https:
 
 # Change history
 
+## 1.6.4
+
+-   Added forced light theme option
+
 ## 1.6.3
 
 -   Fixed faster shutdown on Docker container
@@ -126,7 +130,7 @@ services:
 | CATEGORYBUBBLECOLORLIGHT |          | theme(colors.white)    | Background color for category bubbles (if enabled) in light mode. Set to any hex color or Tailwind color using the theme syntax. |
 | CATEGORYBUBBLECOLORDARK  |          | theme(colors.black)    | Background color for category bubbles (if enabled) in dark mode. Set to any hex color or Tailwind color using the theme syntax.  |
 | NEWWINDOW                |          | true                   | Set to false to not have links open in a new window                                                                              |
-| THEME                    |          | auto                   | Set to "auto", or "dark" to force a display mode (e.g. dark mode)                                                                |
+| THEME                    |          | auto                   | Set to "auto", "light", or "dark" to force a display mode (e.g. dark mode)                                                       |
 | HOVER                    |          | none                   | Set to "underline" for an underline effect on titles when hovering/focusing on that service                                      |
 
 ## Volumes (bind mounts)
