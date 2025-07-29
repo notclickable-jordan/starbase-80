@@ -7,27 +7,24 @@ html {
 }
 
 @media (prefers-color-scheme: dark) {
-	html {
+	html.auto {
 		background-color: theme(colors.gray.950);
+		color: theme(colors.slate.200);
+	}
+
+	html.dark {
+		background-color: theme(colors.gray.950);
+		color: theme(colors.slate.200);
 	}
 }
 
 html.dark {
 	background-color: theme(colors.gray.950);
+	color: theme(colors.slate.200);
 }
 
 body {
 	min-height: 100vh;
-}
-
-@media (prefers-color-scheme: dark) {
-	body {
-		color: theme(colors.slate.200);
-	}
-}
-
-html.dark body {
-	color: theme(colors.slate.200);
 }
 
 h1 {
@@ -47,7 +44,10 @@ a:focus h3 {
 }
 
 @media (prefers-color-scheme: dark) {
-	.var-category-bubble-bg {
-		background-color: theme(colors.black); /* category dark */
+	html.auto,
+	html.dark {
+		.var-category-bubble-bg {
+			background-color: theme(colors.black); /* category dark */
+		}
 	}
 }

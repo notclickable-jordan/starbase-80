@@ -13,6 +13,8 @@
 		"source.fixAll": "explicit",
 		"source.organizeImports": "explicit"
 	},
+	"emmet.showExpandedAbbreviation": "never",
+	"css.customData": [".vscode/tailwind.json"],
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"editor.tabSize": 4
 }
