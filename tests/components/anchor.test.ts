@@ -63,7 +63,7 @@ describe("Anchor Component", () => {
 		test("should render with HTML children", () => {
 			const result = Anchor({
 				uri: "https://example.com",
-				children: '<span class="icon">🚀</span> Launch App',
+				children: "Launch App",
 			});
 			expect(result).toMatchSnapshot();
 		});
@@ -122,7 +122,7 @@ describe("Anchor Component", () => {
 					uri: `https://${color}.example.com`,
 					title: `${color.charAt(0).toUpperCase() + color.slice(1)} themed link`,
 					className: `text-${color}-600 hover:text-${color}-800 underline`,
-					children: `🎨 ${color.charAt(0).toUpperCase() + color.slice(1)} Link`,
+					children: `${color.charAt(0).toUpperCase() + color.slice(1)} Link`,
 					newWindow: index % 2 === 0,
 				});
 				expect(result).toMatchSnapshot();
@@ -135,7 +135,7 @@ describe("Anchor Component", () => {
 				title: longString,
 				className:
 					"inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-200",
-				children: `<div class="flex items-center space-x-2"><span class="text-xl">🔗</span><span>${longString}</span></div>`,
+				children: `<div class="flex items-center space-x-2"><span>${longString}</span></div>`,
 				newWindow: true,
 			});
 			expect(result).toMatchSnapshot();

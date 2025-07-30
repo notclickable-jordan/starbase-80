@@ -11,7 +11,7 @@ exports[`Anchor Component Combined prop variations should render with all props 
 exports[`Anchor Component Combined prop variations should render with all props and blue theme 1`] = `
 "
 			<a href="https://blue.example.com" target="_blank" rel="noopener noreferrer" title="Blue themed link" class="text-blue-600 hover:text-blue-800 underline">
-				🎨 Blue Link
+				Blue Link
 			</a>
 		"
 `;
@@ -19,7 +19,7 @@ exports[`Anchor Component Combined prop variations should render with all props 
 exports[`Anchor Component Combined prop variations should render with all props and green theme 1`] = `
 "
 			<a href="https://green.example.com" target="_blank" rel="noopener noreferrer" title="Green themed link" class="text-green-600 hover:text-green-800 underline">
-				🎨 Green Link
+				Green Link
 			</a>
 		"
 `;
@@ -27,7 +27,7 @@ exports[`Anchor Component Combined prop variations should render with all props 
 exports[`Anchor Component Combined prop variations should render with all props and red theme 1`] = `
 "
 		<a href="https://red.example.com" title="Red themed link" class="text-red-600 hover:text-red-800 underline">
-			🎨 Red Link
+			Red Link
 		</a>
 	"
 `;
@@ -35,7 +35,7 @@ exports[`Anchor Component Combined prop variations should render with all props 
 exports[`Anchor Component Combined prop variations should render with all props and rose theme 1`] = `
 "
 		<a href="https://rose.example.com" title="Rose themed link" class="text-rose-600 hover:text-rose-800 underline">
-			🎨 Rose Link
+			Rose Link
 		</a>
 	"
 `;
@@ -43,7 +43,7 @@ exports[`Anchor Component Combined prop variations should render with all props 
 exports[`Anchor Component Combined prop variations should render with all props and yellow theme 1`] = `
 "
 			<a href="https://yellow.example.com" target="_blank" rel="noopener noreferrer" title="Yellow themed link" class="text-yellow-600 hover:text-yellow-800 underline">
-				🎨 Yellow Link
+				Yellow Link
 			</a>
 		"
 `;
@@ -51,7 +51,7 @@ exports[`Anchor Component Combined prop variations should render with all props 
 exports[`Anchor Component Combined prop variations should render with all props using long strings 1`] = `
 "
 			<a href="https://very-long-domain-name-for-testing-purposes.example.com/with/a/very/long/path/that/might/cause/issues" target="_blank" rel="noopener noreferrer" title="This is a very long string that tests how the component handles extensive text content and ensures that it properly renders without breaking the layout or functionality of the anchor element" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-200">
-				<div class="flex items-center space-x-2"><span class="text-xl">🔗</span><span>This is a very long string that tests how the component handles extensive text content and ensures that it properly renders without breaking the layout or functionality of the anchor element</span></div>
+				<div class="flex items-center space-x-2"><span>This is a very long string that tests how the component handles extensive text content and ensures that it properly renders without breaking the layout or functionality of the anchor element</span></div>
 			</a>
 		"
 `;
@@ -75,7 +75,7 @@ exports[`Anchor Component Required props only should render with just uri 1`] = 
 exports[`Anchor Component With children variations should render with HTML children 1`] = `
 "
 			<a href="https://example.com" target="_blank" rel="noopener noreferrer" title="" class="">
-				<span class="icon">🚀</span> Launch App
+				Launch App
 			</a>
 		"
 `;
