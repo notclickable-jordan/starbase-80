@@ -1,0 +1,907 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Services Component Edge cases should handle services with empty strings 1`] = `
+"
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+			<a href="" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1"></h3>
+			
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`Services Component Edge cases should handle services with special characters 1`] = `
+"
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+			<a href="https://special-chars.example.com/?param=value&other=123" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex">
+			<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-slate-200 dark:bg-gray-900" style="">
+				<span>
+					<span
+						class="flex items-center justify-center w-16 h-16 object-contain bg-black dark:bg-white overflow-hidden"
+						style="mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/star.svg) no-repeat center / contain;webkit-mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/star.svg) no-repeat center / contain"
+					></span>
+				</span>
+				</span>
+			</span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Service™ & Co. - "The Best" <Solution></h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description with special chars: @#$%^&*()[]{}|\\;:'",.<>?</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`Services Component Large service collections should render many services efficiently 1`] = `
+"
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+			<a href="https://service1.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex">
+			<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-slate-200 dark:bg-gray-900" style="">
+				<span>
+					<span
+						class="flex items-center justify-center w-14 h-14 object-contain bg-blue overflow-hidden"
+						style="mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/star.svg) no-repeat center / contain;webkit-mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/star.svg) no-repeat center / contain"
+					></span>
+				</span>
+				</span>
+			</span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Service 1</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for service 1</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		<li class="p-4">
+		
+		<a href="https://service2.example.com" title="" class="flex gap-4">
+			<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16" style=""><img src="/icon.png" alt="" class="w-14 h-14 object-contain" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Service 2</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for service 2</p>
+		</div>
+		</a>
+	
+			
+		</li>
+	
+		<li class="p-4">
+		
+			<a href="https://service3.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16" style="">
+				<img
+					src=https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/nextcloud.png
+					alt=""
+					class="w-14 h-14 object-contain"
+				/>
+			</span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Service 3</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for service 3</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		<li class="p-4">
+		
+		<a href="https://service4.example.com" title="" class="flex gap-4">
+			<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style="">
+				<img
+					src=https://cdn.jsdelivr.net/gh/selfhst/icons/png/jellyfin.png
+					alt=""
+					class="w-14 h-14 object-contain"
+				/>
+			</span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Service 4</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for service 4</p>
+		</div>
+		</a>
+	
+			
+		</li>
+	
+		<li class="p-4">
+		
+			<a href="https://service5.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex">
+			<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 bg-slate-200 dark:bg-gray-900" style="">
+				<span>
+					<span
+						class="flex items-center justify-center w-14 h-14 object-contain bg-yellow overflow-hidden"
+						style="mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/star.svg) no-repeat center / contain;webkit-mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/star.svg) no-repeat center / contain"
+					></span>
+				</span>
+				</span>
+			</span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Service 5</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for service 5</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		<li class="p-4">
+		
+		<a href="https://service6.example.com" title="" class="flex gap-4">
+			<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16" style=""><img src="/icon.png" alt="" class="w-14 h-14 object-contain" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Service 6</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for service 6</p>
+		</div>
+		</a>
+	
+			
+		</li>
+	
+		<li class="p-4">
+		
+			<a href="https://service7.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style="">
+				<img
+					src=https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/nextcloud.png
+					alt=""
+					class="w-14 h-14 object-contain"
+				/>
+			</span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Service 7</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for service 7</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		<li class="p-4">
+		
+		<a href="https://service8.example.com" title="" class="flex gap-4">
+			<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16" style="">
+				<img
+					src=https://cdn.jsdelivr.net/gh/selfhst/icons/png/jellyfin.png
+					alt=""
+					class="w-14 h-14 object-contain"
+				/>
+			</span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Service 8</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for service 8</p>
+		</div>
+		</a>
+	
+			
+		</li>
+	
+		<li class="p-4">
+		
+			<a href="https://service9.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex">
+			<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 bg-slate-200 dark:bg-gray-900" style="">
+				<span>
+					<span
+						class="flex items-center justify-center w-14 h-14 object-contain bg-red overflow-hidden"
+						style="mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/star.svg) no-repeat center / contain;webkit-mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/star.svg) no-repeat center / contain"
+					></span>
+				</span>
+				</span>
+			</span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Service 9</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for service 9</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		<li class="p-4">
+		
+		<a href="https://service10.example.com" title="" class="flex gap-4">
+			<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icon.png" alt="" class="w-14 h-14 object-contain" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Service 10</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for service 10</p>
+		</div>
+		</a>
+	
+			
+		</li>
+	
+		<li class="p-4">
+		
+			<a href="https://service11.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16" style="">
+				<img
+					src=https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/nextcloud.png
+					alt=""
+					class="w-14 h-14 object-contain"
+				/>
+			</span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Service 11</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for service 11</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		<li class="p-4">
+		
+		<a href="https://service12.example.com" title="" class="flex gap-4">
+			<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16" style="">
+				<img
+					src=https://cdn.jsdelivr.net/gh/selfhst/icons/png/jellyfin.png
+					alt=""
+					class="w-14 h-14 object-contain"
+				/>
+			</span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Service 12</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for service 12</p>
+		</div>
+		</a>
+	
+			
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`Services Component Required props only should render with empty services array 1`] = `
+"
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		</ul>
+	"
+`;
+
+exports[`Services Component Required props only should render with multiple basic services 1`] = `
+"
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+			<a href="https://service1.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icons/service1.png" alt="" class="w-16 h-16 object-contain" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Service One</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for Service One</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		<li class="p-4">
+		
+			<a href="https://service2.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icons/service2.png" alt="" class="w-16 h-16 object-contain" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Service Two</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for Service Two</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		<li class="p-4">
+		
+			<a href="https://service3.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icons/service3.png" alt="" class="w-16 h-16 object-contain" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Service Three</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for Service Three</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`Services Component Required props only should render with single service 1`] = `
+"
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+			<a href="https://service0.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icons/service0.png" alt="" class="w-16 h-16 object-contain" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Single Service</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for Single Service</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`Services Component With categoryBubblePadding variations should render with categoryBubblePadding false 1`] = `
+"
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+			<a href="https://service0.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icons/service0.png" alt="" class="w-16 h-16 object-contain" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Unpadded Service</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for Unpadded Service</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`Services Component With categoryBubblePadding variations should render with categoryBubblePadding true 1`] = `
+"
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+			<a href="https://service0.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icons/service0.png" alt="" class="w-14 h-14 object-contain" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Padded Service</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for Padded Service</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`Services Component With color-themed services should render blue themed services 1`] = `
+"
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+			<a href="https://blue.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex">
+			<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-blue-100" style="">
+				<span>
+					<span
+						class="flex items-center justify-center w-14 h-14 object-contain bg-blue overflow-hidden"
+						style="mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/circle.svg) no-repeat center / contain;webkit-mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/circle.svg) no-repeat center / contain"
+					></span>
+				</span>
+				</span>
+			</span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Blue Service</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">A blue themed service</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`Services Component With color-themed services should render green themed services 1`] = `
+"
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+			<a href="https://green.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex">
+			<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-green-100" style="">
+				<span>
+					<span
+						class="flex items-center justify-center w-14 h-14 object-contain bg-green overflow-hidden"
+						style="mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/circle.svg) no-repeat center / contain;webkit-mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/circle.svg) no-repeat center / contain"
+					></span>
+				</span>
+				</span>
+			</span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Green Service</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">A green themed service</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`Services Component With color-themed services should render multiple color-themed services 1`] = `
+"
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+			<a href="https://blue.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex">
+			<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-blue-50" style="">
+				<span>
+					<span
+						class="flex items-center justify-center w-14 h-14 object-contain bg-blue overflow-hidden"
+						style="mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/blue.svg) no-repeat center / contain;webkit-mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/blue.svg) no-repeat center / contain"
+					></span>
+				</span>
+				</span>
+			</span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Blue Service</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">blue themed service description</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		<li class="p-4">
+		
+		<a href="https://rose.example.com" title="" class="flex gap-4">
+			<span class="flex-shrink-0 flex">
+			<span class="flex items-center justify-center overflow-hidden bg-contain w-16 rounded-2xl border border-black/5 shadow-sm bg-rose-50" style="">
+				<span>
+					<span
+						class="flex items-center justify-center w-16 bg-rose overflow-hidden"
+						style="mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/flower.svg) no-repeat center / contain;webkit-mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/flower.svg) no-repeat center / contain"
+					></span>
+				</span>
+				</span>
+			</span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Rose Service</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">rose themed service description</p>
+		</div>
+		</a>
+	
+			
+		</li>
+	
+		<li class="p-4">
+		
+			<a href="https://green.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex">
+			<span class="flex items-center justify-center overflow-hidden bg-contain h-16 rounded-2xl border border-black/5 shadow-sm bg-green-50" style="">
+				<span>
+					<span
+						class="flex items-center justify-center h-14 bg-green overflow-hidden"
+						style="mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/green.svg) no-repeat center / contain;webkit-mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/green.svg) no-repeat center / contain"
+					></span>
+				</span>
+				</span>
+			</span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Green Service</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">green themed service description</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		<li class="p-4">
+		
+		<a href="https://red.example.com" title="" class="flex gap-4">
+			<span class="flex-shrink-0 flex">
+			<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-red-50" style="">
+				<span>
+					<span
+						class="flex items-center justify-center w-16 h-16 object-contain bg-red overflow-hidden"
+						style="mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/red.svg) no-repeat center / contain;webkit-mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/red.svg) no-repeat center / contain"
+					></span>
+				</span>
+				</span>
+			</span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Red Service</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">red themed service description</p>
+		</div>
+		</a>
+	
+			
+		</li>
+	
+		<li class="p-4">
+		
+			<a href="https://yellow.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex">
+			<span class="flex items-center justify-center overflow-hidden bg-contain w-16 rounded-2xl border border-black/5 shadow-sm bg-yellow-50" style="">
+				<span>
+					<span
+						class="flex items-center justify-center w-14 bg-yellow overflow-hidden"
+						style="mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/yellow.svg) no-repeat center / contain;webkit-mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/yellow.svg) no-repeat center / contain"
+					></span>
+				</span>
+				</span>
+			</span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Yellow Service</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">yellow themed service description</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`Services Component With color-themed services should render red themed services 1`] = `
+"
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+		<a href="https://red.example.com" title="" class="flex gap-4">
+			<span class="flex-shrink-0 flex">
+			<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-red-100" style="">
+				<span>
+					<span
+						class="flex items-center justify-center w-16 h-16 object-contain bg-red overflow-hidden"
+						style="mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/circle.svg) no-repeat center / contain;webkit-mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/circle.svg) no-repeat center / contain"
+					></span>
+				</span>
+				</span>
+			</span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Red Service</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">A red themed service</p>
+		</div>
+		</a>
+	
+			
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`Services Component With color-themed services should render rose themed services 1`] = `
+"
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+		<a href="https://rose.example.com" title="" class="flex gap-4">
+			<span class="flex-shrink-0 flex">
+			<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-rose-100" style="">
+				<span>
+					<span
+						class="flex items-center justify-center w-16 h-16 object-contain bg-rose overflow-hidden"
+						style="mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/circle.svg) no-repeat center / contain;webkit-mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/circle.svg) no-repeat center / contain"
+					></span>
+				</span>
+				</span>
+			</span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Rose Service</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">A rose themed service</p>
+		</div>
+		</a>
+	
+			
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`Services Component With color-themed services should render yellow themed services 1`] = `
+"
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+			<a href="https://yellow.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex">
+			<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-yellow-100" style="">
+				<span>
+					<span
+						class="flex items-center justify-center w-14 h-14 object-contain bg-yellow overflow-hidden"
+						style="mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/circle.svg) no-repeat center / contain;webkit-mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/circle.svg) no-repeat center / contain"
+					></span>
+				</span>
+				</span>
+			</span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Yellow Service</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">A yellow themed service</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`Services Component With different icon types should render services with different icon types 1`] = `
+"
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+			<a href="https://http.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="https://example.com/icon.png" alt="" class="w-16 h-16 object-contain" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">HTTP Icon Service</h3>
+			
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		<li class="p-4">
+		
+			<a href="https://local.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/local-icon.png" alt="" class="w-16 h-16 object-contain" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Local Icon Service</h3>
+			
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		<li class="p-4">
+		
+			<a href="https://material.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex">
+			<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-slate-200 dark:bg-gray-900" style="">
+				<span>
+					<span
+						class="flex items-center justify-center w-16 h-16 object-contain bg-black dark:bg-white overflow-hidden"
+						style="mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/home.svg) no-repeat center / contain;webkit-mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/home.svg) no-repeat center / contain"
+					></span>
+				</span>
+				</span>
+			</span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Material Icon Service</h3>
+			
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		<li class="p-4">
+		
+			<a href="https://dashboard.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style="">
+				<img
+					src=https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/nextcloud.png
+					alt=""
+					class="w-16 h-16 object-contain"
+				/>
+			</span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Dashboard Icon Service</h3>
+			
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		<li class="p-4">
+		
+			<a href="https://selfhst.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style="">
+				<img
+					src=https://cdn.jsdelivr.net/gh/selfhst/icons/png/jellyfin.png
+					alt=""
+					class="w-16 h-16 object-contain"
+				/>
+			</span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">SelfHst Icon Service</h3>
+			
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`Services Component With long content should render service with long properties and all options 1`] = `
+"
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+		<a href="https://very-long-domain-name-for-testing-purposes.example.com/with/a/very/long/path/that/might/cause/issues" title="" class="flex gap-4">
+			<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 rounded-2xl border border-black/5 shadow-sm" style="background-color: #E8F4FD"><img src="https://very-long-domain.example.com/very/long/path/to/icon/with/very/descriptive/filename.png" alt="" class="w-14" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">This is a very long service name or description that tests how the component handles extensive text content and ensures that it properly renders without breaking the layout or functionality</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">This is a very long service name or description that tests how the component handles extensive text content and ensures that it properly renders without breaking the layout or functionality with additional context and more detailed information</p>
+		</div>
+		</a>
+	
+			
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`Services Component With long content should render services with long strings 1`] = `
+"
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+			<a href="https://very-long-service-name-1.example.com/with/long/path" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/very/long/path/to/icon/service1-with-long-filename.png" alt="" class="w-16 h-16 object-contain" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">This is a very long service name or description that tests how the component handles extensive text content and ensures that it properly renders without breaking the layout or functionality</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">This is a very long service name or description that tests how the component handles extensive text content and ensures that it properly renders without breaking the layout or functionality - extended description</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		<li class="p-4">
+		
+			<a href="https://very-long-service-name-2.example.com/with/long/path" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/very/long/path/to/icon/service2-with-long-filename.png" alt="" class="w-16 h-16 object-contain" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">This is a very long service name or description that tests how the component handles extensive text content and ensures that it properly renders without breaking the layout or functionality</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">This is a very long service name or description that tests how the component handles extensive text content and ensures that it properly renders without breaking the layout or functionality - extended description</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`Services Component With various service configurations should render service with all optional properties 1`] = `
+"
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+			<a href="https://complete.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex">
+			<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-blue-100" style="">
+				<span>
+					<span
+						class="flex items-center justify-center w-14 h-14 object-contain bg-blue overflow-hidden"
+						style="mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/star.svg) no-repeat center / contain;webkit-mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/star.svg) no-repeat center / contain"
+					></span>
+				</span>
+				</span>
+			</span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Complete Service</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">A service with all properties</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`Services Component With various service configurations should render service without description 1`] = `
+"
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+			<a href="https://nodesc.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icon.png" alt="" class="w-16 h-16 object-contain" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">No Description Service</h3>
+			
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`Services Component With various service configurations should render service without icon 1`] = `
+"
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+			<a href="https://noicon.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">No Icon Service</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Service without an icon</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`Services Component With various service configurations should render service without optional properties 1`] = `
+"
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+			<a href="https://minimal.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Minimal Service</h3>
+			
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		</ul>
+	"
+`;

@@ -1,0 +1,270 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Icon Component Combined prop variations should render with all props 1`] = `"<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-indigo-50" style=""><img src="https://example.com/complete-icon.png" alt="" class="w-14 h-14 object-contain" /></span>"`;
+
+exports[`Icon Component Combined prop variations should render with all props using long strings 1`] = `"<span class="flex items-center justify-center overflow-hidden bg-contain w-16 rounded-2xl border border-black/5 shadow-sm" style="background-color: #E8F4FD"><img src="https://very-long-domain-name.example.com/path/to/very/long/icon/filename/with/lots/of/descriptive/text.png" alt="" class="w-14" /></span>"`;
+
+exports[`Icon Component Combined prop variations should render with blue theme combination 1`] = `
+"
+			<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-blue-100" style="">
+				<span>
+					<span
+						class="flex items-center justify-center w-14 h-14 object-contain bg-blue overflow-hidden"
+						style="mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/star.svg) no-repeat center / contain;webkit-mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/star.svg) no-repeat center / contain"
+					></span>
+				</span>
+				</span>
+			"
+`;
+
+exports[`Icon Component Combined prop variations should render with green theme combination 1`] = `
+"
+			<span class="flex items-center justify-center overflow-hidden bg-contain h-16 rounded-2xl border border-black/5 shadow-sm bg-green-100" style="">
+				<span>
+					<span
+						class="flex items-center justify-center h-14 bg-green overflow-hidden"
+						style="mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/star.svg) no-repeat center / contain;webkit-mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/star.svg) no-repeat center / contain"
+					></span>
+				</span>
+				</span>
+			"
+`;
+
+exports[`Icon Component Combined prop variations should render with red theme combination 1`] = `
+"
+			<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-red-100" style="">
+				<span>
+					<span
+						class="flex items-center justify-center w-16 h-16 object-contain bg-red overflow-hidden"
+						style="mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/star.svg) no-repeat center / contain;webkit-mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/star.svg) no-repeat center / contain"
+					></span>
+				</span>
+				</span>
+			"
+`;
+
+exports[`Icon Component Combined prop variations should render with rose theme combination 1`] = `
+"
+			<span class="flex items-center justify-center overflow-hidden bg-contain w-16 rounded-2xl border border-black/5 shadow-sm bg-rose-100" style="">
+				<span>
+					<span
+						class="flex items-center justify-center w-16 bg-rose overflow-hidden"
+						style="mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/star.svg) no-repeat center / contain;webkit-mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/star.svg) no-repeat center / contain"
+					></span>
+				</span>
+				</span>
+			"
+`;
+
+exports[`Icon Component Combined prop variations should render with some optional props 1`] = `
+"
+			<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-slate-200 dark:bg-gray-900" style="">
+				<span>
+					<span
+						class="flex items-center justify-center w-16 h-16 object-contain bg-blue overflow-hidden"
+						style="mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/cog.svg) no-repeat center / contain;webkit-mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/cog.svg) no-repeat center / contain"
+					></span>
+				</span>
+				</span>
+			"
+`;
+
+exports[`Icon Component Combined prop variations should render with yellow theme combination 1`] = `
+"
+			<span class="flex items-center justify-center overflow-hidden bg-contain w-16 rounded-2xl border border-black/5 shadow-sm bg-yellow-100" style="">
+				<span>
+					<span
+						class="flex items-center justify-center w-14 bg-yellow overflow-hidden"
+						style="mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/star.svg) no-repeat center / contain;webkit-mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/star.svg) no-repeat center / contain"
+					></span>
+				</span>
+				</span>
+			"
+`;
+
+exports[`Icon Component Combined prop variations should render without icon (blank icon) 1`] = `
+"
+			<a href="https://example.com" target="_blank" rel="noopener noreferrer" title="Blank Icon Service" class="">
+				
+		<span
+			class="block w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-blue-300 overflow-hidden"
+		/>
+	
+			</a>
+		"
+`;
+
+exports[`Icon Component Combined prop variations should render without icon and without uri 1`] = `
+"
+		<span
+			class="block w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-rose-300 overflow-hidden"
+		/>
+	"
+`;
+
+exports[`Icon Component Required props only should render with just name and index 1`] = `
+"
+		<span
+			class="block w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-undefined-300 overflow-hidden"
+		/>
+	"
+`;
+
+exports[`Icon Component Required props only should render with long name 1`] = `
+"
+		<span
+			class="block w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-blue-300 overflow-hidden"
+		/>
+	"
+`;
+
+exports[`Icon Component With categoryBubblePadding variations should render with categoryBubblePadding false 1`] = `"<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icon.png" alt="" class="w-16 h-16 object-contain" /></span>"`;
+
+exports[`Icon Component With categoryBubblePadding variations should render with categoryBubblePadding true 1`] = `"<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icon.png" alt="" class="w-14 h-14 object-contain" /></span>"`;
+
+exports[`Icon Component With icon variations should render with HTTP URL icon 1`] = `"<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="https://example.com/icon.png" alt="" class="w-16 h-16 object-contain" /></span>"`;
+
+exports[`Icon Component With icon variations should render with dashboard icon 1`] = `
+"<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style="">
+				<img
+					src=https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/nextcloud.png
+					alt=""
+					class="w-16 h-16 object-contain"
+				/>
+			</span>"
+`;
+
+exports[`Icon Component With icon variations should render with local path icon 1`] = `"<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icons/service.png" alt="" class="w-16 h-16 object-contain" /></span>"`;
+
+exports[`Icon Component With icon variations should render with material design icon 1`] = `
+"
+			<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-slate-200 dark:bg-gray-900" style="">
+				<span>
+					<span
+						class="flex items-center justify-center w-16 h-16 object-contain bg-black dark:bg-white overflow-hidden"
+						style="mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/home.svg) no-repeat center / contain;webkit-mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/home.svg) no-repeat center / contain"
+					></span>
+				</span>
+				</span>
+			"
+`;
+
+exports[`Icon Component With icon variations should render with selfhst icon 1`] = `
+"<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style="">
+				<img
+					src=https://cdn.jsdelivr.net/gh/selfhst/icons/png/jellyfin.png
+					alt=""
+					class="w-16 h-16 object-contain"
+				/>
+			</span>"
+`;
+
+exports[`Icon Component With iconAspect variations should render with iconAspect height 1`] = `"<span class="flex items-center justify-center overflow-hidden bg-contain h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icon.png" alt="" class="h-16" /></span>"`;
+
+exports[`Icon Component With iconAspect variations should render with iconAspect square 1`] = `"<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icon.png" alt="" class="w-16 h-16 object-contain" /></span>"`;
+
+exports[`Icon Component With iconAspect variations should render with iconAspect width 1`] = `"<span class="flex items-center justify-center overflow-hidden bg-contain w-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icon.png" alt="" class="w-16" /></span>"`;
+
+exports[`Icon Component With iconBG variations should render with blue iconBG 1`] = `"<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-blue-100" style=""><img src="/icon.png" alt="" class="w-16 h-16 object-contain" /></span>"`;
+
+exports[`Icon Component With iconBG variations should render with green iconBG 1`] = `"<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-green-100" style=""><img src="/icon.png" alt="" class="w-16 h-16 object-contain" /></span>"`;
+
+exports[`Icon Component With iconBG variations should render with hex background 1`] = `"<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style="background-color: #E8F4FD"><img src="/icon.png" alt="" class="w-16 h-16 object-contain" /></span>"`;
+
+exports[`Icon Component With iconBG variations should render with red iconBG 1`] = `"<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-red-100" style=""><img src="/icon.png" alt="" class="w-16 h-16 object-contain" /></span>"`;
+
+exports[`Icon Component With iconBG variations should render with rose iconBG 1`] = `"<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-rose-100" style=""><img src="/icon.png" alt="" class="w-16 h-16 object-contain" /></span>"`;
+
+exports[`Icon Component With iconBG variations should render with yellow iconBG 1`] = `"<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-yellow-100" style=""><img src="/icon.png" alt="" class="w-16 h-16 object-contain" /></span>"`;
+
+exports[`Icon Component With iconBubble variations should render with iconBubble false 1`] = `"<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16" style=""><img src="/icon.png" alt="" class="w-16 h-16 object-contain" /></span>"`;
+
+exports[`Icon Component With iconBubble variations should render with iconBubble true 1`] = `"<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icon.png" alt="" class="w-16 h-16 object-contain" /></span>"`;
+
+exports[`Icon Component With iconBubblePadding variations should render with iconBubblePadding false 1`] = `"<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icon.png" alt="" class="w-16 h-16 object-contain" /></span>"`;
+
+exports[`Icon Component With iconBubblePadding variations should render with iconBubblePadding true 1`] = `"<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icon.png" alt="" class="w-14 h-14 object-contain" /></span>"`;
+
+exports[`Icon Component With iconColor variations should render with blue iconColor 1`] = `
+"
+			<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-slate-200 dark:bg-gray-900" style="">
+				<span>
+					<span
+						class="flex items-center justify-center w-16 h-16 object-contain bg-blue overflow-hidden"
+						style="mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/star.svg) no-repeat center / contain;webkit-mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/star.svg) no-repeat center / contain"
+					></span>
+				</span>
+				</span>
+			"
+`;
+
+exports[`Icon Component With iconColor variations should render with green iconColor 1`] = `
+"
+			<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-slate-200 dark:bg-gray-900" style="">
+				<span>
+					<span
+						class="flex items-center justify-center w-16 h-16 object-contain bg-green overflow-hidden"
+						style="mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/star.svg) no-repeat center / contain;webkit-mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/star.svg) no-repeat center / contain"
+					></span>
+				</span>
+				</span>
+			"
+`;
+
+exports[`Icon Component With iconColor variations should render with hex color 1`] = `
+"
+			<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-slate-200 dark:bg-gray-900" style="">
+				<span>
+					<span
+						class="flex items-center justify-center w-16 h-16 object-contain  overflow-hidden"
+						style="background-color: #FF6B35;mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/palette.svg) no-repeat center / contain;webkit-mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/palette.svg) no-repeat center / contain"
+					></span>
+				</span>
+				</span>
+			"
+`;
+
+exports[`Icon Component With iconColor variations should render with red iconColor 1`] = `
+"
+			<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-slate-200 dark:bg-gray-900" style="">
+				<span>
+					<span
+						class="flex items-center justify-center w-16 h-16 object-contain bg-red overflow-hidden"
+						style="mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/star.svg) no-repeat center / contain;webkit-mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/star.svg) no-repeat center / contain"
+					></span>
+				</span>
+				</span>
+			"
+`;
+
+exports[`Icon Component With iconColor variations should render with rose iconColor 1`] = `
+"
+			<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-slate-200 dark:bg-gray-900" style="">
+				<span>
+					<span
+						class="flex items-center justify-center w-16 h-16 object-contain bg-rose overflow-hidden"
+						style="mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/star.svg) no-repeat center / contain;webkit-mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/star.svg) no-repeat center / contain"
+					></span>
+				</span>
+				</span>
+			"
+`;
+
+exports[`Icon Component With iconColor variations should render with yellow iconColor 1`] = `
+"
+			<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-slate-200 dark:bg-gray-900" style="">
+				<span>
+					<span
+						class="flex items-center justify-center w-16 h-16 object-contain bg-yellow overflow-hidden"
+						style="mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/star.svg) no-repeat center / contain;webkit-mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/star.svg) no-repeat center / contain"
+					></span>
+				</span>
+				</span>
+			"
+`;
+
+exports[`Icon Component With uri and newWindow variations should render with uri 1`] = `"<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icon.png" alt="" class="w-16 h-16 object-contain" /></span>"`;
+
+exports[`Icon Component With uri and newWindow variations should render with uri and newWindow false 1`] = `"<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icon.png" alt="" class="w-16 h-16 object-contain" /></span>"`;
+
+exports[`Icon Component With uri and newWindow variations should render with uri and newWindow true 1`] = `"<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icon.png" alt="" class="w-16 h-16 object-contain" /></span>"`;

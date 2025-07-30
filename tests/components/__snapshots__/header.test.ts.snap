@@ -1,0 +1,235 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Header Component Combined prop variations should render with blue theme combination 1`] = `
+"
+		<div class="p-2 xl:p-4 flex flex-nowrap justify-center items-center gap-2 xl:flex-wrap">
+			<img src="/icons/blue-logo.png" alt="Blue Portal" class="inline-block w-16 h-16" />
+			<h1>Blue Portal</h1>
+		</div>
+	"
+`;
+
+exports[`Header Component Combined prop variations should render with both title and icon 1`] = `
+"
+		<div class="p-2 xl:p-4 flex flex-nowrap justify-center items-center gap-2 xl:flex-wrap">
+			<img src="/logo.png" alt="My Application" class="inline-block w-16 h-16" />
+			<h1>My Application</h1>
+		</div>
+	"
+`;
+
+exports[`Header Component Combined prop variations should render with empty strings 1`] = `
+"
+		<div class="p-2 xl:p-4 flex flex-nowrap justify-center items-center gap-2 xl:flex-wrap">
+			
+			<h1></h1>
+		</div>
+	"
+`;
+
+exports[`Header Component Combined prop variations should render with green theme combination 1`] = `
+"
+		<div class="p-2 xl:p-4 flex flex-nowrap justify-center items-center gap-2 xl:flex-wrap">
+			<img src="/icons/green-logo.png" alt="Green Portal" class="inline-block w-16 h-16" />
+			<h1>Green Portal</h1>
+		</div>
+	"
+`;
+
+exports[`Header Component Combined prop variations should render with long strings for both props 1`] = `
+"
+		<div class="p-2 xl:p-4 flex flex-nowrap justify-center items-center gap-2 xl:flex-wrap">
+			<img src="/very/long/path/to/assets/images/icons/application/header/main-application-logo-with-very-descriptive-filename.png" alt="This is a very long header title that tests how the component handles extensive text content and ensures that it properly renders without breaking the layout or functionality of the header element" class="inline-block w-16 h-16" />
+			<h1>This is a very long header title that tests how the component handles extensive text content and ensures that it properly renders without breaking the layout or functionality of the header element</h1>
+		</div>
+	"
+`;
+
+exports[`Header Component Combined prop variations should render with red theme combination 1`] = `
+"
+		<div class="p-2 xl:p-4 flex flex-nowrap justify-center items-center gap-2 xl:flex-wrap">
+			<img src="/icons/red-logo.png" alt="Red Portal" class="inline-block w-16 h-16" />
+			<h1>Red Portal</h1>
+		</div>
+	"
+`;
+
+exports[`Header Component Combined prop variations should render with rose theme combination 1`] = `
+"
+		<div class="p-2 xl:p-4 flex flex-nowrap justify-center items-center gap-2 xl:flex-wrap">
+			<img src="/icons/rose-logo.png" alt="Rose Portal" class="inline-block w-16 h-16" />
+			<h1>Rose Portal</h1>
+		</div>
+	"
+`;
+
+exports[`Header Component Combined prop variations should render with special characters in title 1`] = `
+"
+		<div class="p-2 xl:p-4 flex flex-nowrap justify-center items-center gap-2 xl:flex-wrap">
+			<img src="/special-logo.svg" alt="App™ & Co. - "The Best" <Solution> for [Advanced] Users!" class="inline-block w-16 h-16" />
+			<h1>App™ & Co. - "The Best" <Solution> for [Advanced] Users!</h1>
+		</div>
+	"
+`;
+
+exports[`Header Component Combined prop variations should render with yellow theme combination 1`] = `
+"
+		<div class="p-2 xl:p-4 flex flex-nowrap justify-center items-center gap-2 xl:flex-wrap">
+			<img src="/icons/yellow-logo.png" alt="Yellow Portal" class="inline-block w-16 h-16" />
+			<h1>Yellow Portal</h1>
+		</div>
+	"
+`;
+
+exports[`Header Component Required props only should render with no props 1`] = `
+"
+		<div class="p-2 xl:p-4 flex flex-nowrap justify-center items-center gap-2 xl:flex-wrap">
+			
+			<h1>undefined</h1>
+		</div>
+	"
+`;
+
+exports[`Header Component With icon variations should render with blue themed icon 1`] = `
+"
+		<div class="p-2 xl:p-4 flex flex-nowrap justify-center items-center gap-2 xl:flex-wrap">
+			<img src="/icons/blue-theme-logo.svg" alt="" class="inline-block w-16 h-16" />
+			<h1>undefined</h1>
+		</div>
+	"
+`;
+
+exports[`Header Component With icon variations should render with full URL icon 1`] = `
+"
+		<div class="p-2 xl:p-4 flex flex-nowrap justify-center items-center gap-2 xl:flex-wrap">
+			<img src="https://example.com/icon.png" alt="" class="inline-block w-16 h-16" />
+			<h1>undefined</h1>
+		</div>
+	"
+`;
+
+exports[`Header Component With icon variations should render with green themed icon 1`] = `
+"
+		<div class="p-2 xl:p-4 flex flex-nowrap justify-center items-center gap-2 xl:flex-wrap">
+			<img src="/icons/green-theme-logo.svg" alt="" class="inline-block w-16 h-16" />
+			<h1>undefined</h1>
+		</div>
+	"
+`;
+
+exports[`Header Component With icon variations should render with long icon path 1`] = `
+"
+		<div class="p-2 xl:p-4 flex flex-nowrap justify-center items-center gap-2 xl:flex-wrap">
+			<img src="/very/long/path/to/assets/images/icons/application/header/logo-with-very-long-filename.png" alt="" class="inline-block w-16 h-16" />
+			<h1>undefined</h1>
+		</div>
+	"
+`;
+
+exports[`Header Component With icon variations should render with red themed icon 1`] = `
+"
+		<div class="p-2 xl:p-4 flex flex-nowrap justify-center items-center gap-2 xl:flex-wrap">
+			<img src="/icons/red-theme-logo.svg" alt="" class="inline-block w-16 h-16" />
+			<h1>undefined</h1>
+		</div>
+	"
+`;
+
+exports[`Header Component With icon variations should render with rose themed icon 1`] = `
+"
+		<div class="p-2 xl:p-4 flex flex-nowrap justify-center items-center gap-2 xl:flex-wrap">
+			<img src="/icons/rose-theme-logo.svg" alt="" class="inline-block w-16 h-16" />
+			<h1>undefined</h1>
+		</div>
+	"
+`;
+
+exports[`Header Component With icon variations should render with simple icon path 1`] = `
+"
+		<div class="p-2 xl:p-4 flex flex-nowrap justify-center items-center gap-2 xl:flex-wrap">
+			<img src="/logo.png" alt="" class="inline-block w-16 h-16" />
+			<h1>undefined</h1>
+		</div>
+	"
+`;
+
+exports[`Header Component With icon variations should render with yellow themed icon 1`] = `
+"
+		<div class="p-2 xl:p-4 flex flex-nowrap justify-center items-center gap-2 xl:flex-wrap">
+			<img src="/icons/yellow-theme-logo.svg" alt="" class="inline-block w-16 h-16" />
+			<h1>undefined</h1>
+		</div>
+	"
+`;
+
+exports[`Header Component With title variations should render with HTML-like title 1`] = `
+"
+		<div class="p-2 xl:p-4 flex flex-nowrap justify-center items-center gap-2 xl:flex-wrap">
+			
+			<h1>App <em>with</em> emphasis & special chars: @#$%^&*()</h1>
+		</div>
+	"
+`;
+
+exports[`Header Component With title variations should render with blue themed title 1`] = `
+"
+		<div class="p-2 xl:p-4 flex flex-nowrap justify-center items-center gap-2 xl:flex-wrap">
+			
+			<h1>Blue Dashboard</h1>
+		</div>
+	"
+`;
+
+exports[`Header Component With title variations should render with green themed title 1`] = `
+"
+		<div class="p-2 xl:p-4 flex flex-nowrap justify-center items-center gap-2 xl:flex-wrap">
+			
+			<h1>Green Dashboard</h1>
+		</div>
+	"
+`;
+
+exports[`Header Component With title variations should render with long title 1`] = `
+"
+		<div class="p-2 xl:p-4 flex flex-nowrap justify-center items-center gap-2 xl:flex-wrap">
+			
+			<h1>This is a very long header title that tests how the component handles extensive text content and ensures that it properly renders without breaking the layout or functionality of the header element</h1>
+		</div>
+	"
+`;
+
+exports[`Header Component With title variations should render with red themed title 1`] = `
+"
+		<div class="p-2 xl:p-4 flex flex-nowrap justify-center items-center gap-2 xl:flex-wrap">
+			
+			<h1>Red Dashboard</h1>
+		</div>
+	"
+`;
+
+exports[`Header Component With title variations should render with rose themed title 1`] = `
+"
+		<div class="p-2 xl:p-4 flex flex-nowrap justify-center items-center gap-2 xl:flex-wrap">
+			
+			<h1>Rose Dashboard</h1>
+		</div>
+	"
+`;
+
+exports[`Header Component With title variations should render with short title 1`] = `
+"
+		<div class="p-2 xl:p-4 flex flex-nowrap justify-center items-center gap-2 xl:flex-wrap">
+			
+			<h1>My App</h1>
+		</div>
+	"
+`;
+
+exports[`Header Component With title variations should render with yellow themed title 1`] = `
+"
+		<div class="p-2 xl:p-4 flex flex-nowrap justify-center items-center gap-2 xl:flex-wrap">
+			
+			<h1>Yellow Dashboard</h1>
+		</div>
+	"
+`;

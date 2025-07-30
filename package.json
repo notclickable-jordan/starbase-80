@@ -11,7 +11,10 @@
 		"build": "tsc && node ./dist/index.js && npm run html && npm run tailwind && npm run css-cache-break",
 		"html": "html-minifier --remove-comments --collapse-whitespace --input-dir ./public --output-dir ./public --file-ext html",
 		"tailwind": "npx tailwindcss -i ./src/tailwind.css -o ./public/main.css",
-		"css-cache-break": "node ./dist/css-cache-break.js"
+		"css-cache-break": "node ./dist/css-cache-break.js",
+		"test": "jest",
+		"test:watch": "jest --watch",
+		"test:coverage": "jest --coverage"
 	},
 	"dependencies": {
 		"@types/node": "^20.10.5",
@@ -35,6 +38,9 @@
 		]
 	},
 	"devDependencies": {
-		"@types/clean-css": "^4.2.11"
+		"@types/clean-css": "^4.2.11",
+		"@types/jest": "^30.0.0",
+		"jest": "^30.0.5",
+		"ts-jest": "^29.4.0"
 	}
 }

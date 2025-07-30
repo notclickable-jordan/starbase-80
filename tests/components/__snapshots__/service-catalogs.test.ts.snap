@@ -1,0 +1,1228 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`ServiceCatalogList Component Color-themed categories should render blue themed category with all options 1`] = `
+"
+		<ul>
+			
+		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl !bg-blue-50 dark:!bg-blue-900">
+			<h2 class="dark:text-slate-200 text-2xl text-slate-600 font-light py-2 px-4">Blue Applications</h2>
+			
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+			<a href="https://blue1.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex">
+			<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-blue-100" style="">
+				<span>
+					<span
+						class="flex items-center justify-center w-14 h-14 object-contain bg-blue overflow-hidden"
+						style="mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/star.svg) no-repeat center / contain;webkit-mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/star.svg) no-repeat center / contain"
+					></span>
+				</span>
+				</span>
+			</span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Blue Service 1</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">First blue service</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		<li class="p-4">
+		
+		<a href="https://blue2.example.com" title="" class="flex gap-4">
+			<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16" style=""><img src="/icons/blue.png" alt="" class="w-14 h-14 object-contain" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Blue Service 2</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Second blue service</p>
+		</div>
+		</a>
+	
+			
+		</li>
+	
+		</ul>
+	
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`ServiceCatalogList Component Color-themed categories should render green themed category with all options 1`] = `
+"
+		<ul>
+			
+		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl !bg-green-50 dark:!bg-green-900">
+			<h2 class="dark:text-slate-200 text-2xl text-slate-600 font-light py-2 px-4">Green Applications</h2>
+			
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+			<a href="https://green1.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex">
+			<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-green-100" style="">
+				<span>
+					<span
+						class="flex items-center justify-center w-14 h-14 object-contain bg-green overflow-hidden"
+						style="mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/star.svg) no-repeat center / contain;webkit-mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/star.svg) no-repeat center / contain"
+					></span>
+				</span>
+				</span>
+			</span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Green Service 1</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">First green service</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		<li class="p-4">
+		
+		<a href="https://green2.example.com" title="" class="flex gap-4">
+			<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16" style=""><img src="/icons/green.png" alt="" class="w-14 h-14 object-contain" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Green Service 2</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Second green service</p>
+		</div>
+		</a>
+	
+			
+		</li>
+	
+		</ul>
+	
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`ServiceCatalogList Component Color-themed categories should render red themed category with all options 1`] = `
+"
+		<ul>
+			
+		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl !bg-red-50 dark:!bg-red-900">
+			<h2 class="dark:text-slate-200 text-2xl text-slate-600 font-light py-2 px-4">Red Applications</h2>
+			
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+		<a href="https://red1.example.com" title="" class="flex gap-4">
+			<span class="flex-shrink-0 flex">
+			<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-red-100" style="">
+				<span>
+					<span
+						class="flex items-center justify-center w-16 h-16 object-contain bg-red overflow-hidden"
+						style="mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/star.svg) no-repeat center / contain;webkit-mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/star.svg) no-repeat center / contain"
+					></span>
+				</span>
+				</span>
+			</span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Red Service 1</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">First red service</p>
+		</div>
+		</a>
+	
+			
+		</li>
+	
+		<li class="p-4">
+		
+			<a href="https://red2.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16" style=""><img src="/icons/red.png" alt="" class="w-16 h-16 object-contain" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Red Service 2</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Second red service</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		</ul>
+	
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`ServiceCatalogList Component Color-themed categories should render rose themed category with all options 1`] = `
+"
+		<ul>
+			
+		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl !bg-rose-50 dark:!bg-rose-900">
+			<h2 class="dark:text-slate-200 text-2xl text-slate-600 font-light py-2 px-4">Rose Applications</h2>
+			
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+		<a href="https://rose1.example.com" title="" class="flex gap-4">
+			<span class="flex-shrink-0 flex">
+			<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-rose-100" style="">
+				<span>
+					<span
+						class="flex items-center justify-center w-16 h-16 object-contain bg-rose overflow-hidden"
+						style="mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/star.svg) no-repeat center / contain;webkit-mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/star.svg) no-repeat center / contain"
+					></span>
+				</span>
+				</span>
+			</span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Rose Service 1</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">First rose service</p>
+		</div>
+		</a>
+	
+			
+		</li>
+	
+		<li class="p-4">
+		
+			<a href="https://rose2.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16" style=""><img src="/icons/rose.png" alt="" class="w-16 h-16 object-contain" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Rose Service 2</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Second rose service</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		</ul>
+	
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`ServiceCatalogList Component Color-themed categories should render yellow themed category with all options 1`] = `
+"
+		<ul>
+			
+		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl !bg-yellow-50 dark:!bg-yellow-900">
+			<h2 class="dark:text-slate-200 text-2xl text-slate-600 font-light py-2 px-4">Yellow Applications</h2>
+			
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+			<a href="https://yellow1.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex">
+			<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-yellow-100" style="">
+				<span>
+					<span
+						class="flex items-center justify-center w-14 h-14 object-contain bg-yellow overflow-hidden"
+						style="mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/star.svg) no-repeat center / contain;webkit-mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/star.svg) no-repeat center / contain"
+					></span>
+				</span>
+				</span>
+			</span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Yellow Service 1</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">First yellow service</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		<li class="p-4">
+		
+		<a href="https://yellow2.example.com" title="" class="flex gap-4">
+			<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16" style=""><img src="/icons/yellow.png" alt="" class="w-14 h-14 object-contain" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Yellow Service 2</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Second yellow service</p>
+		</div>
+		</a>
+	
+			
+		</li>
+	
+		</ul>
+	
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`ServiceCatalogList Component Complex scenarios should render category with many services 1`] = `
+"
+		<ul>
+			
+		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl !bg-gray-50 dark:!bg-gray-800">
+			<h2 class="dark:text-slate-200 text-2xl text-slate-600 font-light py-2 px-4">Large Category</h2>
+			
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+			<a href="https://service1.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex">
+			<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-slate-200 dark:bg-gray-900" style="">
+				<span>
+					<span
+						class="flex items-center justify-center w-14 h-14 object-contain bg-blue overflow-hidden"
+						style="mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/star.svg) no-repeat center / contain;webkit-mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/star.svg) no-repeat center / contain"
+					></span>
+				</span>
+				</span>
+			</span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Service 1</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for service 1</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		<li class="p-4">
+		
+		<a href="https://service2.example.com" title="" class="flex gap-4">
+			<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icon.png" alt="" class="w-14 h-14 object-contain" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Service 2</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for service 2</p>
+		</div>
+		</a>
+	
+			
+		</li>
+	
+		<li class="p-4">
+		
+			<a href="https://service3.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style="">
+				<img
+					src=https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/nextcloud.png
+					alt=""
+					class="w-14 h-14 object-contain"
+				/>
+			</span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Service 3</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for service 3</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		<li class="p-4">
+		
+		<a href="https://service4.example.com" title="" class="flex gap-4">
+			<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style="">
+				<img
+					src=https://cdn.jsdelivr.net/gh/selfhst/icons/png/jellyfin.png
+					alt=""
+					class="w-14 h-14 object-contain"
+				/>
+			</span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Service 4</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for service 4</p>
+		</div>
+		</a>
+	
+			
+		</li>
+	
+		<li class="p-4">
+		
+			<a href="https://service5.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex">
+			<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-slate-200 dark:bg-gray-900" style="">
+				<span>
+					<span
+						class="flex items-center justify-center w-14 h-14 object-contain bg-yellow overflow-hidden"
+						style="mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/star.svg) no-repeat center / contain;webkit-mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/star.svg) no-repeat center / contain"
+					></span>
+				</span>
+				</span>
+			</span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Service 5</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for service 5</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		<li class="p-4">
+		
+		<a href="https://service6.example.com" title="" class="flex gap-4">
+			<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icon.png" alt="" class="w-14 h-14 object-contain" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Service 6</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for service 6</p>
+		</div>
+		</a>
+	
+			
+		</li>
+	
+		<li class="p-4">
+		
+			<a href="https://service7.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style="">
+				<img
+					src=https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/nextcloud.png
+					alt=""
+					class="w-14 h-14 object-contain"
+				/>
+			</span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Service 7</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for service 7</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		<li class="p-4">
+		
+		<a href="https://service8.example.com" title="" class="flex gap-4">
+			<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style="">
+				<img
+					src=https://cdn.jsdelivr.net/gh/selfhst/icons/png/jellyfin.png
+					alt=""
+					class="w-14 h-14 object-contain"
+				/>
+			</span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Service 8</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for service 8</p>
+		</div>
+		</a>
+	
+			
+		</li>
+	
+		</ul>
+	
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`ServiceCatalogList Component Complex scenarios should render category with no services 1`] = `
+"
+		<ul>
+			
+		<li class="mt-12 first:mt-0 xl:first:mt-6">
+			<h2 class="dark:text-slate-200 text-2xl text-slate-600 font-light py-2 px-4">Empty Category</h2>
+			
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		</ul>
+	
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`ServiceCatalogList Component Complex scenarios should render multiple categories with different configurations 1`] = `
+"
+		<ul>
+			
+		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl !bg-blue-50 dark:!bg-blue-900">
+			<h2 class="dark:text-slate-200 text-2xl text-slate-600 font-light py-2 px-4">Development Tools</h2>
+			
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+			<a href="https://code.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex">
+			<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-slate-200 dark:bg-gray-900" style="">
+				<span>
+					<span
+						class="flex items-center justify-center w-14 h-14 object-contain bg-blue overflow-hidden"
+						style="mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/code-tags.svg) no-repeat center / contain;webkit-mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/code-tags.svg) no-repeat center / contain"
+					></span>
+				</span>
+				</span>
+			</span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">VS Code Server</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Browser-based code editor</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		<li class="p-4">
+		
+		<a href="https://git.example.com" title="" class="flex gap-4">
+			<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style="">
+				<img
+					src=https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/gitlab.png
+					alt=""
+					class="w-14 h-14 object-contain"
+				/>
+			</span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">GitLab</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Git repository manager</p>
+		</div>
+		</a>
+	
+			
+		</li>
+	
+		</ul>
+	
+		</li>
+	
+		<li class="mt-12 first:mt-0 xl:first:mt-6">
+			<h2 class="dark:text-slate-200 text-2xl text-slate-600 font-light py-2 px-4">Media Center</h2>
+			
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+			<a href="https://media.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16" style="">
+				<img
+					src=https://cdn.jsdelivr.net/gh/selfhst/icons/png/jellyfin.png
+					alt=""
+					class="w-16 h-16 object-contain"
+				/>
+			</span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Jellyfin</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Media streaming server</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		</ul>
+	
+		</li>
+	
+		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl !bg-emerald-100">
+			<h2 class="dark:text-slate-200 text-2xl text-slate-600 font-light py-2 px-4">Monitoring</h2>
+			
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+			<a href="https://metrics.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="https://grafana.com/static/assets/img/fav32.png" alt="" class="w-16 h-16 object-contain" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Grafana</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Analytics and monitoring</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		<li class="p-4">
+		
+			<a href="https://uptime.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex">
+			<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-green-100" style="">
+				<span>
+					<span
+						class="flex items-center justify-center w-16 h-16 object-contain bg-green overflow-hidden"
+						style="mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/heart-pulse.svg) no-repeat center / contain;webkit-mask: url(https://cdn.jsdelivr.net/npm/@mdi/svg@latest/svg/heart-pulse.svg) no-repeat center / contain"
+					></span>
+				</span>
+				</span>
+			</span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Uptime Kuma</h3>
+			
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		</ul>
+	
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`ServiceCatalogList Component Complex scenarios should render with all possible combinations 1`] = `
+"
+		<ul>
+			
+		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl !bg-purple-50 dark:!bg-purple-900">
+			<h2 class="dark:text-slate-200 text-2xl text-slate-600 font-light py-2 px-4">This is a very long category name or service name that tests how the component handles extensive text content and ensures that it properly renders without breaking the layout or functionality</h2>
+			
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+		<a href="https://very-long-domain-name.example.com/with/very/long/path" title="" class="flex gap-4">
+			<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 rounded-2xl border border-black/5 shadow-sm" style="background-color: #E8F4FD"><img src="https://very-long-icon-domain.example.com/path/to/icon.png" alt="" class="w-14" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">This is a very long category name or service name that tests how the component handles extensive text content and ensures that it properly renders without breaking the layout or functionality</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">This is a very long category name or service name that tests how the component handles extensive text content and ensures that it properly renders without breaking the layout or functionality - Extended description with more details</p>
+		</div>
+		</a>
+	
+			
+		</li>
+	
+		</ul>
+	
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`ServiceCatalogList Component Edge cases should handle categories with empty strings 1`] = `
+"
+		<ul>
+			
+		<li class="mt-12 first:mt-0 xl:first:mt-6">
+			<h2 class="dark:text-slate-200 text-2xl text-slate-600 font-light py-2 px-4"></h2>
+			
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+			<a href="https://service1.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icons/service1.png" alt="" class="w-16 h-16 object-contain" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1"></h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for </p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		</ul>
+	
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`ServiceCatalogList Component Edge cases should handle categories with special characters 1`] = `
+"
+		<ul>
+			
+		<li class="mt-12 first:mt-0 xl:first:mt-6">
+			<h2 class="dark:text-slate-200 text-2xl text-slate-600 font-light py-2 px-4">Category™ & Co. - "Special" <Characters></h2>
+			
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+			<a href="https://service1.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icons/service1.png" alt="" class="w-16 h-16 object-contain" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Service™ & Co.</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for Service™ & Co.</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		</ul>
+	
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`ServiceCatalogList Component Required props only should render with empty categories array 1`] = `
+"
+		<ul>
+			
+		</ul>
+	"
+`;
+
+exports[`ServiceCatalogList Component Required props only should render with multiple categories 1`] = `
+"
+		<ul>
+			
+		<li class="mt-12 first:mt-0 xl:first:mt-6">
+			<h2 class="dark:text-slate-200 text-2xl text-slate-600 font-light py-2 px-4">Development</h2>
+			
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+			<a href="https://service1.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icons/service1.png" alt="" class="w-16 h-16 object-contain" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">IDE</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for IDE</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		<li class="p-4">
+		
+			<a href="https://service2.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icons/service2.png" alt="" class="w-16 h-16 object-contain" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Version Control</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for Version Control</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		</ul>
+	
+		</li>
+	
+		<li class="mt-12 first:mt-0 xl:first:mt-6">
+			<h2 class="dark:text-slate-200 text-2xl text-slate-600 font-light py-2 px-4">Media</h2>
+			
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+			<a href="https://service3.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icons/service3.png" alt="" class="w-16 h-16 object-contain" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Video Player</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for Video Player</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		<li class="p-4">
+		
+			<a href="https://service4.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icons/service4.png" alt="" class="w-16 h-16 object-contain" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Music Server</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for Music Server</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		</ul>
+	
+		</li>
+	
+		<li class="mt-12 first:mt-0 xl:first:mt-6">
+			<h2 class="dark:text-slate-200 text-2xl text-slate-600 font-light py-2 px-4">Productivity</h2>
+			
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+			<a href="https://service5.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icons/service5.png" alt="" class="w-16 h-16 object-contain" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Note Taking</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for Note Taking</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		<li class="p-4">
+		
+			<a href="https://service6.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icons/service6.png" alt="" class="w-16 h-16 object-contain" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Task Manager</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for Task Manager</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		</ul>
+	
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`ServiceCatalogList Component Required props only should render with single category 1`] = `
+"
+		<ul>
+			
+		<li class="mt-12 first:mt-0 xl:first:mt-6">
+			<h2 class="dark:text-slate-200 text-2xl text-slate-600 font-light py-2 px-4">Development</h2>
+			
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+			<a href="https://service1.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icons/service1.png" alt="" class="w-16 h-16 object-contain" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Code Editor</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for Code Editor</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		<li class="p-4">
+		
+			<a href="https://service2.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icons/service2.png" alt="" class="w-16 h-16 object-contain" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Git Server</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for Git Server</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		</ul>
+	
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`ServiceCatalogList Component With bubble background variations should render category with blue bubble backgrounds 1`] = `
+"
+		<ul>
+			
+		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl !bg-blue-100 dark:!bg-blue-800">
+			<h2 class="dark:text-slate-200 text-2xl text-slate-600 font-light py-2 px-4">Blue Category</h2>
+			
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+			<a href="https://service0.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icons/service0.png" alt="" class="w-16 h-16 object-contain" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">blue Service</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for blue Service</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		</ul>
+	
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`ServiceCatalogList Component With bubble background variations should render category with green bubble backgrounds 1`] = `
+"
+		<ul>
+			
+		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl !bg-green-100 dark:!bg-green-800">
+			<h2 class="dark:text-slate-200 text-2xl text-slate-600 font-light py-2 px-4">Green Category</h2>
+			
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+			<a href="https://service2.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icons/service2.png" alt="" class="w-16 h-16 object-contain" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">green Service</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for green Service</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		</ul>
+	
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`ServiceCatalogList Component With bubble background variations should render category with only dark bubble background 1`] = `
+"
+		<ul>
+			
+		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl dark:!bg-slate-900">
+			<h2 class="dark:text-slate-200 text-2xl text-slate-600 font-light py-2 px-4">Dark BG Only</h2>
+			
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+			<a href="https://service1.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icons/service1.png" alt="" class="w-16 h-16 object-contain" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Service</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for Service</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		</ul>
+	
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`ServiceCatalogList Component With bubble background variations should render category with only light bubble background 1`] = `
+"
+		<ul>
+			
+		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl !bg-emerald-50">
+			<h2 class="dark:text-slate-200 text-2xl text-slate-600 font-light py-2 px-4">Light BG Only</h2>
+			
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+			<a href="https://service1.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icons/service1.png" alt="" class="w-16 h-16 object-contain" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Service</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for Service</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		</ul>
+	
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`ServiceCatalogList Component With bubble background variations should render category with red bubble backgrounds 1`] = `
+"
+		<ul>
+			
+		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl !bg-red-100 dark:!bg-red-800">
+			<h2 class="dark:text-slate-200 text-2xl text-slate-600 font-light py-2 px-4">Red Category</h2>
+			
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+			<a href="https://service3.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icons/service3.png" alt="" class="w-16 h-16 object-contain" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">red Service</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for red Service</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		</ul>
+	
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`ServiceCatalogList Component With bubble background variations should render category with rose bubble backgrounds 1`] = `
+"
+		<ul>
+			
+		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl !bg-rose-100 dark:!bg-rose-800">
+			<h2 class="dark:text-slate-200 text-2xl text-slate-600 font-light py-2 px-4">Rose Category</h2>
+			
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+			<a href="https://service1.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icons/service1.png" alt="" class="w-16 h-16 object-contain" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">rose Service</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for rose Service</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		</ul>
+	
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`ServiceCatalogList Component With bubble background variations should render category with yellow bubble backgrounds 1`] = `
+"
+		<ul>
+			
+		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl !bg-yellow-100 dark:!bg-yellow-800">
+			<h2 class="dark:text-slate-200 text-2xl text-slate-600 font-light py-2 px-4">Yellow Category</h2>
+			
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+			<a href="https://service4.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icons/service4.png" alt="" class="w-16 h-16 object-contain" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">yellow Service</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for yellow Service</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		</ul>
+	
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`ServiceCatalogList Component With bubble variations should render category with bubble disabled 1`] = `
+"
+		<ul>
+			
+		<li class="mt-12 first:mt-0 xl:first:mt-6">
+			<h2 class="dark:text-slate-200 text-2xl text-slate-600 font-light py-2 px-4">No Bubble Category</h2>
+			
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+			<a href="https://service1.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icons/service1.png" alt="" class="w-16 h-16 object-contain" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Service 1</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for Service 1</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		</ul>
+	
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`ServiceCatalogList Component With bubble variations should render category with bubble enabled 1`] = `
+"
+		<ul>
+			
+		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl">
+			<h2 class="dark:text-slate-200 text-2xl text-slate-600 font-light py-2 px-4">Bubble Category</h2>
+			
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+			<a href="https://service1.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icons/service1.png" alt="" class="w-16 h-16 object-contain" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Service 1</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for Service 1</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		</ul>
+	
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`ServiceCatalogList Component With iconBubblePadding variations should render category with iconBubblePadding disabled 1`] = `
+"
+		<ul>
+			
+		<li class="mt-12 first:mt-0 xl:first:mt-6">
+			<h2 class="dark:text-slate-200 text-2xl text-slate-600 font-light py-2 px-4">Unpadded Icons</h2>
+			
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+			<a href="https://service1.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icons/service1.png" alt="" class="w-16 h-16 object-contain" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Unpadded Service</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for Unpadded Service</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		</ul>
+	
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`ServiceCatalogList Component With iconBubblePadding variations should render category with iconBubblePadding enabled 1`] = `
+"
+		<ul>
+			
+		<li class="mt-12 first:mt-0 xl:first:mt-6">
+			<h2 class="dark:text-slate-200 text-2xl text-slate-600 font-light py-2 px-4">Padded Icons</h2>
+			
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+			<a href="https://service1.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icons/service1.png" alt="" class="w-14 h-14 object-contain" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Padded Service</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for Padded Service</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		</ul>
+	
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`ServiceCatalogList Component With long content should render category with long name 1`] = `
+"
+		<ul>
+			
+		<li class="mt-12 first:mt-0 xl:first:mt-6">
+			<h2 class="dark:text-slate-200 text-2xl text-slate-600 font-light py-2 px-4">This is a very long category name or service name that tests how the component handles extensive text content and ensures that it properly renders without breaking the layout or functionality</h2>
+			
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+			<a href="https://service1.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icons/service1.png" alt="" class="w-16 h-16 object-contain" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Service in Long Category</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for Service in Long Category</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		</ul>
+	
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`ServiceCatalogList Component With long content should render category with long service names 1`] = `
+"
+		<ul>
+			
+		<li class="mt-12 first:mt-0 xl:first:mt-6">
+			<h2 class="dark:text-slate-200 text-2xl text-slate-600 font-light py-2 px-4">Long Services</h2>
+			
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+			<a href="https://service1.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icons/service1.png" alt="" class="w-16 h-16 object-contain" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">This is a very long category name or service name that tests how the component handles extensive text content and ensures that it properly renders without breaking the layout or functionality</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for This is a very long category name or service name that tests how the component handles extensive text content and ensures that it properly renders without breaking the layout or functionality</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		<li class="p-4">
+		
+			<a href="https://service2.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="flex-shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icons/service2.png" alt="" class="w-16 h-16 object-contain" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">This is a very long category name or service name that tests how the component handles extensive text content and ensures that it properly renders without breaking the layout or functionality - Second</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for This is a very long category name or service name that tests how the component handles extensive text content and ensures that it properly renders without breaking the layout or functionality - Second</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		</ul>
+	
+		</li>
+	
+		</ul>
+	"
+`;
