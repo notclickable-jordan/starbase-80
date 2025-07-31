@@ -4,7 +4,7 @@ This document describes the comprehensive snapshot test suite for all components
 
 ## Overview
 
-The test suite includes 137 snapshot tests across 5 components, providing comprehensive coverage of all component props, variations, and edge cases.
+The test suite includes snapshot tests across 5 components, providing comprehensive coverage of all component props, variations, and edge cases.
 
 ## Components Tested
 
