@@ -15,12 +15,12 @@ Inspired by [Ben Phelps' Homepage](https://gethomepage.dev/) and [Umbrel](https:
 
 # Docker and source code
 
--   [Docker image](https://hub.docker.com/r/jordanroher/starbase-80)
--   [Source code on GitHub](https://github.com/notclickable-jordan/starbase-80)
+- [Docker image](https://hub.docker.com/r/jordanroher/starbase-80)
+- [Source code on GitHub](https://github.com/notclickable-jordan/starbase-80)
 
 # Live demo
 
--   [Starbase 80](https://notclickable-jordan.github.io/starbase-80/)
+- [Starbase 80](https://notclickable-jordan.github.io/starbase-80/)
 
 # Preview
 
@@ -29,72 +29,6 @@ Inspired by [Ben Phelps' Homepage](https://gethomepage.dev/) and [Umbrel](https:
 <br />
 
 <img src="./preview-dark.jpg" alt="Dark mode" />
-
-# Change history
-
-## 1.6.4
-
--   Added forced light theme option
-
-## 1.6.3
-
--   Fixed faster shutdown on Docker container
-
-## 1.6.2
-
--   Faster shutdown on Docker container
-
-## 1.6.1
-
--   Added `iconBubblePadding` boolean option to categories and services
-
-## 1.6.0
-
--   Added `CATEGORYBUBBLECOLORLIGHT` and `CATEGORYBUBBLECOLORDARK` for greater control of category bubble colors
--   Added `category.bubbleBGLight` and `category.bubbleBGDark` to theme individual category bubble background colors
-
-## 1.5.5
-
--   Updated to node:23-slim
-
-## 1.5.4
-
--   Re-added wget to allow for health checks
-
-## 1.5.3
-
--   Added support for [selfh.st](https://selfh.st/icons/) icons
-
-## 1.5.2
-
--   Fixed issue with Material icons having incorrect left margin
--   Fixed aspect ratio issues on images
-
-## 1.5.1
-
--   Changed links to be on the entire service object
--   Added underline option
-
-## 1.5.0
-
--   Fixed dark mode manual override
-
-## 1.4.2
-
--   Added `apple-touch-icon-precomposed` link
-
-## 1.4.0
-
--   Rewrote the entire application to not use React. Now it's just a Node application that emits static HTML.
--   Removed lots of packages
-
-## 1.3.0
-
--   Removed all JavaScript as part of the build step. The image will be slightly larger and take longer to start up and shut down, but the page will be even lighter.
-
-## 1.2.0
-
--   Moved `config.json` bind mount destination to `/app/src/config/config.json` for improved Portainer and volume support. The previous bind mount location will continue to work, but we recommend updating your bind mounts.
 
 # Docker
 
@@ -138,9 +72,9 @@ services:
 | Path                        | Required | Notes                                                                         |
 | --------------------------- | -------- | ----------------------------------------------------------------------------- |
 | /app/src/config/config.json | true     | Configuration with list of sites and links                                    |
-| /app/public/favicon.ico     | false    | Website favicon                                                               |
-| /app/public/logo.png        | false    | Logo in the header                                                            |
-| /app/public/icons           | false    | Or wherever you want to put them, JSON icon paths are relative to /app/public |
+| /app/public/favicon.ico     |          | Website favicon                                                               |
+| /app/public/logo.png        |          | Logo in the header                                                            |
+| /app/public/icons           |          | Or wherever you want to put them, JSON icon paths are relative to /app/public |
 
 # Configuration
 
@@ -203,11 +137,11 @@ services:
 
 | Name              | Default | Required | Notes                                                                                                                                                     |
 | ----------------- | ------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| category          |         | false    | Displays above the list of services                                                                                                                       |
-| bubble            | false   | false    | Shows a bubble around category                                                                                                                            |
-| bubbleBGLight     |         | false    | Background color for category bubbles. Must be a [Tailwind color](https://tailwindcss.com/docs/background-color) (do not prefix with `bg-`).              |
-| bubbleBGDark      |         | false    | Background color for category bubbles in dark mode. Must be a [Tailwind color](https://tailwindcss.com/docs/background-color) (do not prefix with `bg-`). |
-| iconBubblePadding | false   | false    | If `true`, adds a slight padding around each service's icons which are in a bubble.                                                                       |
+| category          |         |          | Displays above the list of services                                                                                                                       |
+| bubble            | false   |          | Shows a bubble around category                                                                                                                            |
+| bubbleBGLight     |         |          | Background color for category bubbles. Must be a [Tailwind color](https://tailwindcss.com/docs/background-color) (do not prefix with `bg-`).              |
+| bubbleBGDark      |         |          | Background color for category bubbles in dark mode. Must be a [Tailwind color](https://tailwindcss.com/docs/background-color) (do not prefix with `bg-`). |
+| iconBubblePadding | false   |          | If `true`, adds a slight padding around each service's icons which are in a bubble.                                                                       |
 | services          |         | true     | Array of services                                                                                                                                         |
 
 ## Service variables
@@ -216,14 +150,14 @@ services:
 | ----------------- | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | name              |         | true     | Title of service                                                                                                                                                                                                                                              |
 | uri               |         | true     | Hyperlink to resource                                                                                                                                                                                                                                         |
-| description       |         | false    | 2-3 words which appear below the title                                                                                                                                                                                                                        |
-| icon              |         | false    | Relative URI, absolute URI, service name ([Dashboard icon](https://github.com/walkxcode/dashboard-icons)), `mdi-` service name ([Material Design icon](https://icon-sets.iconify.design/mdi/)), `selfhst-` icon name [selfh.st icon](https://selfh.st/icons/) |
-| iconBG            |         | false    | Background color for icons. Hex code or [Tailwind color](https://tailwindcss.com/docs/background-color) (do not prefix with `bg-`).                                                                                                                           |
-| iconColor         |         | false    | Only used as the fill color for Material Design icons. Hex code or [Tailwind color](https://tailwindcss.com/docs/background-color) (do not prefix with `bg-`).                                                                                                |
-| iconBubble        | true    | false    | If `false` the bubble and shadow are removed from the icon                                                                                                                                                                                                    |
-| iconBubblePadding | false   | false    | Overrides `bubblePadding` set at the category level                                                                                                                                                                                                           |
-| iconAspect        | square  | false    | Set to `"width"` or `"height"` to constrain the icon to the width or height of the icon, respectively                                                                                                                                                         |
-| newWindow         |         | false    | Set to `true` or `false` to override the environment variable `NEWWINDOW` for this service                                                                                                                                                                    |
+| description       |         |          | 2-3 words which appear below the title                                                                                                                                                                                                                        |
+| icon              |         |          | Relative URI, absolute URI, service name ([Dashboard icon](https://github.com/walkxcode/dashboard-icons)), `mdi-` service name ([Material Design icon](https://icon-sets.iconify.design/mdi/)), `selfhst-` icon name [selfh.st icon](https://selfh.st/icons/) |
+| iconBG            |         |          | Background color for icons. Hex code or [Tailwind color](https://tailwindcss.com/docs/background-color) (do not prefix with `bg-`).                                                                                                                           |
+| iconColor         |         |          | Only used as the fill color for Material Design icons. Hex code or [Tailwind color](https://tailwindcss.com/docs/background-color) (do not prefix with `bg-`).                                                                                                |
+| iconBubble        | true    |          | If `false` the bubble and shadow are removed from the icon                                                                                                                                                                                                    |
+| iconBubblePadding | false   |          | Overrides `bubblePadding` set at the category level                                                                                                                                                                                                           |
+| iconAspect        | square  |          | Set to `"width"` or `"height"` to constrain the icon to the width or height of the icon, respectively                                                                                                                                                         |
+| newWindow         |         |          | Set to `true` or `false` to override the environment variable `NEWWINDOW` for this service                                                                                                                                                                    |
 
 # Icons
 
@@ -277,3 +211,69 @@ Use any [selfh.st icon](https://selfh.st/icons/) by prefixing the name with `sel
 # Icon in config.json
 "icon": "selfhst-couchdb"
 ```
+
+# Change history
+
+## 1.6.4
+
+- Added forced light theme option
+
+## 1.6.3
+
+- Fixed faster shutdown on Docker container
+
+## 1.6.2
+
+- Faster shutdown on Docker container
+
+## 1.6.1
+
+- Added `iconBubblePadding` boolean option to categories and services
+
+## 1.6.0
+
+- Added `CATEGORYBUBBLECOLORLIGHT` and `CATEGORYBUBBLECOLORDARK` for greater control of category bubble colors
+- Added `category.bubbleBGLight` and `category.bubbleBGDark` to theme individual category bubble background colors
+
+## 1.5.5
+
+- Updated to node:23-slim
+
+## 1.5.4
+
+- Re-added wget to allow for health checks
+
+## 1.5.3
+
+- Added support for [selfh.st](https://selfh.st/icons/) icons
+
+## 1.5.2
+
+- Fixed issue with Material icons having incorrect left margin
+- Fixed aspect ratio issues on images
+
+## 1.5.1
+
+- Changed links to be on the entire service object
+- Added underline option
+
+## 1.5.0
+
+- Fixed dark mode manual override
+
+## 1.4.2
+
+- Added `apple-touch-icon-precomposed` link
+
+## 1.4.0
+
+- Rewrote the entire application to not use React. Now it's just a Node application that emits static HTML.
+- Removed lots of packages
+
+## 1.3.0
+
+- Removed all JavaScript as part of the build step. The image will be slightly larger and take longer to start up and shut down, but the page will be even lighter.
+
+## 1.2.0
+
+- Moved `config.json` bind mount destination to `/app/src/config/config.json` for improved Portainer and volume support. The previous bind mount location will continue to work, but we recommend updating your bind mounts.

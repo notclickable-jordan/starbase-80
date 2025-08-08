@@ -22,5 +22,47 @@
 				"iconColor": "blue-500"
 			}
 		]
+	},
+	{
+		"category": "Theme-Aware Icons Test",
+		"services": [
+			{
+				"name": "Theme Test Service",
+				"uri": "http://localhost",
+				"description": "Testing light/dark icons",
+				"icon": "github",
+				"iconLight": "mdi-white-balance-sunny",
+				"iconDark": "mdi-moon-waning-crescent"
+			},
+			{
+				"name": "Light Only Test",
+				"uri": "http://localhost",
+				"description": "Only iconLight specified",
+				"iconLight": "mdi-lightbulb",
+				"iconColor": "yellow-500"
+			},
+			{
+				"name": "Dark Only Test",
+				"uri": "http://localhost",
+				"description": "Only iconDark specified",
+				"iconDark": "mdi-sleep"
+			},
+			{
+				"name": "Traditional Icon",
+				"uri": "http://localhost",
+				"description": "Backward compatibility test",
+				"icon": "mdi-check-circle",
+				"iconColor": "green-500"
+			},
+			{
+				"name": "Mixed Icons Test",
+				"uri": "http://localhost",
+				"description": "All three properties",
+				"icon": "mdi-star",
+				"iconLight": "mdi-star-outline",
+				"iconDark": "mdi-star-circle",
+				"iconColor": "purple-500"
+			}
+		]
 	}
 ]

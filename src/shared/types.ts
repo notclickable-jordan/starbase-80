@@ -13,6 +13,8 @@ export interface IService {
 
 	description?: string;
 	icon?: string;
+	iconLight?: string;
+	iconDark?: string;
 	iconColor?: string;
 	iconBG?: string;
 	iconBubble?: boolean;
