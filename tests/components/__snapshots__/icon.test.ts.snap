@@ -1,11 +1,25 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`Icon Component Combined prop variations should render with all props 1`] = `"<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-indigo-50" style=""><img src="https://example.com/complete-icon.png" alt="" class="w-14 h-14 object-contain" /></span>"`;
+exports[`Icon Component Combined prop variations should render with all props 1`] = `
+"
+			<a href="https://complete.example.com" target="_blank" rel="noopener noreferrer" title="Complete Service" class="">
+				<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-indigo-50" style=""><img src="https://example.com/complete-icon.png" alt="" class="w-14 h-14 object-contain" /></span>
+			</a>
+		"
+`;
 
-exports[`Icon Component Combined prop variations should render with all props using long strings 1`] = `"<span class="flex items-center justify-center overflow-hidden bg-contain w-16 rounded-2xl border border-black/5 shadow-sm" style="background-color: #E8F4FD"><img src="https://very-long-domain-name.example.com/path/to/very/long/icon/filename/with/lots/of/descriptive/text.png" alt="" class="w-14" /></span>"`;
+exports[`Icon Component Combined prop variations should render with all props using long strings 1`] = `
+"
+		<a href="https://very-long-domain-name-for-testing.example.com/with/a/very/long/path" title="This is a very long service name that tests how the component handles extensive text content and ensures that it properly renders without breaking the layout or functionality" class="">
+			<span class="flex items-center justify-center overflow-hidden bg-contain w-16 rounded-2xl border border-black/5 shadow-sm" style="background-color: #E8F4FD"><img src="https://very-long-domain-name.example.com/path/to/very/long/icon/filename/with/lots/of/descriptive/text.png" alt="" class="w-14" /></span>
+		</a>
+	"
+`;
 
 exports[`Icon Component Combined prop variations should render with blue theme combination 1`] = `
 "
+			<a href="https://blue.example.com" target="_blank" rel="noopener noreferrer" title="Blue Service" class="">
+				
 			<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-blue-100" style="">
 				<span>
 					<span
@@ -14,11 +28,15 @@ exports[`Icon Component Combined prop variations should render with blue theme c
 					></span>
 				</span>
 				</span>
-			"
+			
+			</a>
+		"
 `;
 
 exports[`Icon Component Combined prop variations should render with green theme combination 1`] = `
 "
+			<a href="https://green.example.com" target="_blank" rel="noopener noreferrer" title="Green Service" class="">
+				
 			<span class="flex items-center justify-center overflow-hidden bg-contain h-16 rounded-2xl border border-black/5 shadow-sm bg-green-100" style="">
 				<span>
 					<span
@@ -27,11 +45,15 @@ exports[`Icon Component Combined prop variations should render with green theme 
 					></span>
 				</span>
 				</span>
-			"
+			
+			</a>
+		"
 `;
 
 exports[`Icon Component Combined prop variations should render with red theme combination 1`] = `
 "
+		<a href="https://red.example.com" title="Red Service" class="">
+			
 			<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-red-100" style="">
 				<span>
 					<span
@@ -40,11 +62,15 @@ exports[`Icon Component Combined prop variations should render with red theme co
 					></span>
 				</span>
 				</span>
-			"
+			
+		</a>
+	"
 `;
 
 exports[`Icon Component Combined prop variations should render with rose theme combination 1`] = `
 "
+		<a href="https://rose.example.com" title="Rose Service" class="">
+			
 			<span class="flex items-center justify-center overflow-hidden bg-contain w-16 rounded-2xl border border-black/5 shadow-sm bg-rose-100" style="">
 				<span>
 					<span
@@ -53,7 +79,9 @@ exports[`Icon Component Combined prop variations should render with rose theme c
 					></span>
 				</span>
 				</span>
-			"
+			
+		</a>
+	"
 `;
 
 exports[`Icon Component Combined prop variations should render with some optional props 1`] = `
@@ -71,6 +99,8 @@ exports[`Icon Component Combined prop variations should render with some optiona
 
 exports[`Icon Component Combined prop variations should render with yellow theme combination 1`] = `
 "
+			<a href="https://yellow.example.com" target="_blank" rel="noopener noreferrer" title="Yellow Service" class="">
+				
 			<span class="flex items-center justify-center overflow-hidden bg-contain w-16 rounded-2xl border border-black/5 shadow-sm bg-yellow-100" style="">
 				<span>
 					<span
@@ -79,7 +109,9 @@ exports[`Icon Component Combined prop variations should render with yellow theme
 					></span>
 				</span>
 				</span>
-			"
+			
+			</a>
+		"
 `;
 
 exports[`Icon Component Combined prop variations should render without icon (blank icon) 1`] = `
@@ -263,8 +295,26 @@ exports[`Icon Component With iconColor variations should render with yellow icon
 			"
 `;
 
-exports[`Icon Component With uri and newWindow variations should render with uri 1`] = `"<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icon.png" alt="" class="w-16 h-16 object-contain" /></span>"`;
+exports[`Icon Component With uri and newWindow variations should render with uri 1`] = `
+"
+			<a href="https://example.com" target="_blank" rel="noopener noreferrer" title="Linked Service" class="">
+				<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icon.png" alt="" class="w-16 h-16 object-contain" /></span>
+			</a>
+		"
+`;
 
-exports[`Icon Component With uri and newWindow variations should render with uri and newWindow false 1`] = `"<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icon.png" alt="" class="w-16 h-16 object-contain" /></span>"`;
+exports[`Icon Component With uri and newWindow variations should render with uri and newWindow false 1`] = `
+"
+		<a href="https://example.com" title="Same Window Service" class="">
+			<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icon.png" alt="" class="w-16 h-16 object-contain" /></span>
+		</a>
+	"
+`;
 
-exports[`Icon Component With uri and newWindow variations should render with uri and newWindow true 1`] = `"<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icon.png" alt="" class="w-16 h-16 object-contain" /></span>"`;
+exports[`Icon Component With uri and newWindow variations should render with uri and newWindow true 1`] = `
+"
+			<a href="https://example.com" target="_blank" rel="noopener noreferrer" title="New Window Service" class="">
+				<span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icon.png" alt="" class="w-16 h-16 object-contain" /></span>
+			</a>
+		"
+`;

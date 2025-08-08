@@ -186,6 +186,7 @@ describe("Icon Component", () => {
 				index: 0,
 				icon: "/icon.png",
 				uri: "https://example.com",
+				standalone: true,
 			});
 			expect(result).toMatchSnapshot();
 		});
@@ -197,6 +198,7 @@ describe("Icon Component", () => {
 				icon: "/icon.png",
 				uri: "https://example.com",
 				newWindow: true,
+				standalone: true,
 			});
 			expect(result).toMatchSnapshot();
 		});
@@ -208,6 +210,7 @@ describe("Icon Component", () => {
 				icon: "/icon.png",
 				uri: "https://example.com",
 				newWindow: false,
+				standalone: true,
 			});
 			expect(result).toMatchSnapshot();
 		});
@@ -260,6 +263,7 @@ describe("Icon Component", () => {
 					iconAspect: index % 3 === 0 ? "square" : index % 3 === 1 ? "width" : "height",
 					uri: `https://${color}.example.com`,
 					newWindow: index % 2 === 0,
+					standalone: true,
 				});
 				expect(result).toMatchSnapshot();
 			});
@@ -278,6 +282,7 @@ describe("Icon Component", () => {
 				uri: "https://complete.example.com",
 				newWindow: true,
 				categoryBubblePadding: true,
+				standalone: true,
 			});
 			expect(result).toMatchSnapshot();
 		});
@@ -295,6 +300,7 @@ describe("Icon Component", () => {
 				uri: "https://very-long-domain-name-for-testing.example.com/with/a/very/long/path",
 				newWindow: false,
 				categoryBubblePadding: false,
+				standalone: true,
 			});
 			expect(result).toMatchSnapshot();
 		});
@@ -304,6 +310,7 @@ describe("Icon Component", () => {
 				name: "Blank Icon Service",
 				index: 5,
 				uri: "https://example.com",
+				standalone: true,
 			});
 			expect(result).toMatchSnapshot();
 		});

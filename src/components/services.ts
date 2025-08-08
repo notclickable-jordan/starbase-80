@@ -27,8 +27,20 @@ interface IServiceProps {
 function Service(props: IServiceProps) {
 	const { service, index, categoryBubblePadding } = props;
 
-	const { name, uri, description, icon, iconBG, iconBubble, iconBubblePadding, iconColor, iconAspect, newWindow } =
-		service;
+	const {
+		name,
+		uri,
+		description,
+		icon,
+		iconLight,
+		iconDark,
+		iconBG,
+		iconBubble,
+		iconBubblePadding,
+		iconColor,
+		iconAspect,
+		newWindow,
+	} = service;
 
 	return `
 		<li class="p-4">
@@ -41,6 +53,8 @@ function Service(props: IServiceProps) {
 					? `<span class="flex-shrink-0 flex">${Icon({
 							name,
 							icon,
+							iconLight,
+							iconDark,
 							uri,
 							index,
 							iconColor,

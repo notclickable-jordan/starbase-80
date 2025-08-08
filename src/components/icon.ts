@@ -1,5 +1,6 @@
 import { is } from "../shared/is";
 import { IconAspect } from "../shared/types";
+import { THEME } from "../variables";
 import { Anchor } from "./anchor";
 
 const iconColors = [
@@ -27,6 +28,8 @@ interface IProps {
 	name: string;
 	index: number;
 	icon?: string;
+	iconLight?: string;
+	iconDark?: string;
 	iconColor?: string;
 	iconBG?: string;
 	iconBubble?: boolean;
@@ -35,6 +38,28 @@ interface IProps {
 	uri?: string;
 	newWindow?: boolean;
 	categoryBubblePadding?: boolean;
+	standalone?: boolean; // New prop to indicate if icon should create its own anchor
+}
+
+// Theme detection utility
+function getCurrentTheme(): "light" | "dark" | "auto" {
+	return THEME as "light" | "dark" | "auto";
+}
+
+// Icon selection logic
+function selectIcon(icon?: string, iconLight?: string, iconDark?: string): string | null {
+	const theme = getCurrentTheme();
+
+	switch (theme) {
+		case "light":
+			return iconLight || icon || null;
+		case "dark":
+			return iconDark || icon || null;
+		case "auto":
+		default:
+			// For auto theme, we'll handle this in the main function
+			return icon || null;
+	}
 }
 
 export const Icon = function (props: IProps): string {
@@ -42,6 +67,8 @@ export const Icon = function (props: IProps): string {
 		name,
 		uri,
 		icon,
+		iconLight,
+		iconDark,
 		index,
 		iconBG,
 		iconBubble,
@@ -50,32 +77,91 @@ export const Icon = function (props: IProps): string {
 		iconAspect,
 		newWindow,
 		categoryBubblePadding,
+		standalone = false,
 	} = props;
 
-	if (is.null(icon)) {
-		if (!is.null(uri)) {
-			return Anchor({ uri: uri as string, title: name, newWindow, children: IconBlank({ index }) });
+	const theme = getCurrentTheme();
+	let iconContent = "";
+
+	// Handle auto theme with dual rendering
+	if (theme === "auto" && (iconLight || iconDark)) {
+		const lightIcon = iconLight || icon;
+		const darkIcon = iconDark || icon;
+
+		let bubblePadding = categoryBubblePadding || false;
+		if (iconBubblePadding === true) {
+			bubblePadding = true;
+		} else if (iconBubblePadding === false) {
+			bubblePadding = false;
 		}
 
-		return IconBlank({ index });
+		let result = "";
+
+		// Light theme icon
+		if (lightIcon) {
+			const lightIconHtml = IconBase({
+				icon: lightIcon,
+				iconBG,
+				iconColor,
+				iconBubble,
+				iconBubblePadding: bubblePadding,
+				iconAspect,
+			});
+			result += `<span class="block dark:hidden">${lightIconHtml}</span>`;
+		}
+
+		// Dark theme icon
+		if (darkIcon) {
+			const darkIconHtml = IconBase({
+				icon: darkIcon,
+				iconBG,
+				iconColor,
+				iconBubble,
+				iconBubblePadding: bubblePadding,
+				iconAspect,
+			});
+			result += `<span class="hidden dark:block">${darkIconHtml}</span>`;
+		}
+
+		iconContent = result || IconBlank({ index });
+	} else {
+		// Handle light/dark theme or fallback for auto theme
+		const selectedIcon = selectIcon(icon, iconLight, iconDark);
+
+		if (is.null(selectedIcon)) {
+			iconContent = IconBlank({ index });
+		} else {
+			let bubblePadding = categoryBubblePadding || false;
+
+			if (iconBubblePadding === true) {
+				bubblePadding = true;
+			} else if (iconBubblePadding === false) {
+				bubblePadding = false;
+			}
+
+			iconContent = IconBase({
+				icon: selectedIcon as string,
+				iconBG,
+				iconColor,
+				iconBubble,
+				iconBubblePadding: bubblePadding,
+				iconAspect,
+			});
+		}
 	}
 
-	let bubblePadding = categoryBubblePadding || false;
-
-	if (iconBubblePadding === true) {
-		bubblePadding = true;
-	} else if (iconBubblePadding === false) {
-		bubblePadding = false;
+	// Only wrap in Anchor component if uri is provided AND standalone is true
+	// This prevents nested anchors when the icon is used within services components
+	if (!is.null(uri) && standalone) {
+		return Anchor({
+			uri: uri as string,
+			title: name,
+			newWindow,
+			children: iconContent,
+		});
 	}
 
-	return IconBase({
-		icon: icon as string,
-		iconBG,
-		iconColor,
-		iconBubble,
-		iconBubblePadding: bubblePadding,
-		iconAspect,
-	});
+	return iconContent;
 };
 
 interface IIconBlankProps {
