@@ -52,20 +52,28 @@ services:
 
 ## Environment variables
 
-| Variable                 | Required | Default                | Notes                                                                                                                            |
-| ------------------------ | -------- | ---------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| TITLE                    | True     | My Website             | Set to TITLE= to hide the title                                                                                                  |
-| LOGO                     | True     | /logo.png              | Set to LOGO= to hide the logo                                                                                                    |
-| HEADER                   |          | true                   | Set to false to hide the title and logo                                                                                          |
-| HEADERLINE               |          | true                   | Set to false to turn off the header border line                                                                                  |
-| CATEGORIES               |          | normal                 | Set to "small" for smaller, uppercase category labels                                                                            |
-| BGCOLOR                  |          | theme(colors.slate.50) | Page background color in light mode. Set to any hex color or Tailwind color using the theme syntax.                              |
-| BGCOLORDARK              |          | theme(colors.gray.950) | Page background color in dark mode. Set to any hex color or Tailwind color using the theme syntax.                               |
-| CATEGORYBUBBLECOLORLIGHT |          | theme(colors.white)    | Background color for category bubbles (if enabled) in light mode. Set to any hex color or Tailwind color using the theme syntax. |
-| CATEGORYBUBBLECOLORDARK  |          | theme(colors.black)    | Background color for category bubbles (if enabled) in dark mode. Set to any hex color or Tailwind color using the theme syntax.  |
-| NEWWINDOW                |          | true                   | Set to false to not have links open in a new window                                                                              |
-| THEME                    |          | auto                   | Set to "auto", "light", or "dark" to force a display mode (e.g. dark mode)                                                       |
-| HOVER                    |          | none                   | Set to "underline" for an underline effect on titles when hovering/focusing on that service                                      |
+| Variable                 | Required | Default                  | Notes                                                                                                                            |
+| ------------------------ | -------- | ------------------------ | -------------------------------------------------------------------------------------------------------------------------------- |
+| TITLE                    | True     | My Website               | Set to TITLE= to hide the title                                                                                                  |
+| LOGO                     | True     | /logo.png                | Set to LOGO= to hide the logo                                                                                                    |
+| HEADER                   |          | true                     | Set to false to hide the title and logo                                                                                          |
+| HEADERLINE               |          | true                     | Set to false to turn off the header border line                                                                                  |
+| CATEGORIES               |          | normal                   | Set to "small" for smaller, uppercase category labels                                                                            |
+| BGCOLOR                  |          | theme(colors.slate.50)   | Page background color in light mode. Set to any hex color or Tailwind color using the theme syntax.                              |
+| BGCOLORDARK              |          | theme(colors.gray.950)   | Page background color in dark mode. Set to any hex color or Tailwind color using the theme syntax.                               |
+| CATEGORYBUBBLECOLORLIGHT |          | theme(colors.white)      | Background color for category bubbles (if enabled) in light mode. Set to any hex color or Tailwind color using the theme syntax. |
+| CATEGORYBUBBLECOLORDARK  |          | theme(colors.black)      | Background color for category bubbles (if enabled) in dark mode. Set to any hex color or Tailwind color using the theme syntax.  |
+| TITLECOLOR               |          | black                    | Title text color in light mode. Set to any CSS color value (hex, rgb, rgba, etc.).                                               |
+| TITLECOLORDARK           |          | rgb(226 232 240)         | Title text color in dark mode. Set to any CSS color value (hex, rgb, rgba, etc.).                                                |
+| CATEGORYCOLOR            |          | rgb(71 85 105)           | Category heading text color in light mode. Set to any CSS color value (hex, rgb, rgba, etc.).                                    |
+| CATEGORYCOLORDARK        |          | rgb(226 232 240)         | Category heading text color in dark mode. Set to any CSS color value (hex, rgb, rgba, etc.).                                     |
+| LINKCOLOR                |          | black                    | Service link text color in light mode. Set to any CSS color value (hex, rgb, rgba, etc.).                                        |
+| LINKCOLORDARK            |          | rgb(226 232 240)         | Service link text color in dark mode. Set to any CSS color value (hex, rgb, rgba, etc.).                                         |
+| DESCRIPTIONCOLOR         |          | rgba(0, 0, 0, 0.5)       | Service description text color in light mode. Set to any CSS color value (hex, rgb, rgba, etc.).                                 |
+| DESCRIPTIONCOLORDARK     |          | rgba(255, 255, 255, 0.5) | Service description text color in dark mode. Set to any CSS color value (hex, rgb, rgba, etc.).                                  |
+| NEWWINDOW                |          | true                     | Set to false to not have links open in a new window                                                                              |
+| THEME                    |          | auto                     | Set to "auto", "light", or "dark" to force a display mode (e.g. dark mode)                                                       |
+| HOVER                    |          | none                     | Set to "underline" for an underline effect on titles when hovering/focusing on that service                                      |
 
 ## Volumes (bind mounts)
 

@@ -68,8 +68,8 @@ function Service(props: IServiceProps) {
 					: ``
 			}
 		<div>
-			<h3 class="text-lg mt-1 font-semibold line-clamp-1">${name}</h3>
-			${!is.null(description) ? `<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">${description}</p>` : ``}
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1 var-link-color">${name}</h3>
+			${!is.null(description) ? `<p class="text-sm line-clamp-1 var-description-color">${description}</p>` : ``}
 		</div>`,
 		})}
 			

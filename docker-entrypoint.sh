@@ -37,6 +37,14 @@ sed -i -e 's/background-color: theme(colors\.slate\.50)/background-color: '"${BG
 sed -i -e 's/background-color: theme(colors\.gray\.950)/background-color: '"${BGCOLORDARK}"'/g' /app/src/tailwind.css
 sed -i -e 's/background-color: theme(colors\.white)\; \/\* category light \*\//background-color: '"${CATEGORYBUBBLECOLORLIGHT}"\;'/g' /app/src/tailwind.css
 sed -i -e 's/background-color: theme(colors\.black)\; \/\* category dark \*\//background-color: '"${CATEGORYBUBBLECOLORDARK}"\;'/g' /app/src/tailwind.css
+sed -i -e 's/color: black; \/\* title light \*\//color: '"${TITLECOLOR}"\;'/g' /app/src/tailwind.css
+sed -i -e 's/color: rgb(71 85 105); \/\* category light - slate-600 \*\//color: '"${CATEGORYCOLOR}"\;'/g' /app/src/tailwind.css
+sed -i -e 's/color: black; \/\* link light \*\//color: '"${LINKCOLOR}"\;'/g' /app/src/tailwind.css
+sed -i -e 's/color: rgba(0, 0, 0, 0\.5); \/\* description light \*\//color: '"${DESCRIPTIONCOLOR}"\;'/g' /app/src/tailwind.css
+sed -i -e 's/color: rgb(226 232 240); \/\* title dark - slate-200 \*\//color: '"${TITLECOLORDARK}"\;'/g' /app/src/tailwind.css
+sed -i -e 's/color: rgb(226 232 240); \/\* category dark - slate-200 \*\//color: '"${CATEGORYCOLORDARK}"\;'/g' /app/src/tailwind.css
+sed -i -e 's/color: rgb(226 232 240); \/\* link dark - slate-200 \*\//color: '"${LINKCOLORDARK}"\;'/g' /app/src/tailwind.css
+sed -i -e 's/color: rgba(255, 255, 255, 0\.5); \/\* description dark \*\//color: '"${DESCRIPTIONCOLORDARK}"\;'/g' /app/src/tailwind.css
 
 # Light/dark theme
 if [ "$THEME" = "dark" ]; then sed -i -e 's/darkMode: "media"/darkMode: "selector"/g' /app/tailwind.config.js; fi

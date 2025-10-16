@@ -34,6 +34,44 @@ h1 {
 	padding: 0;
 }
 
+.var-title-color {
+	color: black; /* title light */
+}
+
+.var-category-color {
+	color: rgb(71 85 105); /* category light - slate-600 */
+}
+
+.var-link-color {
+	color: black; /* link light */
+}
+
+.var-description-color {
+	color: rgba(0, 0, 0, 0.5); /* description light */
+}
+
+@media (prefers-color-scheme: dark) {
+	html.auto .var-title-color,
+	html.dark .var-title-color {
+		color: rgb(226 232 240); /* title dark - slate-200 */
+	}
+
+	html.auto .var-category-color,
+	html.dark .var-category-color {
+		color: rgb(226 232 240); /* category dark - slate-200 */
+	}
+
+	html.auto .var-link-color,
+	html.dark .var-link-color {
+		color: rgb(226 232 240); /* link dark - slate-200 */
+	}
+
+	html.auto .var-description-color,
+	html.dark .var-description-color {
+		color: rgba(255, 255, 255, 0.5); /* description dark */
+	}
+}
+
 a:hover h3,
 a:focus h3 {
 	@apply no-underline;

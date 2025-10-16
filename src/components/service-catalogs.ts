@@ -24,15 +24,15 @@ interface ICatalogProps {
 const ServiceCatalog = function (props: ICatalogProps) {
 	const { category } = props;
 
-	let categoryClassName = "dark:text-slate-200";
+	let categoryClassName = "var-category-color";
 
 	switch (CATEGORIES as string) {
 		case "small":
-			categoryClassName += " text-sm text-slate-800 font-semibold py px-4 uppercase";
+			categoryClassName += " text-sm font-semibold py px-4 uppercase";
 			break;
 		case "normal":
 		default:
-			categoryClassName += " text-2xl text-slate-600 font-light py-2 px-4";
+			categoryClassName += " text-2xl font-light py-2 px-4";
 			break;
 	}
 
