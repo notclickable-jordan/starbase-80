@@ -1,6 +1,12 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../tailwind.config.mjs";
+
+/* Preserve the config safelist: keep every bg-{color}-{shade} available so any
+   category/icon color chosen in config.json works without editing Tailwind config. */
+@source inline("bg-{slate,gray,zinc,neutral,stone,red,orange,amber,yellow,lime,green,emerald,teal,cyan,sky,blue,indigo,violet,purple,fuchsia,pink,rose}-{50,100,200,300,400,500,600,700,800,900,950}");
+@source inline("bg-transparent");
+@source inline("bg-black");
+@source inline("bg-white");
 
 html {
 	background-color: theme(colors.slate.50);

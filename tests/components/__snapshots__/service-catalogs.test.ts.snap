@@ -4,7 +4,7 @@ exports[`ServiceCatalogList Component Color-themed categories should render blue
 "
 		<ul>
 			
-		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl !bg-blue-50 dark:!bg-blue-900">
+		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl bg-blue-50! dark:bg-blue-900!">
 			<h2 class="dark:text-slate-200 text-2xl text-slate-600 font-light py-2 px-4">Blue Applications</h2>
 			
 		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
@@ -56,7 +56,7 @@ exports[`ServiceCatalogList Component Color-themed categories should render gree
 "
 		<ul>
 			
-		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl !bg-green-50 dark:!bg-green-900">
+		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl bg-green-50! dark:bg-green-900!">
 			<h2 class="dark:text-slate-200 text-2xl text-slate-600 font-light py-2 px-4">Green Applications</h2>
 			
 		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
@@ -108,7 +108,7 @@ exports[`ServiceCatalogList Component Color-themed categories should render red 
 "
 		<ul>
 			
-		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl !bg-red-50 dark:!bg-red-900">
+		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl bg-red-50! dark:bg-red-900!">
 			<h2 class="dark:text-slate-200 text-2xl text-slate-600 font-light py-2 px-4">Red Applications</h2>
 			
 		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
@@ -160,7 +160,7 @@ exports[`ServiceCatalogList Component Color-themed categories should render rose
 "
 		<ul>
 			
-		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl !bg-rose-50 dark:!bg-rose-900">
+		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl bg-rose-50! dark:bg-rose-900!">
 			<h2 class="dark:text-slate-200 text-2xl text-slate-600 font-light py-2 px-4">Rose Applications</h2>
 			
 		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
@@ -212,7 +212,7 @@ exports[`ServiceCatalogList Component Color-themed categories should render yell
 "
 		<ul>
 			
-		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl !bg-yellow-50 dark:!bg-yellow-900">
+		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl bg-yellow-50! dark:bg-yellow-900!">
 			<h2 class="dark:text-slate-200 text-2xl text-slate-600 font-light py-2 px-4">Yellow Applications</h2>
 			
 		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
@@ -264,7 +264,7 @@ exports[`ServiceCatalogList Component Complex scenarios should render category w
 "
 		<ul>
 			
-		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl !bg-gray-50 dark:!bg-gray-800">
+		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl bg-gray-50! dark:bg-gray-800!">
 			<h2 class="dark:text-slate-200 text-2xl text-slate-600 font-light py-2 px-4">Large Category</h2>
 			
 		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
@@ -444,7 +444,7 @@ exports[`ServiceCatalogList Component Complex scenarios should render multiple c
 "
 		<ul>
 			
-		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl !bg-blue-50 dark:!bg-blue-900">
+		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl bg-blue-50! dark:bg-blue-900!">
 			<h2 class="dark:text-slate-200 text-2xl text-slate-600 font-light py-2 px-4">Development Tools</h2>
 			
 		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
@@ -522,7 +522,7 @@ exports[`ServiceCatalogList Component Complex scenarios should render multiple c
 	
 		</li>
 	
-		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl !bg-emerald-100">
+		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl bg-emerald-100!">
 			<h2 class="dark:text-slate-200 text-2xl text-slate-600 font-light py-2 px-4">Monitoring</h2>
 			
 		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
@@ -574,7 +574,7 @@ exports[`ServiceCatalogList Component Complex scenarios should render with all p
 "
 		<ul>
 			
-		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl !bg-purple-50 dark:!bg-purple-900">
+		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl bg-purple-50! dark:bg-purple-900!">
 			<h2 class="dark:text-slate-200 text-2xl text-slate-600 font-light py-2 px-4">This is a very long category name or service name that tests how the component handles extensive text content and ensures that it properly renders without breaking the layout or functionality</h2>
 			
 		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
@@ -828,7 +828,7 @@ exports[`ServiceCatalogList Component With bubble background variations should r
 "
 		<ul>
 			
-		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl !bg-blue-100 dark:!bg-blue-800">
+		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl bg-blue-100! dark:bg-blue-800!">
 			<h2 class="dark:text-slate-200 text-2xl text-slate-600 font-light py-2 px-4">Blue Category</h2>
 			
 		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
@@ -858,7 +858,7 @@ exports[`ServiceCatalogList Component With bubble background variations should r
 "
 		<ul>
 			
-		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl !bg-green-100 dark:!bg-green-800">
+		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl bg-green-100! dark:bg-green-800!">
 			<h2 class="dark:text-slate-200 text-2xl text-slate-600 font-light py-2 px-4">Green Category</h2>
 			
 		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
@@ -888,7 +888,7 @@ exports[`ServiceCatalogList Component With bubble background variations should r
 "
 		<ul>
 			
-		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl dark:!bg-slate-900">
+		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl dark:bg-slate-900!">
 			<h2 class="dark:text-slate-200 text-2xl text-slate-600 font-light py-2 px-4">Dark BG Only</h2>
 			
 		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
@@ -918,7 +918,7 @@ exports[`ServiceCatalogList Component With bubble background variations should r
 "
 		<ul>
 			
-		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl !bg-emerald-50">
+		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl bg-emerald-50!">
 			<h2 class="dark:text-slate-200 text-2xl text-slate-600 font-light py-2 px-4">Light BG Only</h2>
 			
 		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
@@ -948,7 +948,7 @@ exports[`ServiceCatalogList Component With bubble background variations should r
 "
 		<ul>
 			
-		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl !bg-red-100 dark:!bg-red-800">
+		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl bg-red-100! dark:bg-red-800!">
 			<h2 class="dark:text-slate-200 text-2xl text-slate-600 font-light py-2 px-4">Red Category</h2>
 			
 		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
@@ -978,7 +978,7 @@ exports[`ServiceCatalogList Component With bubble background variations should r
 "
 		<ul>
 			
-		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl !bg-rose-100 dark:!bg-rose-800">
+		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl bg-rose-100! dark:bg-rose-800!">
 			<h2 class="dark:text-slate-200 text-2xl text-slate-600 font-light py-2 px-4">Rose Category</h2>
 			
 		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
@@ -1008,7 +1008,7 @@ exports[`ServiceCatalogList Component With bubble background variations should r
 "
 		<ul>
 			
-		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl !bg-yellow-100 dark:!bg-yellow-800">
+		<li class="mt-12 first:mt-0 xl:first:mt-6 var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl bg-yellow-100! dark:bg-yellow-800!">
 			<h2 class="dark:text-slate-200 text-2xl text-slate-600 font-light py-2 px-4">Yellow Category</h2>
 			
 		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">

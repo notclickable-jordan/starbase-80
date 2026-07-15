@@ -42,11 +42,11 @@ const ServiceCatalog = function (props: ICatalogProps) {
 		liClassName += " var-category-bubble-bg rounded-2xl px-6 py-6 ring-1 ring-slate-900/5 shadow-xl";
 
 		if (!is.null(category.bubbleBGLight)) {
-			liClassName += ` !bg-${category.bubbleBGLight}`;
+			liClassName += ` bg-${category.bubbleBGLight}!`;
 		}
 
 		if (!is.null(category.bubbleBGDark)) {
-			liClassName += ` dark:!bg-${category.bubbleBGDark}`;
+			liClassName += ` dark:bg-${category.bubbleBGDark}!`;
 		}
 	}
 

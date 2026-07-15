@@ -214,6 +214,11 @@ Use any [selfh.st icon](https://selfh.st/icons/) by prefixing the name with `sel
 
 # Change history
 
+## 1.6.5
+
+- Switched to swc/jest
+- Updated packages
+
 ## 1.6.4
 
 - Added forced light theme option
