@@ -1,4 +1,3 @@
-import CleanCSS from "clean-css";
 import * as path from "path";
 import { sbMakeFolder, sbReadFile, sbRemoveAllCSS, sbWriteFile } from "./shared/files";
 
@@ -14,7 +13,7 @@ async function start(): Promise<void> {
 	await sbMakeFolder(cssFilePath);
 
 	const css = await sbReadFile(cssFileInPath);
-	await sbWriteFile(cssFileOutPath, new CleanCSS().minify(css).styles);
+	await sbWriteFile(cssFileOutPath, css);
 
 	const index = await sbReadFile(indexFileInOutPath);
 	const cssLink = `<link rel="stylesheet" href="./main.css" crossorigin="">`;
