@@ -33,13 +33,13 @@ export const IndexPage = function (props: IProps): string {
 		}
 	}
 
-	let pageWrapperClassName = "min-h-screen flex flex-col  max-w-screen-2xl mx-auto";
+	let pageWrapperClassName = "min-h-screen flex flex-col  max-w-(--breakpoint-2xl) mx-auto";
 
 	if (!SHOWHEADERTOP) {
 		pageWrapperClassName += " xl:flex-row";
 	}
 
-	let serviceCatalogListWrapperClassName = "p-4 flex-grow";
+	let serviceCatalogListWrapperClassName = "p-4 grow";
 
 	if (!SHOWHEADERTOP) {
 		serviceCatalogListWrapperClassName += " min-h-screen";

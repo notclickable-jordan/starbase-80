@@ -50,7 +50,7 @@ function Service(props: IServiceProps) {
 			className: "flex gap-4",
 			children: `${
 				!is.null(icon)
-					? `<span class="flex-shrink-0 flex">${Icon({
+					? `<span class="shrink-0 flex">${Icon({
 							name,
 							icon,
 							iconLight,

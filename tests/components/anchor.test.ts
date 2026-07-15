@@ -134,7 +134,7 @@ describe("Anchor Component", () => {
 				uri: "https://very-long-domain-name-for-testing-purposes.example.com/with/a/very/long/path/that/might/cause/issues",
 				title: longString,
 				className:
-					"inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-200",
+					"inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-linear-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-200",
 				children: `<div class="flex items-center space-x-2"><span>${longString}</span></div>`,
 				newWindow: true,
 			});

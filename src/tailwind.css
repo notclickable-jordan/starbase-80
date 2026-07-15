@@ -1,4 +1,5 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
 @config "../tailwind.config.mjs";
 
 /* Preserve the config safelist: keep every bg-{color}-{shade} available so any
@@ -9,24 +10,24 @@
 @source inline("bg-white");
 
 html {
-	background-color: theme(colors.slate.50);
+	background-color: var(--color-slate-50);
 }
 
 @media (prefers-color-scheme: dark) {
 	html.auto {
-		background-color: theme(colors.gray.950);
-		color: theme(colors.slate.200);
+		background-color: var(--color-gray-950);
+		color: var(--color-slate-200);
 	}
 
 	html.dark {
-		background-color: theme(colors.gray.950);
-		color: theme(colors.slate.200);
+		background-color: var(--color-gray-950);
+		color: var(--color-slate-200);
 	}
 }
 
 html.dark {
-	background-color: theme(colors.gray.950);
-	color: theme(colors.slate.200);
+	background-color: var(--color-gray-950);
+	color: var(--color-slate-200);
 }
 
 body {
@@ -34,8 +35,8 @@ body {
 }
 
 h1 {
-	font-size: theme(fontSize.3xl);
-	font-weight: theme(fontWeight.semibold);
+	font-size: var(--text-3xl);
+	font-weight: var(--font-weight-semibold);
 	margin: 0;
 	padding: 0;
 }
@@ -46,15 +47,15 @@ a:focus h3 {
 }
 
 .var-category-bubble-bg {
-	background-color: theme(colors.white); /* category light */
+	background-color: var(--color-white); /* category light */
 }
 
 @media (prefers-color-scheme: dark) {
 	html.auto .var-category-bubble-bg {
-		background-color: theme(colors.black); /* category dark */
+		background-color: var(--color-black); /* category dark */
 	}
 
 	html.dark .var-category-bubble-bg {
-		background-color: theme(colors.black); /* category dark */
+		background-color: var(--color-black); /* category dark */
 	}
 }
