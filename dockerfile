@@ -1,5 +1,5 @@
 # Build site using Node JS
-FROM node:23-slim
+FROM node:26-slim
 
 # Install nginx and wget
 RUN apt-get update && apt-get install -y nginx wget
@@ -17,7 +17,7 @@ LABEL \
 WORKDIR /app
 
 COPY package.json .
-RUN npm i
+RUN npm i --legacy-peer-deps
 
 COPY . .
 

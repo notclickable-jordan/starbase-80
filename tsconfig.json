@@ -3,10 +3,12 @@
 		"target": "ESNext",
 		"lib": ["DOM", "DOM.Iterable", "ESNext"],
 		"outDir": "./dist",
+		"rootDir": "./src",
 		"strict": true,
 		"esModuleInterop": true,
 		"resolveJsonModule": true,
-		"module": "CommonJS"
+		"module": "CommonJS",
+		"types": ["node"]
 	},
 	"include": ["src/index.ts", "src/css-cache-break.ts"]
 }

@@ -1,26 +1,33 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@config "../tailwind.config.mjs";
+
+/* Preserve the config safelist: keep every bg-{color}-{shade} available so any
+   category/icon color chosen in config.json works without editing Tailwind config. */
+@source inline("bg-{slate,gray,zinc,neutral,stone,red,orange,amber,yellow,lime,green,emerald,teal,cyan,sky,blue,indigo,violet,purple,fuchsia,pink,rose}-{50,100,200,300,400,500,600,700,800,900,950}");
+@source inline("bg-transparent");
+@source inline("bg-black");
+@source inline("bg-white");
 
 html {
-	background-color: theme(colors.slate.50);
+	background-color: var(--color-slate-50);
 }
 
 @media (prefers-color-scheme: dark) {
 	html.auto {
-		background-color: theme(colors.gray.950);
-		color: theme(colors.slate.200);
+		background-color: var(--color-gray-950);
+		color: var(--color-slate-200);
 	}
 
 	html.dark {
-		background-color: theme(colors.gray.950);
-		color: theme(colors.slate.200);
+		background-color: var(--color-gray-950);
+		color: var(--color-slate-200);
 	}
 }
 
 html.dark {
-	background-color: theme(colors.gray.950);
-	color: theme(colors.slate.200);
+	background-color: var(--color-gray-950);
+	color: var(--color-slate-200);
 }
 
 body {
@@ -28,8 +35,8 @@ body {
 }
 
 h1 {
-	font-size: theme(fontSize.3xl);
-	font-weight: theme(fontWeight.semibold);
+	font-size: var(--text-3xl);
+	font-weight: var(--font-weight-semibold);
 	margin: 0;
 	padding: 0;
 }
@@ -40,15 +47,15 @@ a:focus h3 {
 }
 
 .var-category-bubble-bg {
-	background-color: theme(colors.white); /* category light */
+	background-color: var(--color-white); /* category light */
 }
 
 @media (prefers-color-scheme: dark) {
 	html.auto .var-category-bubble-bg {
-		background-color: theme(colors.black); /* category dark */
+		background-color: var(--color-black); /* category dark */
 	}
 
 	html.dark .var-category-bubble-bg {
-		background-color: theme(colors.black); /* category dark */
+		background-color: var(--color-black); /* category dark */
 	}
 }
