@@ -33,15 +33,30 @@ sed -i -e 's/CATEGORIES = "normal"/CATEGORIES = "'"${CATEGORIES}"'"/g' /app/src/
 sed -i -e 's/NEWWINDOW = true/NEWWINDOW = '"${NEWWINDOW}"'/g' /app/src/variables.ts
 
 # CSS replacement
-sed -i -e 's/background-color: theme(colors\.slate\.50)/background-color: '"${BGCOLOR}"'/g' /app/src/tailwind.css
-sed -i -e 's/background-color: theme(colors\.gray\.950)/background-color: '"${BGCOLORDARK}"'/g' /app/src/tailwind.css
-sed -i -e 's/background-color: theme(colors\.white)\; \/\* category light \*\//background-color: '"${CATEGORYBUBBLECOLORLIGHT}"\;'/g' /app/src/tailwind.css
-sed -i -e 's/background-color: theme(colors\.black)\; \/\* category dark \*\//background-color: '"${CATEGORYBUBBLECOLORDARK}"\;'/g' /app/src/tailwind.css
+# Tailwind v4 removed the theme(colors.x.y) function. Translate any legacy
+# theme(colors.x.y) color values (built-in defaults or user-supplied) into the
+# v4 var(--color-x-y) equivalent so existing configs keep working. Hex codes and
+# already-migrated var(...) values pass through unchanged.
+translate_color() {
+	printf '%s' "$1" | sed -E \
+		-e 's/theme\(colors\.([a-zA-Z]+)\.([0-9]+)\)/var(--color-\1-\2)/g' \
+		-e 's/theme\(colors\.([a-zA-Z]+)\)/var(--color-\1)/g'
+}
+
+BGCOLOR=$(translate_color "${BGCOLOR}")
+BGCOLORDARK=$(translate_color "${BGCOLORDARK}")
+CATEGORYBUBBLECOLORLIGHT=$(translate_color "${CATEGORYBUBBLECOLORLIGHT}")
+CATEGORYBUBBLECOLORDARK=$(translate_color "${CATEGORYBUBBLECOLORDARK}")
+
+sed -i -e 's/background-color: var(--color-slate-50)/background-color: '"${BGCOLOR}"'/g' /app/src/tailwind.css
+sed -i -e 's/background-color: var(--color-gray-950)/background-color: '"${BGCOLORDARK}"'/g' /app/src/tailwind.css
+sed -i -e 's/background-color: var(--color-white)\; \/\* category light \*\//background-color: '"${CATEGORYBUBBLECOLORLIGHT}"\;'/g' /app/src/tailwind.css
+sed -i -e 's/background-color: var(--color-black)\; \/\* category dark \*\//background-color: '"${CATEGORYBUBBLECOLORDARK}"\;'/g' /app/src/tailwind.css
 
 # Light/dark theme
-if [ "$THEME" = "dark" ]; then sed -i -e 's/darkMode: "media"/darkMode: "selector"/g' /app/tailwind.config.js; fi
+if [ "$THEME" = "dark" ]; then sed -i -e 's/darkMode: "media"/darkMode: "selector"/g' /app/tailwind.config.mjs; fi
 if [ "$THEME" = "dark" ]; then sed -i -e 's/<html class="auto"/<html class="dark"/' /app/index.html; fi
-if [ "$THEME" = "light" ]; then sed -i -e 's/darkMode: "media"/darkMode: "selector"/g' /app/tailwind.config.js; fi
+if [ "$THEME" = "light" ]; then sed -i -e 's/darkMode: "media"/darkMode: "selector"/g' /app/tailwind.config.mjs; fi
 if [ "$THEME" = "light" ]; then sed -i -e 's/<html class="auto"/<html class="light"/' /app/index.html; fi
 
 # Hover effect
