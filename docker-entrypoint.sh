@@ -62,9 +62,42 @@ if [ "$THEME" = "light" ]; then sed -i -e 's/<html class="auto"/<html class="lig
 # Hover effect
 if [ "$HOVER" = "underline" ]; then sed -i -e 's/@apply no-underline;/@apply underline;/g' /app/src/tailwind.css; fi
 
+# Validate the config files before building. If a config file contains invalid
+# JSON, tsc fails with a cryptic error and nginx would otherwise start anyway,
+# serving a 403. Fail loudly and stop the container instead.
+validate_config() {
+	config_file="$1"
+
+	# Skip files that don't exist (the legacy config is optional)
+	if [ ! -f "$config_file" ]; then
+		return 0
+	fi
+
+	if ! node -e 'JSON.parse(require("fs").readFileSync(process.argv[1], "utf8"))' "$config_file" 2>/tmp/config-error; then
+		echo "========================================================================"
+		echo "ERROR: $config_file is not valid JSON."
+		echo ""
+		sed 's/^/  /' /tmp/config-error
+		echo ""
+		echo "Please fix the formatting of your config file and restart the container."
+		echo "A common mistake is a missing comma or curly brace."
+		echo "========================================================================"
+		exit 1
+	fi
+}
+
+validate_config /app/src/config.json
+validate_config /app/src/config/config.json
+
 # Build the application
 echo "Building application..."
-npm run build
+if ! npm run build; then
+	echo "========================================================================"
+	echo "ERROR: The build failed. The container will stop instead of serving a"
+	echo "broken page. Check the build output above for details."
+	echo "========================================================================"
+	exit 1
+fi
 
 # Start nginx and track its PID
 echo "Starting nginx..."

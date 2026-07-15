@@ -214,6 +214,10 @@ Use any [selfh.st icon](https://selfh.st/icons/) by prefixing the name with `sel
 
 # Change history
 
+## 1.6.6
+
+- Fail gracefully with a clear message when the config file contains invalid JSON
+
 ## 1.6.5
 
 - Switched to swc/jest
