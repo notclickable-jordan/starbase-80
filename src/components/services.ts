@@ -10,10 +10,11 @@ interface IServicesProps {
 
 export const Services = function (props: IServicesProps) {
 	const { services, categoryBubblePadding } = props;
+	const visibleServices = services.filter(service => !service.hidden);
 
 	return `
 		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
-			${services.map((service, index) => Service({ index, service, categoryBubblePadding })).join("")}
+			${visibleServices.map((service, index) => Service({ index, service, categoryBubblePadding })).join("")}
 		</ul>
 	`;
 };
@@ -49,7 +50,7 @@ function Service(props: IServiceProps) {
 			newWindow,
 			className: "flex gap-4",
 			children: `${
-				!is.null(icon)
+				!is.null(icon) || !is.null(iconLight) || !is.null(iconDark)
 					? `<span class="shrink-0 flex">${Icon({
 							name,
 							icon,

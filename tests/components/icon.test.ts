@@ -24,6 +24,20 @@ describe("Icon Component", () => {
 		});
 	});
 
+	describe("IconBlank background color assignment", () => {
+		// Regression test: getIconColor previously computed `iconColors.length % index`
+		// instead of `index % iconColors.length`, which produced `bg-undefined-300`
+		// (an out-of-bounds array access) for index 0 and any index that is a multiple
+		// or divisor of the color list length.
+		[0, 1, 2, 3, 14, 15, 16, 20].forEach(index => {
+			test(`should assign a valid Tailwind background color at index ${index}`, () => {
+				const result = Icon({ name: "Blank", index });
+				expect(result).not.toContain("undefined");
+				expect(result).toMatch(/bg-[a-z]+-300/);
+			});
+		});
+	});
+
 	describe("With icon variations", () => {
 		test("should render with HTTP URL icon", () => {
 			const result = Icon({
@@ -321,6 +335,127 @@ describe("Icon Component", () => {
 				index: 7,
 			});
 			expect(result).toMatchSnapshot();
+		});
+	});
+
+	describe("With theme-aware icon variations (auto theme)", () => {
+		test("should render both iconLight and iconDark with theme toggle classes", () => {
+			const result = Icon({
+				name: "Theme Service",
+				index: 2,
+				iconLight: "/icons/light.png",
+				iconDark: "/icons/dark.png",
+			});
+			expect(result).toContain("/icons/light.png");
+			expect(result).toContain("/icons/dark.png");
+			expect(result).toContain("dark:hidden");
+			expect(result).toContain("hidden dark:block");
+			expect(result).toMatchSnapshot();
+		});
+
+		test("should use icon as the dark fallback when only iconLight is set", () => {
+			const result = Icon({
+				name: "Theme Service",
+				index: 2,
+				icon: "/icons/base.png",
+				iconLight: "/icons/light.png",
+			});
+			expect(result).toContain("/icons/light.png");
+			expect(result).toContain("/icons/base.png");
+			expect(result).toMatchSnapshot();
+		});
+
+		test("should use icon as the light fallback when only iconDark is set", () => {
+			const result = Icon({
+				name: "Theme Service",
+				index: 2,
+				icon: "/icons/base.png",
+				iconDark: "/icons/dark.png",
+			});
+			expect(result).toContain("/icons/dark.png");
+			expect(result).toContain("/icons/base.png");
+			expect(result).toMatchSnapshot();
+		});
+
+		test("should render an IconBlank for the dark side when only iconLight is set and there is no base icon", () => {
+			const result = Icon({
+				name: "Theme Service",
+				index: 2,
+				iconLight: "/icons/light.png",
+			});
+			expect(result).toContain("/icons/light.png");
+			expect((result.match(/<img/g) || []).length).toBe(1);
+			expect(result).toMatchSnapshot();
+		});
+
+		test("should render an IconBlank for the light side when only iconDark is set and there is no base icon", () => {
+			const result = Icon({
+				name: "Theme Service",
+				index: 2,
+				iconDark: "/icons/dark.png",
+			});
+			expect(result).toContain("/icons/dark.png");
+			expect((result.match(/<img/g) || []).length).toBe(1);
+			expect(result).toMatchSnapshot();
+		});
+	});
+
+	describe("With theme-aware icon variations (explicit THEME)", () => {
+		function renderWithTheme(theme: "light" | "dark" | "auto", props: Record<string, unknown>): string {
+			let html = "";
+			jest.isolateModules(() => {
+				jest.doMock("../../src/variables", () => ({ THEME: theme }));
+				const { Icon: ThemedIcon } = require("../../src/components/icon");
+				html = ThemedIcon(props);
+			});
+			return html;
+		}
+
+		test("uses iconDark when THEME is dark", () => {
+			const html = renderWithTheme("dark", {
+				name: "Themed Service",
+				index: 2,
+				icon: "/icons/base.png",
+				iconLight: "/icons/light.png",
+				iconDark: "/icons/dark.png",
+			});
+			expect(html).toContain("/icons/dark.png");
+			expect(html).not.toContain("/icons/light.png");
+			expect(html).not.toContain("/icons/base.png");
+		});
+
+		test("uses iconLight when THEME is light", () => {
+			const html = renderWithTheme("light", {
+				name: "Themed Service",
+				index: 2,
+				icon: "/icons/base.png",
+				iconLight: "/icons/light.png",
+				iconDark: "/icons/dark.png",
+			});
+			expect(html).toContain("/icons/light.png");
+			expect(html).not.toContain("/icons/dark.png");
+			expect(html).not.toContain("/icons/base.png");
+		});
+
+		test("falls back to icon when THEME is dark and iconDark is not set", () => {
+			const html = renderWithTheme("dark", {
+				name: "Themed Service",
+				index: 2,
+				icon: "/icons/base.png",
+				iconLight: "/icons/light.png",
+			});
+			expect(html).toContain("/icons/base.png");
+			expect(html).not.toContain("/icons/light.png");
+		});
+
+		test("renders IconBlank when THEME is dark and neither icon nor iconDark is set", () => {
+			const html = renderWithTheme("dark", {
+				name: "Themed Service",
+				index: 2,
+				iconLight: "/icons/light.png",
+			});
+			expect(html).not.toContain("/icons/light.png");
+			expect((html.match(/<img/g) || []).length).toBe(0);
 		});
 	});
 });

@@ -22,7 +22,7 @@ const iconColors = [
 ];
 const iconLevel = 300;
 
-const getIconColor = (index: number) => `bg-${iconColors[iconColors.length % index]}-${iconLevel}`;
+const getIconColor = (index: number) => `bg-${iconColors[index % iconColors.length]}-${iconLevel}`;
 
 interface IProps {
 	name: string;
@@ -95,35 +95,29 @@ export const Icon = function (props: IProps): string {
 			bubblePadding = false;
 		}
 
-		let result = "";
+		const lightIconHtml = lightIcon
+			? IconBase({
+					icon: lightIcon,
+					iconBG,
+					iconColor,
+					iconBubble,
+					iconBubblePadding: bubblePadding,
+					iconAspect,
+				})
+			: IconBlank({ index });
 
-		// Light theme icon
-		if (lightIcon) {
-			const lightIconHtml = IconBase({
-				icon: lightIcon,
-				iconBG,
-				iconColor,
-				iconBubble,
-				iconBubblePadding: bubblePadding,
-				iconAspect,
-			});
-			result += `<span class="block dark:hidden">${lightIconHtml}</span>`;
-		}
+		const darkIconHtml = darkIcon
+			? IconBase({
+					icon: darkIcon,
+					iconBG,
+					iconColor,
+					iconBubble,
+					iconBubblePadding: bubblePadding,
+					iconAspect,
+				})
+			: IconBlank({ index });
 
-		// Dark theme icon
-		if (darkIcon) {
-			const darkIconHtml = IconBase({
-				icon: darkIcon,
-				iconBG,
-				iconColor,
-				iconBubble,
-				iconBubblePadding: bubblePadding,
-				iconAspect,
-			});
-			result += `<span class="hidden dark:block">${darkIconHtml}</span>`;
-		}
-
-		iconContent = result || IconBlank({ index });
+		iconContent = `<span class="block dark:hidden">${lightIconHtml}</span><span class="hidden dark:block">${darkIconHtml}</span>`;
 	} else {
 		// Handle light/dark theme or fallback for auto theme
 		const selectedIcon = selectIcon(icon, iconLight, iconDark);

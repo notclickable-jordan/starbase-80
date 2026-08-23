@@ -119,7 +119,7 @@ exports[`Icon Component Combined prop variations should render without icon (bla
 			<a href="https://example.com" target="_blank" rel="noopener noreferrer" title="Blank Icon Service" class="">
 				
 		<span
-			class="block w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-blue-300 overflow-hidden"
+			class="block w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-cyan-300 overflow-hidden"
 		/>
 	
 			</a>
@@ -129,7 +129,7 @@ exports[`Icon Component Combined prop variations should render without icon (bla
 exports[`Icon Component Combined prop variations should render without icon and without uri 1`] = `
 "
 		<span
-			class="block w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-rose-300 overflow-hidden"
+			class="block w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-orange-300 overflow-hidden"
 		/>
 	"
 `;
@@ -137,7 +137,7 @@ exports[`Icon Component Combined prop variations should render without icon and 
 exports[`Icon Component Required props only should render with just name and index 1`] = `
 "
 		<span
-			class="block w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-undefined-300 overflow-hidden"
+			class="block w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-blue-300 overflow-hidden"
 		/>
 	"
 `;
@@ -145,7 +145,7 @@ exports[`Icon Component Required props only should render with just name and ind
 exports[`Icon Component Required props only should render with long name 1`] = `
 "
 		<span
-			class="block w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-blue-300 overflow-hidden"
+			class="block w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-rose-300 overflow-hidden"
 		/>
 	"
 `;
@@ -294,6 +294,28 @@ exports[`Icon Component With iconColor variations should render with yellow icon
 				</span>
 			"
 `;
+
+exports[`Icon Component With theme-aware icon variations (auto theme) should render an IconBlank for the dark side when only iconLight is set and there is no base icon 1`] = `
+"<span class="block dark:hidden"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icons/light.png" alt="" class="w-16 h-16 object-contain" /></span></span><span class="hidden dark:block">
+		<span
+			class="block w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-green-300 overflow-hidden"
+		/>
+	</span>"
+`;
+
+exports[`Icon Component With theme-aware icon variations (auto theme) should render an IconBlank for the light side when only iconDark is set and there is no base icon 1`] = `
+"<span class="block dark:hidden">
+		<span
+			class="block w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-green-300 overflow-hidden"
+		/>
+	</span><span class="hidden dark:block"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icons/dark.png" alt="" class="w-16 h-16 object-contain" /></span></span>"
+`;
+
+exports[`Icon Component With theme-aware icon variations (auto theme) should render both iconLight and iconDark with theme toggle classes 1`] = `"<span class="block dark:hidden"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icons/light.png" alt="" class="w-16 h-16 object-contain" /></span></span><span class="hidden dark:block"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icons/dark.png" alt="" class="w-16 h-16 object-contain" /></span></span>"`;
+
+exports[`Icon Component With theme-aware icon variations (auto theme) should use icon as the dark fallback when only iconLight is set 1`] = `"<span class="block dark:hidden"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icons/light.png" alt="" class="w-16 h-16 object-contain" /></span></span><span class="hidden dark:block"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icons/base.png" alt="" class="w-16 h-16 object-contain" /></span></span>"`;
+
+exports[`Icon Component With theme-aware icon variations (auto theme) should use icon as the light fallback when only iconDark is set 1`] = `"<span class="block dark:hidden"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icons/base.png" alt="" class="w-16 h-16 object-contain" /></span></span><span class="hidden dark:block"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icons/dark.png" alt="" class="w-16 h-16 object-contain" /></span></span>"`;
 
 exports[`Icon Component With uri and newWindow variations should render with uri 1`] = `
 "

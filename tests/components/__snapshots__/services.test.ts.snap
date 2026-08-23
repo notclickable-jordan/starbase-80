@@ -758,6 +758,77 @@ exports[`Services Component With different icon types should render services wit
 	"
 `;
 
+exports[`Services Component With hidden services should not render a service marked as hidden 1`] = `
+"
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+			<a href="https://service1.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="shrink-0 flex"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icons/service1.png" alt="" class="w-16 h-16 object-contain" /></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Visible Service</h3>
+			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">Description for Visible Service</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`Services Component With hidden services should not skip a color index for a hidden service 1`] = `
+"
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+			<a href="https://a.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="shrink-0 flex"><span class="block dark:hidden"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icons/a.png" alt="" class="w-16 h-16 object-contain" /></span></span><span class="hidden dark:block">
+		<span
+			class="block w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-blue-300 overflow-hidden"
+		/>
+	</span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">First Visible</h3>
+			
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		<li class="p-4">
+		
+			<a href="https://b.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="shrink-0 flex"><span class="block dark:hidden"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icons/b.png" alt="" class="w-16 h-16 object-contain" /></span></span><span class="hidden dark:block">
+		<span
+			class="block w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-rose-300 overflow-hidden"
+		/>
+	</span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Second Visible</h3>
+			
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`Services Component With hidden services should render nothing when every service is hidden 1`] = `
+"
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		</ul>
+	"
+`;
+
 exports[`Services Component With long content should render service with long properties and all options 1`] = `
 "
 		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
@@ -803,6 +874,77 @@ exports[`Services Component With long content should render services with long s
 		<div>
 			<h3 class="text-lg mt-1 font-semibold line-clamp-1">This is a very long service name or description that tests how the component handles extensive text content and ensures that it properly renders without breaking the layout or functionality</h3>
 			<p class="text-sm text-black/50 dark:text-white/50 line-clamp-1">This is a very long service name or description that tests how the component handles extensive text content and ensures that it properly renders without breaking the layout or functionality - extended description</p>
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`Services Component With theme-aware icon-only services (iconLight / iconDark) should render the icon wrapper when both iconLight and iconDark are set without a base icon 1`] = `
+"
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+			<a href="https://both.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="shrink-0 flex"><span class="block dark:hidden"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icons/light.png" alt="" class="w-16 h-16 object-contain" /></span></span><span class="hidden dark:block"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icons/dark.png" alt="" class="w-16 h-16 object-contain" /></span></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Both Themed Service</h3>
+			
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`Services Component With theme-aware icon-only services (iconLight / iconDark) should render the icon wrapper when only iconDark is set 1`] = `
+"
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+			<a href="https://dark.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="shrink-0 flex"><span class="block dark:hidden">
+		<span
+			class="block w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-blue-300 overflow-hidden"
+		/>
+	</span><span class="hidden dark:block"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icons/dark.png" alt="" class="w-16 h-16 object-contain" /></span></span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Dark Only Service</h3>
+			
+		</div>
+			</a>
+		
+			
+		</li>
+	
+		</ul>
+	"
+`;
+
+exports[`Services Component With theme-aware icon-only services (iconLight / iconDark) should render the icon wrapper when only iconLight is set 1`] = `
+"
+		<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 lg:gap-2 lg:gap-y-4">
+			
+		<li class="p-4">
+		
+			<a href="https://light.example.com" target="_blank" rel="noopener noreferrer" title="" class="flex gap-4">
+				<span class="shrink-0 flex"><span class="block dark:hidden"><span class="flex items-center justify-center overflow-hidden bg-contain w-16 h-16 rounded-2xl border border-black/5 shadow-sm" style=""><img src="/icons/light.png" alt="" class="w-16 h-16 object-contain" /></span></span><span class="hidden dark:block">
+		<span
+			class="block w-16 h-16 rounded-2xl border border-black/5 shadow-sm bg-blue-300 overflow-hidden"
+		/>
+	</span></span>
+		<div>
+			<h3 class="text-lg mt-1 font-semibold line-clamp-1">Light Only Service</h3>
+			
 		</div>
 			</a>
 		

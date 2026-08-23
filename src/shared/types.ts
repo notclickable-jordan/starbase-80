@@ -11,6 +11,7 @@ export interface IService {
 	name: string;
 	uri: string;
 
+	hidden?: boolean;
 	description?: string;
 	icon?: string;
 	iconLight?: string;

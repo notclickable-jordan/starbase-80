@@ -243,6 +243,99 @@ describe("Services Component", () => {
 		});
 	});
 
+	describe("With theme-aware icon-only services (iconLight / iconDark)", () => {
+		test("should render the icon wrapper when only iconLight is set", () => {
+			const services: IService[] = [
+				{
+					name: "Light Only Service",
+					uri: "https://light.example.com",
+					iconLight: "/icons/light.png",
+				},
+			];
+			const result = Services({ services });
+			expect(result).toContain("shrink-0 flex");
+			expect(result).toContain("/icons/light.png");
+			expect(result).toMatchSnapshot();
+		});
+
+		test("should render the icon wrapper when only iconDark is set", () => {
+			const services: IService[] = [
+				{
+					name: "Dark Only Service",
+					uri: "https://dark.example.com",
+					iconDark: "/icons/dark.png",
+				},
+			];
+			const result = Services({ services });
+			expect(result).toContain("shrink-0 flex");
+			expect(result).toContain("/icons/dark.png");
+			expect(result).toMatchSnapshot();
+		});
+
+		test("should render the icon wrapper when both iconLight and iconDark are set without a base icon", () => {
+			const services: IService[] = [
+				{
+					name: "Both Themed Service",
+					uri: "https://both.example.com",
+					iconLight: "/icons/light.png",
+					iconDark: "/icons/dark.png",
+				},
+			];
+			const result = Services({ services });
+			expect(result).toContain("shrink-0 flex");
+			expect(result).toContain("/icons/light.png");
+			expect(result).toContain("/icons/dark.png");
+			expect(result).toMatchSnapshot();
+		});
+	});
+
+	describe("With hidden services", () => {
+		test("should not render a service marked as hidden", () => {
+			const services: IService[] = [
+				createTestService("Visible Service", 1),
+				{ ...createTestService("Hidden Service", 2), hidden: true },
+			];
+			const result = Services({ services });
+			expect(result).toContain("Visible Service");
+			expect(result).not.toContain("Hidden Service");
+			expect(result).toMatchSnapshot();
+		});
+
+		test("should render nothing when every service is hidden", () => {
+			const services: IService[] = [
+				{ ...createTestService("Hidden One", 1), hidden: true },
+				{ ...createTestService("Hidden Two", 2), hidden: true },
+			];
+			const result = Services({ services });
+			expect(result).not.toContain("Hidden One");
+			expect(result).not.toContain("Hidden Two");
+			expect(result).toMatchSnapshot();
+		});
+
+		test("should not skip a color index for a hidden service", () => {
+			// Hidden services are filtered out before indexes are assigned, so the
+			// icon color cycling (getIconColor) for visible blank-icon placeholders
+			// stays contiguous instead of leaving a gap where the hidden service was.
+			// iconLight-only services trigger an IconBlank placeholder on the dark
+			// side (no icon/iconDark fallback available).
+			const services: IService[] = [
+				{ name: "Hidden", uri: "https://hidden.example.com", iconLight: "/icons/hidden.png", hidden: true },
+				{ name: "First Visible", uri: "https://a.example.com", iconLight: "/icons/a.png" },
+				{ name: "Second Visible", uri: "https://b.example.com", iconLight: "/icons/b.png" },
+			];
+			const result = Services({ services });
+			expect(result).toContain("bg-blue-300");
+			expect(result).toContain("bg-rose-300");
+			expect(result).toMatchSnapshot();
+		});
+
+		test("should treat hidden as false by default", () => {
+			const services: IService[] = [createTestService("Default Visible", 1)];
+			const result = Services({ services });
+			expect(result).toContain("Default Visible");
+		});
+	});
+
 	describe("Edge cases", () => {
 		test("should handle services with empty strings", () => {
 			const services: IService[] = [

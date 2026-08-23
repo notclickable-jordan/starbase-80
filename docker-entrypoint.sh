@@ -16,8 +16,15 @@ cleanup() {
 # Set up signal traps
 trap cleanup TERM INT QUIT
 
-# Escape slashes
-LOGO=$(echo "${LOGO}" | sed 's/\//\\\//g')
+# Escape a value for safe use as the replacement side of a sed s/// substitution
+# (all commands below use / as the delimiter, and & has special meaning in the
+# replacement text), so free-form values like TITLE or LOGO can't break the build.
+escape_sed_replacement() {
+	printf '%s' "$1" | sed -e 's/[\&/]/\\&/g'
+}
+
+TITLE=$(escape_sed_replacement "${TITLE}")
+LOGO=$(escape_sed_replacement "${LOGO}")
 
 # HTML replacement
 sed -i -e 's/My Website/'"${TITLE}"'/g' /app/index.html
@@ -31,6 +38,7 @@ sed -i -e 's/SHOWHEADERLINE = true/SHOWHEADERLINE = '"${HEADERLINE}"'/g' /app/sr
 sed -i -e 's/SHOWHEADERTOP = false/SHOWHEADERTOP = '"${HEADERTOP}"'/g' /app/src/variables.ts
 sed -i -e 's/CATEGORIES = "normal"/CATEGORIES = "'"${CATEGORIES}"'"/g' /app/src/variables.ts
 sed -i -e 's/NEWWINDOW = true/NEWWINDOW = '"${NEWWINDOW}"'/g' /app/src/variables.ts
+sed -i -e 's/THEME = "auto"/THEME = "'"${THEME}"'"/g' /app/src/variables.ts
 
 # CSS replacement
 # Tailwind v4 removed the theme(colors.x.y) function. Translate any legacy
@@ -43,10 +51,10 @@ translate_color() {
 		-e 's/theme\(colors\.([a-zA-Z]+)\)/var(--color-\1)/g'
 }
 
-BGCOLOR=$(translate_color "${BGCOLOR}")
-BGCOLORDARK=$(translate_color "${BGCOLORDARK}")
-CATEGORYBUBBLECOLORLIGHT=$(translate_color "${CATEGORYBUBBLECOLORLIGHT}")
-CATEGORYBUBBLECOLORDARK=$(translate_color "${CATEGORYBUBBLECOLORDARK}")
+BGCOLOR=$(escape_sed_replacement "$(translate_color "${BGCOLOR}")")
+BGCOLORDARK=$(escape_sed_replacement "$(translate_color "${BGCOLORDARK}")")
+CATEGORYBUBBLECOLORLIGHT=$(escape_sed_replacement "$(translate_color "${CATEGORYBUBBLECOLORLIGHT}")")
+CATEGORYBUBBLECOLORDARK=$(escape_sed_replacement "$(translate_color "${CATEGORYBUBBLECOLORDARK}")")
 
 sed -i -e 's/background-color: var(--color-slate-50)/background-color: '"${BGCOLOR}"'/g' /app/src/tailwind.css
 sed -i -e 's/background-color: var(--color-gray-950)/background-color: '"${BGCOLORDARK}"'/g' /app/src/tailwind.css

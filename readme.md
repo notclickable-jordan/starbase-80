@@ -150,8 +150,11 @@ services:
 | ----------------- | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | name              |         | true     | Title of service                                                                                                                                                                                                                                              |
 | uri               |         | true     | Hyperlink to resource                                                                                                                                                                                                                                         |
+| hidden            | false   |          | If `true`, the service is skipped entirely instead of being rendered. Handy for temporarily disabling a service without deleting it.                                                                                                                        |
 | description       |         |          | 2-3 words which appear below the title                                                                                                                                                                                                                        |
 | icon              |         |          | Relative URI, absolute URI, service name ([Dashboard icon](https://github.com/walkxcode/dashboard-icons)), `mdi-` service name ([Material Design icon](https://icon-sets.iconify.design/mdi/)), `selfhst-` icon name [selfh.st icon](https://selfh.st/icons/) |
+| iconLight         |         |          | Overrides `icon` when the page is displayed in light mode. Falls back to `icon` if not set.                                                                                                                                                                   |
+| iconDark          |         |          | Overrides `icon` when the page is displayed in dark mode. Falls back to `icon` if not set.                                                                                                                                                                     |
 | iconBG            |         |          | Background color for icons. Hex code or [Tailwind color](https://tailwindcss.com/docs/background-color) (do not prefix with `bg-`).                                                                                                                           |
 | iconColor         |         |          | Only used as the fill color for Material Design icons. Hex code or [Tailwind color](https://tailwindcss.com/docs/background-color) (do not prefix with `bg-`).                                                                                                |
 | iconBubble        | true    |          | If `false` the bubble and shadow are removed from the icon                                                                                                                                                                                                    |
@@ -212,7 +215,26 @@ Use any [selfh.st icon](https://selfh.st/icons/) by prefixing the name with `sel
 "icon": "selfhst-couchdb"
 ```
 
+## Theme-aware icons
+
+Set `iconLight` and/or `iconDark` to show a different icon depending on light/dark mode. Any icon type (bind mount, Dashboard, Material Design, or selfh.st) can be mixed and matched between the two. If only one is set, `icon` (if present) is used as the fallback for the other mode.
+
+```bash
+# Icon in config.json
+"icon": "/icons/service.png",
+"iconLight": "/icons/service-light.png",
+"iconDark": "/icons/service-dark.png"
+```
+
 # Change history
+
+## 1.6.7
+
+- Added `iconLight` and `iconDark` service options to show a different icon depending on light/dark mode
+- Added a `hidden` service option to temporarily disable a service without deleting it from config.json
+- Fixed `getIconColor` cycling through the wrong index, which produced an invalid background class for some icon placeholders
+- Fixed a missing space in the header's class list that broke its sizing when `HEADERLINE` is enabled (the default)
+- Hardened `docker-entrypoint.sh` against `TITLE`/`LOGO`/color values containing `/` or `&`, which could previously corrupt the build
 
 ## 1.6.6
 
