@@ -1,0 +1,14 @@
+{
+	"name": "Starbase 80",
+	"short_name": "Starbase 80",
+	"start_url": "/",
+	"display": "standalone",
+	"background_color": "#ffffff",
+	"theme_color": "#ffffff",
+	"icons": [
+		{
+			"src": "/logo.png",
+			"sizes": "192x192 512x512"
+		}
+	]
+}

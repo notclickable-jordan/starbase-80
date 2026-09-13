@@ -2,10 +2,15 @@
 
 # PID tracking for proper signal handling
 nginx_pid=""
+stats_pid=""
 
 # Signal handler for fast shutdown
 cleanup() {
     echo "Received shutdown signal, stopping nginx..."
+    if [ -n "$stats_pid" ]; then
+        kill -TERM "$stats_pid" 2>/dev/null
+        wait "$stats_pid" 2>/dev/null
+    fi
     if [ -n "$nginx_pid" ]; then
         kill -QUIT "$nginx_pid" 2>/dev/null
         wait "$nginx_pid" 2>/dev/null
@@ -26,14 +31,28 @@ escape_sed_replacement() {
 TITLE=$(escape_sed_replacement "${TITLE}")
 LOGO=$(escape_sed_replacement "${LOGO}")
 
+# LOGO="" is a documented way to hide the header logo, but the favicon / home screen icons
+# should still have something to show in that case, so fall back to the static favicon.ico.
+if [ -z "$LOGO" ]; then
+    ICONHREF=$(escape_sed_replacement "/favicon.ico")
+else
+    ICONHREF="$LOGO"
+fi
+
 # HTML replacement
-sed -i -e 's/My Website/'"${TITLE}"'/g' /app/index.html
-sed -i -e 's/\/logo\.png/'"${LOGO}"'/g' /app/index.html
+sed -i -e 's/Starbase 80/'"${TITLE}"'/g' /app/index.html
+sed -i -e 's/\/logo\.png/'"${ICONHREF}"'/g' /app/index.html
+
+# Web app manifest replacement (drives the home screen icon/name on Android and, via the
+# apple-touch-icon link above, iOS/iPadOS "Add to Home Screen")
+sed -i -e 's/Starbase 80/'"${TITLE}"'/g' /app/public/manifest.json
+sed -i -e 's/\/logo\.png/'"${ICONHREF}"'/g' /app/public/manifest.json
 
 # TypeScript replacement
-sed -i -e 's/PAGETITLE = "My Website"/PAGETITLE = "'"${TITLE}"'"/g' /app/src/variables.ts
+sed -i -e 's/PAGETITLE = "Starbase 80"/PAGETITLE = "'"${TITLE}"'"/g' /app/src/variables.ts
 sed -i -e 's/PAGEICON = "\/logo\.png"/PAGEICON = "'"${LOGO}"'"/g' /app/src/variables.ts
 sed -i -e 's/SHOWHEADER = true/SHOWHEADER = '"${HEADER}"'/g' /app/src/variables.ts
+sed -i -e 's/SHOWSTATS = false/SHOWSTATS = '"${SHOWSTATS}"'/g' /app/src/variables.ts
 sed -i -e 's/SHOWHEADERLINE = true/SHOWHEADERLINE = '"${HEADERLINE}"'/g' /app/src/variables.ts
 sed -i -e 's/SHOWHEADERTOP = false/SHOWHEADERTOP = '"${HEADERTOP}"'/g' /app/src/variables.ts
 sed -i -e 's/CATEGORIES = "normal"/CATEGORIES = "'"${CATEGORIES}"'"/g' /app/src/variables.ts
@@ -105,6 +124,13 @@ if ! npm run build; then
 	echo "broken page. Check the build output above for details."
 	echo "========================================================================"
 	exit 1
+fi
+
+# Start the stats server (powers the optional SHOWSTATS widget) and track its PID
+if [ "$SHOWSTATS" = "true" ]; then
+    echo "Starting stats server..."
+    node ./dist/stats-server.js &
+    stats_pid=$!
 fi
 
 # Start nginx and track its PID
