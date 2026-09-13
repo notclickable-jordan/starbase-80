@@ -27,9 +27,11 @@ COPY nginx.conf /etc/nginx/nginx.conf
 
 ENV NODE_ENV=production
 
-ENV TITLE="My Website"
+ENV TITLE="Starbase 80"
 ENV LOGO="/logo.png"
 ENV HEADER="true"
+ENV SHOWSTATS="false"
+ENV STATSDISK="/:Root"
 ENV HEADERLINE="true"
 ENV HEADERTOP="false"
 ENV CATEGORIES="normal"

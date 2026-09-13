@@ -1,10 +1,11 @@
 import { Header } from "../components/header";
 import { ServiceCatalogList } from "../components/service-catalogs";
+import { SystemStats } from "../components/system-stats";
 import userServicesOld from "../config.json";
 import userServices from "../config/config.json";
 import { is } from "../shared/is";
 import { IServiceCategory } from "../shared/types";
-import { SHOWHEADER, SHOWHEADERLINE, SHOWHEADERTOP } from "../variables";
+import { SHOWHEADER, SHOWHEADERLINE, SHOWHEADERTOP, SHOWSTATS } from "../variables";
 
 interface IProps {
 	title?: string;
@@ -53,6 +54,7 @@ export const IndexPage = function (props: IProps): string {
 						? `
 					<div class="${headerClassName}">
 					${Header({ icon, title })}
+					${SHOWSTATS ? SystemStats() : ``}
 					</div>
 				`
 						: ``

@@ -1,6 +1,7 @@
-export const PAGETITLE = "My Website";
+export const PAGETITLE = "Starbase 80";
 export const PAGEICON = "/logo.png";
 export const SHOWHEADER = true;
+export const SHOWSTATS = false;
 export const SHOWHEADERLINE = true;
 export const SHOWHEADERTOP = false;
 export const CATEGORIES = "normal";

@@ -10,5 +10,5 @@
 		"module": "CommonJS",
 		"types": ["node"]
 	},
-	"include": ["src/index.ts", "src/css-cache-break.ts"]
+	"include": ["src/index.ts", "src/css-cache-break.ts", "src/stats-server.ts"]
 }

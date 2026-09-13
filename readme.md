@@ -3,6 +3,30 @@
 > DR T'ANA: (to Mariner) "You wanna goof around, go work on Starbase 80!"<br />
 > JET: "Damn, Starbase 80?!"
 
+## Table of contents
+
+- [About](#about)
+- [Docker and source code](#docker-and-source-code)
+- [Live demo](#live-demo)
+- [Preview](#preview)
+- [Docker](#docker)
+  - [Sample Docker compose](#sample-docker-compose)
+  - [Environment variables](#environment-variables)
+  - [Volumes (bind mounts)](#volumes-bind-mounts)
+  - [Favicon and "Add to Home Screen" icons](#favicon-and-add-to-home-screen-icons)
+  - [System stats widget](#system-stats-widget)
+- [Configuration](#configuration)
+  - [Sample config.json](#sample-configjson)
+  - [Category variables](#category-variables)
+  - [Service variables](#service-variables)
+- [Icons](#icons)
+  - [Volume / bind mount](#volume--bind-mount)
+  - [Dashboard icons](#dashboard-icons)
+  - [Material design](#material-design)
+  - [Selfh.st icons](#selfhst-icons)
+  - [Theme-aware icons](#theme-aware-icons)
+- [Change history](#change-history)
+
 # About
 
 A nice looking homepage for Docker containers or any services and links.
@@ -43,10 +67,16 @@ services:
         environment:
             - TITLE=Starbase 80
             - LOGO=/starbase80.jpg
+            # Set to true to show a live CPU / memory / disk widget in the header (requires HEADER=true)
+            - SHOWSTATS=false
+            # Comma-separated path:Label pairs for the disks shown by the widget above.
+            # The default below needs no volume mount; see "System stats widget" in the readme
+            # before adding more disks — mounting one incorrectly can break the container
+            - STATSDISK=/:Root
         volumes:
             - ./config.json:/app/src/config/config.json
             - ./public/favicon.ico:/app/public/favicon.ico
-            - ./public/logo.png:/app/public/logo.png
+            - ./public/starbase80.jpg:/app/public/starbase80.jpg
             - ./public/icons:/app/public/icons
 ```
 
@@ -54,10 +84,11 @@ services:
 
 | Variable                 | Required | Default                | Notes                                                                                                                            |
 | ------------------------ | -------- | ---------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| TITLE                    | True     | My Website             | Set to TITLE= to hide the title                                                                                                  |
+| TITLE                    | True     | Starbase 80             | Set to TITLE= to hide the title                                                                                                  |
 | LOGO                     | True     | /logo.png              | Set to LOGO= to hide the logo                                                                                                    |
 | HEADER                   |          | true                   | Set to false to hide the title and logo                                                                                          |
 | HEADERLINE               |          | true                   | Set to false to turn off the header border line                                                                                  |
+| HEADERTOP                |          | false                  | Set to true to show the header as a full-width bar on top instead of a sidebar on the left                                       |
 | CATEGORIES               |          | normal                 | Set to "small" for smaller, uppercase category labels                                                                            |
 | BGCOLOR                  |          | theme(colors.slate.50) | Page background color in light mode. Accepts a hex color (e.g. `#f8fafc`) or a Tailwind color as `var(--color-slate-50)`. Legacy `theme(colors.slate.50)` syntax is still accepted and auto-converted. |
 | BGCOLORDARK              |          | theme(colors.gray.950) | Page background color in dark mode. Accepts a hex color or a Tailwind color as `var(--color-gray-950)`. Legacy `theme(colors.gray.950)` syntax is still accepted and auto-converted.                    |
@@ -66,15 +97,42 @@ services:
 | NEWWINDOW                |          | true                   | Set to false to not have links open in a new window                                                                              |
 | THEME                    |          | auto                   | Set to "auto", "light", or "dark" to force a display mode (e.g. dark mode)                                                       |
 | HOVER                    |          | none                   | Set to "underline" for an underline effect on titles when hovering/focusing on that service                                      |
+| SHOWSTATS                |          | false                  | Set to true to show a live CPU / memory / disk widget in the header (requires `HEADER=true`). See [System stats widget](#system-stats-widget). |
+| STATSDISK                |          | /:Root                 | Comma-separated list of `path:Label` pairs for the disks shown by the stats widget. The default needs no volume mount. To add more disks see [System stats widget](#system-stats-widget) — never bind-mount a host path onto `/`. |
 
 ## Volumes (bind mounts)
 
 | Path                        | Required | Notes                                                                         |
 | --------------------------- | -------- | ----------------------------------------------------------------------------- |
 | /app/src/config/config.json | true     | Configuration with list of sites and links                                    |
-| /app/public/favicon.ico     |          | Website favicon                                                               |
-| /app/public/logo.png        |          | Logo in the header                                                            |
+| /app/public/favicon.ico     |          | Fallback favicon, only used when `LOGO=` is set empty (see below)             |
+| /app/public/logo.png        |          | Logo in the header, favicon, and home screen icon (or wherever `LOGO` points) |
 | /app/public/icons           |          | Or wherever you want to put them, JSON icon paths are relative to /app/public |
+
+## Favicon and "Add to Home Screen" icons
+
+`LOGO` is used everywhere an icon is needed: the header, the browser tab favicon, and the icon shown when the site is added to the home screen on iPhone/iPad (`apple-touch-icon`) or Android/desktop Chrome (via the generated `manifest.json`). There's nothing extra to configure — just set `LOGO` (or mount your own `/app/public/logo.png`) and it's picked up everywhere.
+
+If `LOGO=` is set to hide the header logo, the favicon and home screen icon fall back to `/app/public/favicon.ico` instead of going blank.
+
+Note that iOS/Android just scale the single image you provide rather than using purpose-built icon sizes, so a square image with some padding around the subject will look best once cropped into a home screen icon.
+
+## System stats widget
+
+Setting `SHOWSTATS=true` adds a small CPU / memory / disk widget to the header. CPU and memory always reflect the container's own view of the host (no extra configuration needed). The default `STATSDISK=/:Root` needs no volume either — it just reports usage for the container's own root filesystem, which in most setups lives on the same disk as the host's root anyway.
+
+To track other disks, add an entry to `STATSDISK` and bind-mount the matching host path into the container. **Never mount a host path onto the container's own `/`** — that replaces the entire container filesystem (nginx, node, `/app`, everything) and it will fail to start. Mount it at its own dedicated path instead:
+
+```yaml
+    environment:
+      - SHOWSTATS=true
+      - STATSDISK=/host:Root,/mnt/storage:Storage
+    volumes:
+      - /:/host:ro
+      - /mnt/storage:/mnt/storage:ro
+```
+
+Here the host's `/` is mounted at `/host` inside the container (not at `/`), and `STATSDISK` points at that same `/host` path. A path with nothing mounted at it will show as "N/A" instead of failing the build.
 
 # Configuration
 
@@ -101,13 +159,17 @@ services:
 				"name": "Calibre",
 				"uri": "https://calibre.mywebsite.com",
 				"description": "eBook library",
-				"icon": "/icons/calibre.png"
+				"icon": "/icons/calibre.png",
+				"newWindow": false
 			}
 		]
 	},
 	{
 		"category": "Devices",
 		"bubble": true,
+		"bubbleBGLight": "slate-100",
+		"bubbleBGDark": "slate-800",
+		"iconBubblePadding": true,
 		"services": [
 			{
 				"name": "Router",
@@ -126,7 +188,43 @@ services:
 				"name": "Synology",
 				"uri": "http://synology:5000",
 				"description": "Network storage",
-				"icon": "/icons/synology.png"
+				"icon": "/icons/synology.png",
+				"iconBubblePadding": false
+			}
+		]
+	},
+	{
+		"category": "Monitoring",
+		"services": [
+			{
+				"name": "Uptime Kuma",
+				"uri": "https://status.mywebsite.com",
+				"description": "Uptime monitoring",
+				"icon": "mdi-heart-pulse",
+				"iconColor": "sky-500",
+				"iconBG": "#fef3c7"
+			},
+			{
+				"name": "Grafana",
+				"uri": "https://grafana.mywebsite.com",
+				"description": "Dashboards",
+				"icon": "/icons/grafana-light.png",
+				"iconLight": "/icons/grafana-light.png",
+				"iconDark": "/icons/grafana-dark.png"
+			},
+			{
+				"name": "Company Banner",
+				"uri": "https://mywebsite.com",
+				"description": "Wide logo, not square",
+				"icon": "/icons/wide-logo.png",
+				"iconAspect": "width"
+			},
+			{
+				"name": "Old Wiki",
+				"uri": "https://wiki.mywebsite.com",
+				"description": "Retired, kept for reference",
+				"icon": "/icons/wiki.png",
+				"hidden": true
 			}
 		]
 	}
@@ -227,6 +325,12 @@ Set `iconLight` and/or `iconDark` to show a different icon depending on light/da
 ```
 
 # Change history
+
+## 1.7.0
+
+- Added a system stats widget (`SHOWSTATS`/`STATSDISK`) that shows live CPU, memory, and disk usage in the header
+- Modernized favicon and "Add to Home Screen" support: `LOGO` now also drives the favicon, a proper `apple-touch-icon` (replacing the pre-iOS7 `apple-touch-icon-precomposed`), and a generated `manifest.json` for Android/Chrome
+- Changed the default `TITLE` from the generic "My Website" to "Starbase 80"
 
 ## 1.6.7
 

@@ -5,11 +5,11 @@
 	"repository": {
 		"url": "https://github.com/notclickable-jordan/starbase-80/"
 	},
-	"version": "1.6.7",
+	"version": "1.7.0",
 	"type": "commonjs",
 	"scripts": {
 		"build": "tsc && node ./dist/index.js && npm run html && npm run tailwind && npm run css-cache-break",
-		"html": "html-minifier --remove-comments --collapse-whitespace --input-dir ./public --output-dir ./public --file-ext html",
+		"html": "html-minifier-next --remove-comments --collapse-whitespace --input-dir ./public --output-dir ./public --file-ext html",
 		"tailwind": "npx @tailwindcss/cli -i ./src/tailwind.css -o ./public/main.css --minify",
 		"css-cache-break": "node ./dist/css-cache-break.js",
 		"test": "jest",
@@ -18,9 +18,10 @@
 	},
 	"dependencies": {
 		"@types/node": "^26.1.1",
-		"html-minifier": "^4.0.0",
+		"html-minifier-next": "^8.4.2",
 		"prettier": "^3.9.5",
 		"prettier-plugin-tailwindcss": "^0.8.1",
+		"systeminformation": "^5.33.1",
 		"tailwindcss": "^4.3.2",
 		"typescript": "^7.0.2"
 	},
